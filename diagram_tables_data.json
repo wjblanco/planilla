@@ -1,0 +1,2908 @@
+[
+    {
+        "id": "PLA_CONF_PAISES",
+        "name": "PLA_CONF_PAISES",
+        "attributes": [
+            {
+                "id": "PLA_CONF_PAISES_ID",
+                "full_definition": "PAI_PAIS_ID INT NOT NULL",
+                "simple_name": "PAI_PAIS_ID"
+            },
+            {
+                "id": "PLA_CONF_PAISES_CODIGO_ISO",
+                "full_definition": "PAI_CODIGO_ISO CHAR(2) NOT NULL",
+                "simple_name": "PAI_CODIGO_ISO"
+            },
+            {
+                "id": "PLA_CONF_PAISES_NOMBRE",
+                "full_definition": "PAI_NOMBRE VARCHAR(100) NOT NULL",
+                "simple_name": "PAI_NOMBRE"
+            },
+            {
+                "id": "PLA_CONF_PAISES_MONEDA",
+                "full_definition": "PAI_MONEDA_PRINCIPAL CHAR(3) NOT NULL",
+                "simple_name": "PAI_MONEDA_PRINCIPAL"
+            },
+            {
+                "id": "PLA_CONF_PAISES_FORMATO_FECHA",
+                "full_definition": "PAI_FORMATO_FECHA VARCHAR(20) NOT NULL DEFAULT 'dd/mm/yyyy'",
+                "simple_name": "PAI_FORMATO_FECHA"
+            },
+            {
+                "id": "PLA_CONF_PAISES_IDIOMA",
+                "full_definition": "PAI_IDIOMA_PRINCIPAL CHAR(2) NOT NULL DEFAULT 'es'",
+                "simple_name": "PAI_IDIOMA_PRINCIPAL"
+            },
+            {
+                "id": "PLA_CONF_PAISES_ZONA_HORARIA",
+                "full_definition": "PAI_ZONA_HORARIA VARCHAR(50) NOT NULL DEFAULT 'America/Guatemala'",
+                "simple_name": "PAI_ZONA_HORARIA"
+            },
+            {
+                "id": "PLA_CONF_PAISES_ACTIVO",
+                "full_definition": "PAI_ACTIVO BOOLEAN NOT NULL DEFAULT TRUE",
+                "simple_name": "PAI_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_MONEDAS",
+        "name": "PLA_CONF_MONEDAS",
+        "attributes": [
+            {
+                "id": "PLA_CONF_MONEDAS_ID",
+                "full_definition": "MON_MONEDA_ID INT NOT NULL",
+                "simple_name": "MON_MONEDA_ID"
+            },
+            {
+                "id": "PLA_CONF_MONEDAS_CODIGO_ISO",
+                "full_definition": "MON_CODIGO_ISO CHAR(3) NOT NULL",
+                "simple_name": "MON_CODIGO_ISO"
+            },
+            {
+                "id": "PLA_CONF_MONEDAS_NOMBRE",
+                "full_definition": "MON_NOMBRE VARCHAR(50) NOT NULL",
+                "simple_name": "MON_NOMBRE"
+            },
+            {
+                "id": "PLA_CONF_MONEDAS_SIMBOLO",
+                "full_definition": "MON_SIMBOLO VARCHAR(5) NOT NULL",
+                "simple_name": "MON_SIMBOLO"
+            },
+            {
+                "id": "PLA_CONF_MONEDAS_DECIMALES",
+                "full_definition": "MON_DECIMALES INT NOT NULL DEFAULT 2",
+                "simple_name": "MON_DECIMALES"
+            },
+            {
+                "id": "PLA_CONF_MONEDAS_ACTIVO",
+                "full_definition": "MON_ACTIVO BOOLEAN NOT NULL DEFAULT TRUE",
+                "simple_name": "MON_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_ID",
+        "name": "PLA_CONF_TIPOS_ID",
+        "attributes": [
+            {
+                "id": "PLA_CONF_TIPOS_ID_ID",
+                "full_definition": "TIP_TIPO_ID INT NOT NULL",
+                "simple_name": "TIP_TIPO_ID"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ID_PAIS",
+                "full_definition": "TIP_PAIS_ID INT NOT NULL",
+                "simple_name": "TIP_PAIS_ID"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ID_NOMBRE",
+                "full_definition": "TIP_NOMBRE VARCHAR(50) NOT NULL",
+                "simple_name": "TIP_NOMBRE"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ID_FORMATO",
+                "full_definition": "TIP_FORMATO VARCHAR(200)",
+                "simple_name": "TIP_FORMATO"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ID_LONGITUD",
+                "full_definition": "TIP_LONGITUD INT",
+                "simple_name": "TIP_LONGITUD"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ID_OBLIGATORIO",
+                "full_definition": "TIP_OBLIGATORIO BOOLEAN NOT NULL DEFAULT TRUE",
+                "simple_name": "TIP_OBLIGATORIO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PAR_IMPUESTOS",
+        "name": "PLA_PAR_IMPUESTOS",
+        "attributes": [
+            {
+                "id": "PLA_PAR_IMPUESTOS_ID",
+                "full_definition": "IMP_IMPUESTO_ID int NOT NULL",
+                "simple_name": "IMP_IMPUESTO_ID"
+            },
+            {
+                "id": "IMP_PAIS_ID",
+                "full_definition": "IMP_PAIS_ID int NOT NULL",
+                "simple_name": "IMP_PAIS_ID"
+            },
+            {
+                "id": "IMP_NOMBRE",
+                "full_definition": "IMP_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "IMP_NOMBRE"
+            },
+            {
+                "id": "IMP_TIPO",
+                "full_definition": "IMP_TIPO varchar(20) NOT NULL DEFAULT 'ESCALONADO'",
+                "simple_name": "IMP_TIPO"
+            },
+            {
+                "id": "IMP_APLICA_A",
+                "full_definition": "IMP_APLICA_A varchar(20) NOT NULL DEFAULT 'TODOS'",
+                "simple_name": "IMP_APLICA_A"
+            },
+            {
+                "id": "IMP_FECHA_INI",
+                "full_definition": "IMP_FECHA_INI date NOT NULL",
+                "simple_name": "IMP_FECHA_INI"
+            },
+            {
+                "id": "IMP_FECHA_FIN",
+                "full_definition": "IMP_FECHA_FIN date",
+                "simple_name": "IMP_FECHA_FIN"
+            },
+            {
+                "id": "IMP_ACTIVO",
+                "full_definition": "IMP_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "IMP_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PAR_TRAMOS_IMPUESTOS",
+        "name": "PLA_PAR_TRAMOS_IMPUESTOS",
+        "attributes": [
+            {
+                "id": "PLA_PAR_TRAMOS_IMPUESTOS_ID",
+                "full_definition": "TRA_TRAMO_ID int NOT NULL",
+                "simple_name": "TRA_TRAMO_ID"
+            },
+            {
+                "id": "TRA_IMPUESTO_ID",
+                "full_definition": "TRA_IMPUESTO_ID int NOT NULL",
+                "simple_name": "TRA_IMPUESTO_ID"
+            },
+            {
+                "id": "TRA_LIM_INF",
+                "full_definition": "TRA_LIM_INF decimal(12,2) NOT NULL",
+                "simple_name": "TRA_LIM_INF"
+            },
+            {
+                "id": "TRA_LIM_SUP",
+                "full_definition": "TRA_LIM_SUP decimal(12,2)",
+                "simple_name": "TRA_LIM_SUP"
+            },
+            {
+                "id": "TRA_PORCENTAJE",
+                "full_definition": "TRA_PORCENTAJE decimal(5,2) NOT NULL",
+                "simple_name": "TRA_PORCENTAJE"
+            },
+            {
+                "id": "TRA_CUOTA_FIJA",
+                "full_definition": "TRA_CUOTA_FIJA decimal(10,2) NOT NULL DEFAULT 0",
+                "simple_name": "TRA_CUOTA_FIJA"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PAR_PRESTACIONES",
+        "name": "PLA_PAR_PRESTACIONES",
+        "attributes": [
+            {
+                "id": "PLA_PAR_PRESTACIONES_ID",
+                "full_definition": "PRE_PRESTACION_ID int NOT NULL",
+                "simple_name": "PRE_PRESTACION_ID"
+            },
+            {
+                "id": "PRE_PAIS_ID",
+                "full_definition": "PRE_PAIS_ID int NOT NULL",
+                "simple_name": "PRE_PAIS_ID"
+            },
+            {
+                "id": "PRE_TIPO_PRESTACION",
+                "full_definition": "PRE_TIPO_PRESTACION varchar(30) NOT NULL",
+                "simple_name": "PRE_TIPO_PRESTACION"
+            },
+            {
+                "id": "PRE_NOMBRE",
+                "full_definition": "PRE_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "PRE_NOMBRE"
+            },
+            {
+                "id": "PRE_METODO_CALCULO",
+                "full_definition": "PRE_METODO_CALCULO varchar(30) NOT NULL",
+                "simple_name": "PRE_METODO_CALCULO"
+            },
+            {
+                "id": "PRE_VALOR_BASE",
+                "full_definition": "PRE_VALOR_BASE decimal(10,2) NOT NULL",
+                "simple_name": "PRE_VALOR_BASE"
+            },
+            {
+                "id": "PRE_PERIODICIDAD",
+                "full_definition": "PRE_PERIODICIDAD varchar(20) NOT NULL",
+                "simple_name": "PRE_PERIODICIDAD"
+            },
+            {
+                "id": "PRE_ACUMULABLE",
+                "full_definition": "PRE_ACUMULABLE boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "PRE_ACUMULABLE"
+            },
+            {
+                "id": "PRE_MAX_ACUMULACION",
+                "full_definition": "PRE_MAX_ACUMULACION decimal(10,2)",
+                "simple_name": "PRE_MAX_ACUMULACION"
+            },
+            {
+                "id": "PRE_FECHA_INI",
+                "full_definition": "PRE_FECHA_INI date NOT NULL",
+                "simple_name": "PRE_FECHA_INI"
+            },
+            {
+                "id": "PRE_FECHA_FIN",
+                "full_definition": "PRE_FECHA_FIN date",
+                "simple_name": "PRE_FECHA_FIN"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_EMPLEADOS",
+        "name": "PLA_EMP_EMPLEADOS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_EMP_ID",
+                "full_definition": "EMP_EMP_ID INT NOT NULL",
+                "simple_name": "EMP_EMP_ID"
+            },
+            {
+                "id": "PLA_EMP_CODIGO",
+                "full_definition": "EMP_CODIGO VARCHAR(20) NOT NULL",
+                "simple_name": "EMP_CODIGO"
+            },
+            {
+                "id": "PLA_EMP_TIPO_ID",
+                "full_definition": "EMP_TIPO_ID INT NOT NULL",
+                "simple_name": "EMP_TIPO_ID"
+            },
+            {
+                "id": "PLA_EMP_NUMERO_ID",
+                "full_definition": "EMP_NUMERO_ID VARCHAR(30) NOT NULL",
+                "simple_name": "EMP_NUMERO_ID"
+            },
+            {
+                "id": "PLA_EMP_NOMBRE1",
+                "full_definition": "EMP_NOMBRE1 VARCHAR(50) NOT NULL",
+                "simple_name": "EMP_NOMBRE1"
+            },
+            {
+                "id": "PLA_EMP_NOMBRE2",
+                "full_definition": "EMP_NOMBRE2 VARCHAR(50)",
+                "simple_name": "EMP_NOMBRE2"
+            },
+            {
+                "id": "PLA_EMP_APELLIDO1",
+                "full_definition": "EMP_APELLIDO1 VARCHAR(50) NOT NULL",
+                "simple_name": "EMP_APELLIDO1"
+            },
+            {
+                "id": "PLA_EMP_APELLIDO2",
+                "full_definition": "EMP_APELLIDO2 VARCHAR(50)",
+                "simple_name": "EMP_APELLIDO2"
+            },
+            {
+                "id": "PLA_EMP_FECHA_NAC",
+                "full_definition": "EMP_FECHA_NAC DATE",
+                "simple_name": "EMP_FECHA_NAC"
+            },
+            {
+                "id": "PLA_EMP_GENERO",
+                "full_definition": "EMP_GENERO VARCHAR(20)",
+                "simple_name": "EMP_GENERO"
+            },
+            {
+                "id": "PLA_EMP_PAIS_NAC",
+                "full_definition": "EMP_PAIS_NAC INT",
+                "simple_name": "EMP_PAIS_NAC"
+            },
+            {
+                "id": "PLA_EMP_FECHA_INGRESO",
+                "full_definition": "EMP_FECHA_INGRESO DATE NOT NULL",
+                "simple_name": "EMP_FECHA_INGRESO"
+            },
+            {
+                "id": "PLA_EMP_MONEDA_SALARIO",
+                "full_definition": "EMP_MONEDA_SALARIO CHAR(3) NOT NULL",
+                "simple_name": "EMP_MONEDA_SALARIO"
+            },
+            {
+                "id": "PLA_EMP_SALARIO_BASE",
+                "full_definition": "EMP_SALARIO_BASE DECIMAL(12,2) NOT NULL",
+                "simple_name": "EMP_SALARIO_BASE"
+            },
+            {
+                "id": "PLA_EMP_TIPO_CONTRATO",
+                "full_definition": "EMP_TIPO_CONTRATO INT NOT NULL",
+                "simple_name": "EMP_TIPO_CONTRATO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_TIPOS_CONTRATO",
+        "name": "PLA_EMP_TIPOS_CONTRATO",
+        "attributes": [
+            {
+                "id": "PLA_TCO_CONTRATO_ID",
+                "full_definition": "TCO_CONTRATO_ID INT NOT NULL",
+                "simple_name": "TCO_CONTRATO_ID"
+            },
+            {
+                "id": "PLA_TCO_PAIS_ID",
+                "full_definition": "TCO_PAIS_ID INT NOT NULL",
+                "simple_name": "TCO_PAIS_ID"
+            },
+            {
+                "id": "PLA_TCO_CODIGO",
+                "full_definition": "TCO_CODIGO VARCHAR(20) NOT NULL",
+                "simple_name": "TCO_CODIGO"
+            },
+            {
+                "id": "PLA_TCO_NOMBRE",
+                "full_definition": "TCO_NOMBRE VARCHAR(100) NOT NULL",
+                "simple_name": "TCO_NOMBRE"
+            },
+            {
+                "id": "PLA_TCO_DESCRIPCION",
+                "full_definition": "TCO_DESCRIPCION VARCHAR(200)",
+                "simple_name": "TCO_DESCRIPCION"
+            },
+            {
+                "id": "PLA_TCO_HORAS_SEMANALES",
+                "full_definition": "TCO_HORAS_SEMANALES DECIMAL(5,2) NOT NULL DEFAULT 40",
+                "simple_name": "TCO_HORAS_SEMANALES"
+            },
+            {
+                "id": "PLA_TCO_BENEFICIOS_LEGALES",
+                "full_definition": "TCO_BENEFICIOS_LEGALES BOOLEAN NOT NULL DEFAULT TRUE",
+                "simple_name": "TCO_BENEFICIOS_LEGALES"
+            },
+            {
+                "id": "PLA_TCO_PERIODO_PRUEBA",
+                "full_definition": "TCO_PERIODO_PRUEBA INT DEFAULT 90",
+                "simple_name": "TCO_PERIODO_PRUEBA"
+            },
+            {
+                "id": "PLA_TCO_NOTIFICACION_PREAVISO",
+                "full_definition": "TCO_NOTIFICACION_PREAVISO INT DEFAULT 30",
+                "simple_name": "TCO_NOTIFICACION_PREAVISO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_PERIODOS_PAGO",
+        "name": "PLA_CONF_PERIODOS_PAGO",
+        "attributes": [
+            {
+                "id": "PLA_CONF_PERIODOS_PAGO_ID",
+                "full_definition": "PRP_PERIODO_ID int NOT NULL",
+                "simple_name": "PRP_PERIODO_ID"
+            },
+            {
+                "id": "PRP_PAIS_ID",
+                "full_definition": "PRP_PAIS_ID int NOT NULL",
+                "simple_name": "PRP_PAIS_ID"
+            },
+            {
+                "id": "PRP_TIPO",
+                "full_definition": "PRP_TIPO varchar(20) NOT NULL",
+                "simple_name": "PRP_TIPO"
+            },
+            {
+                "id": "PRP_NOMBRE",
+                "full_definition": "PRP_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "PRP_NOMBRE"
+            },
+            {
+                "id": "PRP_DIAS",
+                "full_definition": "PRP_DIAS int NOT NULL DEFAULT 15",
+                "simple_name": "PRP_DIAS"
+            },
+            {
+                "id": "PRP_DIA_PAGO",
+                "full_definition": "PRP_DIA_PAGO int",
+                "simple_name": "PRP_DIA_PAGO"
+            },
+            {
+                "id": "PRP_FECHA_INICIO",
+                "full_definition": "PRP_FECHA_INICIO date NOT NULL",
+                "simple_name": "PRP_FECHA_INICIO"
+            },
+            {
+                "id": "PRP_FECHA_FIN",
+                "full_definition": "PRP_FECHA_FIN date",
+                "simple_name": "PRP_FECHA_FIN"
+            },
+            {
+                "id": "PRP_ACTIVO",
+                "full_definition": "PRP_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "PRP_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_BENEFICIOS",
+        "name": "PLA_CONF_BENEFICIOS",
+        "attributes": [
+            {
+                "id": "PLA_CONF_BENEFICIOS_ID",
+                "full_definition": "BEN_BENEFICIO_ID int NOT NULL",
+                "simple_name": "BEN_BENEFICIO_ID"
+            },
+            {
+                "id": "BEN_PAIS_ID",
+                "full_definition": "BEN_PAIS_ID int NOT NULL",
+                "simple_name": "BEN_PAIS_ID"
+            },
+            {
+                "id": "BEN_NOMBRE",
+                "full_definition": "BEN_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "BEN_NOMBRE"
+            },
+            {
+                "id": "BEN_TIPO",
+                "full_definition": "BEN_TIPO varchar(20) NOT NULL",
+                "simple_name": "BEN_TIPO"
+            },
+            {
+                "id": "BEN_VALOR",
+                "full_definition": "BEN_VALOR decimal(10,2)",
+                "simple_name": "BEN_VALOR"
+            },
+            {
+                "id": "BEN_MONEDA",
+                "full_definition": "BEN_MONEDA char(3)",
+                "simple_name": "BEN_MONEDA"
+            },
+            {
+                "id": "BEN_PERIODICIDAD",
+                "full_definition": "BEN_PERIODICIDAD varchar(20) NOT NULL",
+                "simple_name": "BEN_PERIODICIDAD"
+            },
+            {
+                "id": "BEN_IMPOSITIVO",
+                "full_definition": "BEN_IMPOSITIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "BEN_IMPOSITIVO"
+            },
+            {
+                "id": "BEN_APLICA_SEGURO_SOCIAL",
+                "full_definition": "BEN_APLICA_SEGURO_SOCIAL boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "BEN_APLICA_SEGURO_SOCIAL"
+            },
+            {
+                "id": "BEN_ACTIVO",
+                "full_definition": "BEN_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "BEN_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PLA_PERIODOS",
+        "name": "PLA_PLA_PERIODOS",
+        "attributes": [
+            {
+                "id": "PLA_PLA_PERIODOS_ID",
+                "full_definition": "PER_PERIODO_ID int NOT NULL",
+                "simple_name": "PER_PERIODO_ID"
+            },
+            {
+                "id": "PER_EMPRESA_ID",
+                "full_definition": "PER_EMPRESA_ID int NOT NULL",
+                "simple_name": "PER_EMPRESA_ID"
+            },
+            {
+                "id": "PER_TIPO_PERIODO_ID",
+                "full_definition": "PER_TIPO_PERIODO_ID int NOT NULL",
+                "simple_name": "PER_TIPO_PERIODO_ID"
+            },
+            {
+                "id": "PER_CODIGO",
+                "full_definition": "PER_CODIGO varchar(20) NOT NULL",
+                "simple_name": "PER_CODIGO"
+            },
+            {
+                "id": "PER_NOMBRE",
+                "full_definition": "PER_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "PER_NOMBRE"
+            },
+            {
+                "id": "PER_FECHA_INICIO",
+                "full_definition": "PER_FECHA_INICIO date NOT NULL",
+                "simple_name": "PER_FECHA_INICIO"
+            },
+            {
+                "id": "PER_FECHA_FIN",
+                "full_definition": "PER_FECHA_FIN date NOT NULL",
+                "simple_name": "PER_FECHA_FIN"
+            },
+            {
+                "id": "PER_FECHA_PAGO",
+                "full_definition": "PER_FECHA_PAGO date NOT NULL",
+                "simple_name": "PER_FECHA_PAGO"
+            },
+            {
+                "id": "PER_MONEDA",
+                "full_definition": "PER_MONEDA char(3) NOT NULL",
+                "simple_name": "PER_MONEDA"
+            },
+            {
+                "id": "PER_ESTADO",
+                "full_definition": "PER_ESTADO varchar(20) NOT NULL DEFAULT 'ABIERTO'",
+                "simple_name": "PER_ESTADO"
+            },
+            {
+                "id": "PER_TASA_CAMBIO",
+                "full_definition": "PER_TASA_CAMBIO decimal(12,6)",
+                "simple_name": "PER_TASA_CAMBIO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PLANILLA",
+        "name": "PLA_PLA_PLANILLA",
+        "attributes": [
+            {
+                "id": "PLA_PLANILLA_ID",
+                "full_definition": "PLA_PLANILLA_ID int NOT NULL",
+                "simple_name": "PLA_PLANILLA_ID"
+            },
+            {
+                "id": "PLA_PERIODO_ID",
+                "full_definition": "PLA_PERIODO_ID int NOT NULL",
+                "simple_name": "PLA_PERIODO_ID"
+            },
+            {
+                "id": "PLA_TIPO",
+                "full_definition": "PLA_TIPO varchar(30) NOT NULL DEFAULT 'NORMAL'",
+                "simple_name": "PLA_TIPO"
+            },
+            {
+                "id": "PLA_FECHA_GENERACION",
+                "full_definition": "PLA_FECHA_GENERACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "simple_name": "PLA_FECHA_GENERACION"
+            },
+            {
+                "id": "PLA_TOTAL_INGRESOS",
+                "full_definition": "PLA_TOTAL_INGRESOS decimal(12,2)",
+                "simple_name": "PLA_TOTAL_INGRESOS"
+            },
+            {
+                "id": "PLA_TOTAL_DESCUENTOS",
+                "full_definition": "PLA_TOTAL_DESCUENTOS decimal(12,2)",
+                "simple_name": "PLA_TOTAL_DESCUENTOS"
+            },
+            {
+                "id": "PLA_TOTAL_LIQUIDO",
+                "full_definition": "PLA_TOTAL_LIQUIDO decimal(12,2)",
+                "simple_name": "PLA_TOTAL_LIQUIDO"
+            },
+            {
+                "id": "PLA_MONEDA",
+                "full_definition": "PLA_MONEDA char(3) NOT NULL",
+                "simple_name": "PLA_MONEDA"
+            },
+            {
+                "id": "PLA_TASA_CAMBIO",
+                "full_definition": "PLA_TASA_CAMBIO decimal(12,6) NOT NULL DEFAULT 1",
+                "simple_name": "PLA_TASA_CAMBIO"
+            },
+            {
+                "id": "PLA_ESTADO",
+                "full_definition": "PLA_ESTADO varchar(20) NOT NULL DEFAULT 'GENERADA'",
+                "simple_name": "PLA_ESTADO"
+            },
+            {
+                "id": "PLA_OBSERVACIONES",
+                "full_definition": "PLA_OBSERVACIONES text",
+                "simple_name": "PLA_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_DETALLE",
+        "name": "PLA_PLA_DETALLE",
+        "attributes": [
+            {
+                "id": "PLA_DETALLE_ID",
+                "full_definition": "DET_DETALLE_ID int NOT NULL",
+                "simple_name": "DET_DETALLE_ID"
+            },
+            {
+                "id": "DET_PLANILLA_ID",
+                "full_definition": "DET_PLANILLA_ID int NOT NULL",
+                "simple_name": "DET_PLANILLA_ID"
+            },
+            {
+                "id": "DET_EMPLEADO_ID",
+                "full_definition": "DET_EMPLEADO_ID int NOT NULL",
+                "simple_name": "DET_EMPLEADO_ID"
+            },
+            {
+                "id": "DET_SALARIO_BASE",
+                "full_definition": "DET_SALARIO_BASE decimal(10,2) NOT NULL",
+                "simple_name": "DET_SALARIO_BASE"
+            },
+            {
+                "id": "DET_MONEDA_SALARIO",
+                "full_definition": "DET_MONEDA_SALARIO char(3) NOT NULL",
+                "simple_name": "DET_MONEDA_SALARIO"
+            },
+            {
+                "id": "DET_TASA_CAMBIO",
+                "full_definition": "DET_TASA_CAMBIO decimal(12,6) NOT NULL DEFAULT 1",
+                "simple_name": "DET_TASA_CAMBIO"
+            },
+            {
+                "id": "DET_TOTAL_INGRESOS",
+                "full_definition": "DET_TOTAL_INGRESOS decimal(12,2) NOT NULL",
+                "simple_name": "DET_TOTAL_INGRESOS"
+            },
+            {
+                "id": "DET_TOTAL_DESCUENTOS",
+                "full_definition": "DET_TOTAL_DESCUENTOS decimal(12,2) NOT NULL",
+                "simple_name": "DET_TOTAL_DESCUENTOS"
+            },
+            {
+                "id": "DET_TOTAL_LIQUIDO",
+                "full_definition": "DET_TOTAL_LIQUIDO decimal(12,2) NOT NULL",
+                "simple_name": "DET_TOTAL_LIQUIDO"
+            },
+            {
+                "id": "DET_MONEDA_PAGO",
+                "full_definition": "DET_MONEDA_PAGO char(3) NOT NULL",
+                "simple_name": "DET_MONEDA_PAGO"
+            },
+            {
+                "id": "DET_ESTADO",
+                "full_definition": "DET_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "simple_name": "DET_ESTADO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PLA_DETALLE_ITEMS",
+        "name": "PLA_PLA_DETALLE_ITEMS",
+        "attributes": [
+            {
+                "id": "PLA_PLA_DETALLE_ITEMS_ID",
+                "full_definition": "DEI_ITEM_ID int NOT NULL",
+                "simple_name": "DEI_ITEM_ID"
+            },
+            {
+                "id": "DEI_DETALLE_ID",
+                "full_definition": "DEI_DETALLE_ID int NOT NULL",
+                "simple_name": "DEI_DETALLE_ID"
+            },
+            {
+                "id": "DEI_TIPO",
+                "full_definition": "DEI_TIPO varchar(20) NOT NULL",
+                "simple_name": "DEI_TIPO"
+            },
+            {
+                "id": "DEI_CODIGO_CONCEPTO",
+                "full_definition": "DEI_CODIGO_CONCEPTO int NOT NULL",
+                "simple_name": "DEI_CODIGO_CONCEPTO"
+            },
+            {
+                "id": "DEI_DESCRIPCION",
+                "full_definition": "DEI_DESCRIPCION varchar(200) NOT NULL",
+                "simple_name": "DEI_DESCRIPCION"
+            },
+            {
+                "id": "DEI_CANTIDAD",
+                "full_definition": "DEI_CANTIDAD decimal(10,2) NOT NULL",
+                "simple_name": "DEI_CANTIDAD"
+            },
+            {
+                "id": "DEI_VALOR_UNITARIO",
+                "full_definition": "DEI_VALOR_UNITARIO decimal(12,2) NOT NULL",
+                "simple_name": "DEI_VALOR_UNITARIO"
+            },
+            {
+                "id": "DEI_VALOR_TOTAL",
+                "full_definition": "DEI_VALOR_TOTAL decimal(12,2) NOT NULL",
+                "simple_name": "DEI_VALOR_TOTAL"
+            },
+            {
+                "id": "DEI_MONEDA",
+                "full_definition": "DEI_MONEDA char(3) NOT NULL",
+                "simple_name": "DEI_MONEDA"
+            },
+            {
+                "id": "DEI_TASA_CAMBIO",
+                "full_definition": "DEI_TASA_CAMBIO decimal(12,6) NOT NULL",
+                "simple_name": "DEI_TASA_CAMBIO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PLA_CONF_CONCEPTOS_NOMINA",
+        "name": "PLA_CONF_CONCEPTOS_NOMINA",
+        "attributes": [
+            {
+                "id": "PLA_PLA_CONF_CONCEPTOS_NOMINA_ID",
+                "full_definition": "CON_CONCEPTO_ID int NOT NULL",
+                "simple_name": "CON_CONCEPTO_ID"
+            },
+            {
+                "id": "CON_PAIS_ID",
+                "full_definition": "CON_PAIS_ID int NOT NULL",
+                "simple_name": "CON_PAIS_ID"
+            },
+            {
+                "id": "CON_NOMBRE",
+                "full_definition": "CON_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "CON_NOMBRE"
+            },
+            {
+                "id": "CON_DESCRIPCION",
+                "full_definition": "CON_DESCRIPCION varchar(200)",
+                "simple_name": "CON_DESCRIPCION"
+            },
+            {
+                "id": "CON_TIPO",
+                "full_definition": "CON_TIPO varchar(20) NOT NULL",
+                "simple_name": "CON_TIPO"
+            },
+            {
+                "id": "CON_APLICA_IMPUESTOS",
+                "full_definition": "CON_APLICA_IMPUESTOS boolean NOT NULL",
+                "simple_name": "CON_APLICA_IMPUESTOS"
+            },
+            {
+                "id": "CON_APLICA_SEGURO_SOCIAL",
+                "full_definition": "CON_APLICA_SEGURO_SOCIAL boolean NOT NULL",
+                "simple_name": "CON_APLICA_SEGURO_SOCIAL"
+            },
+            {
+                "id": "CON_ES_PATRONAL",
+                "full_definition": "CON_ES_PATRONAL boolean NOT NULL",
+                "simple_name": "CON_ES_PATRONAL"
+            },
+            {
+                "id": "CON_ESTADO",
+                "full_definition": "CON_ESTADO varchar(20) NOT NULL",
+                "simple_name": "CON_ESTADO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PLA_EMP_HISTORIAL_SALARIAL",
+        "name": "PLA_EMP_HISTORIAL_SALARIAL",
+        "attributes": [
+            {
+                "id": "PLA_PLA_EMP_HISTORIAL_SALARIAL_ID",
+                "full_definition": "HSA_HISTORIAL_ID int NOT NULL",
+                "simple_name": "HSA_HISTORIAL_ID"
+            },
+            {
+                "id": "HSA_EMPLEADO_ID",
+                "full_definition": "HSA_EMPLEADO_ID int NOT NULL",
+                "simple_name": "HSA_EMPLEADO_ID"
+            },
+            {
+                "id": "HSA_SALARIO_ANTERIOR",
+                "full_definition": "HSA_SALARIO_ANTERIOR decimal(12,2)",
+                "simple_name": "HSA_SALARIO_ANTERIOR"
+            },
+            {
+                "id": "HSA_SALARIO_NUEVO",
+                "full_definition": "HSA_SALARIO_NUEVO decimal(12,2) NOT NULL",
+                "simple_name": "HSA_SALARIO_NUEVO"
+            },
+            {
+                "id": "HSA_MONEDA",
+                "full_definition": "HSA_MONEDA char(3) NOT NULL",
+                "simple_name": "HSA_MONEDA"
+            },
+            {
+                "id": "HSA_TIPO_CAMBIO",
+                "full_definition": "HSA_TIPO_CAMBIO varchar(30) NOT NULL",
+                "simple_name": "HSA_TIPO_CAMBIO"
+            },
+            {
+                "id": "HSA_FECHA_INICIO",
+                "full_definition": "HSA_FECHA_INICIO date NOT NULL",
+                "simple_name": "HSA_FECHA_INICIO"
+            },
+            {
+                "id": "HSA_FECHA_REGISTRO",
+                "full_definition": "HSA_FECHA_REGISTRO datetime NOT NULL",
+                "simple_name": "HSA_FECHA_REGISTRO"
+            },
+            {
+                "id": "HSA_MOTIVO",
+                "full_definition": "HSA_MOTIVO text",
+                "simple_name": "HSA_MOTIVO"
+            },
+            {
+                "id": "HSA_AUTORIZADO_POR",
+                "full_definition": "HSA_AUTORIZADO_POR int NOT NULL",
+                "simple_name": "HSA_AUTORIZADO_POR"
+            },
+            {
+                "id": "HSA_ESTADO",
+                "full_definition": "HSA_ESTADO varchar(20) NOT NULL",
+                "simple_name": "HSA_ESTADO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_MOVIMIENTOS",
+        "name": "PLA_PLA_MOVIMIENTOS",
+        "attributes": [
+            {
+                "id": "PLA_MOVIMIENTOS_ID",
+                "full_definition": "MOV_MOVIMIENTO_ID int NOT NULL",
+                "simple_name": "MOV_MOVIMIENTO_ID"
+            },
+            {
+                "id": "MOV_EMPLEADO_ID",
+                "full_definition": "MOV_EMPLEADO_ID int NOT NULL",
+                "simple_name": "MOV_EMPLEADO_ID"
+            },
+            {
+                "id": "MOV_TIPO",
+                "full_definition": "MOV_TIPO varchar(20) NOT NULL",
+                "simple_name": "MOV_TIPO"
+            },
+            {
+                "id": "MOV_CONCEPTO_ID",
+                "full_definition": "MOV_CONCEPTO_ID int NOT NULL",
+                "simple_name": "MOV_CONCEPTO_ID"
+            },
+            {
+                "id": "MOV_MONTO",
+                "full_definition": "MOV_MONTO decimal(12,2) NOT NULL",
+                "simple_name": "MOV_MONTO"
+            },
+            {
+                "id": "MOV_MONEDA",
+                "full_definition": "MOV_MONEDA char(3) NOT NULL",
+                "simple_name": "MOV_MONEDA"
+            },
+            {
+                "id": "MOV_FECHA",
+                "full_definition": "MOV_FECHA date NOT NULL",
+                "simple_name": "MOV_FECHA"
+            },
+            {
+                "id": "MOV_PERIODO_ID",
+                "full_definition": "MOV_PERIODO_ID int",
+                "simple_name": "MOV_PERIODO_ID"
+            },
+            {
+                "id": "MOV_APLICADO_EN_PLANILLA",
+                "full_definition": "MOV_APLICADO_EN_PLANILLA boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "MOV_APLICADO_EN_PLANILLA"
+            },
+            {
+                "id": "MOV_DESCRIPCION",
+                "full_definition": "MOV_DESCRIPCION text",
+                "simple_name": "MOV_DESCRIPCION"
+            },
+            {
+                "id": "MOV_APROBADO_POR",
+                "full_definition": "MOV_APROBADO_POR int",
+                "simple_name": "MOV_APROBADO_POR"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PRESTACIONES_LEGALES",
+        "name": "PLA_PLA_PRESTACIONES_LEGALES",
+        "attributes": [
+            {
+                "id": "PLA_PRESTACIONES_LEGALES_ID",
+                "full_definition": "PRL_PRESTACION_ID int NOT NULL",
+                "simple_name": "PRL_PRESTACION_ID"
+            },
+            {
+                "id": "PRL_EMPLEADO_ID",
+                "full_definition": "PRL_EMPLEADO_ID int NOT NULL",
+                "simple_name": "PRL_EMPLEADO_ID"
+            },
+            {
+                "id": "PRL_TIPO_PRESTACION_ID",
+                "full_definition": "PRL_TIPO_PRESTACION_ID int NOT NULL",
+                "simple_name": "PRL_TIPO_PRESTACION_ID"
+            },
+            {
+                "id": "PRL_PERIODO_REFERENCIA",
+                "full_definition": "PRL_PERIODO_REFERENCIA varchar(30) NOT NULL",
+                "simple_name": "PRL_PERIODO_REFERENCIA"
+            },
+            {
+                "id": "PRL_FECHA_CALCULO",
+                "full_definition": "PRL_FECHA_CALCULO date NOT NULL DEFAULT CURRENT_DATE",
+                "simple_name": "PRL_FECHA_CALCULO"
+            },
+            {
+                "id": "PRL_FECHA_PAGO",
+                "full_definition": "PRL_FECHA_PAGO date",
+                "simple_name": "PRL_FECHA_PAGO"
+            },
+            {
+                "id": "PRL_MONTO",
+                "full_definition": "PRL_MONTO decimal(12,2) NOT NULL",
+                "simple_name": "PRL_MONTO"
+            },
+            {
+                "id": "PRL_MONEDA",
+                "full_definition": "PRL_MONEDA char(3) NOT NULL",
+                "simple_name": "PRL_MONEDA"
+            },
+            {
+                "id": "PRL_ESTADO",
+                "full_definition": "PRL_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "simple_name": "PRL_ESTADO"
+            },
+            {
+                "id": "PRL_OBSERVACIONES",
+                "full_definition": "PRL_OBSERVACIONES text",
+                "simple_name": "PRL_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_EMPRESAS",
+        "name": "PLA_CONF_EMPRESAS",
+        "attributes": [
+            {
+                "id": "PLA_CONF_EMPRESAS_ID",
+                "full_definition": "EPR_EMPRESA_ID int NOT NULL",
+                "simple_name": "EPR_EMPRESA_ID"
+            },
+            {
+                "id": "EPR_PAIS_ID",
+                "full_definition": "EPR_PAIS_ID int NOT NULL",
+                "simple_name": "EPR_PAIS_ID"
+            },
+            {
+                "id": "EPR_NOMBRE_LEGAL",
+                "full_definition": "EPR_NOMBRE_LEGAL varchar(200) NOT NULL",
+                "simple_name": "EPR_NOMBRE_LEGAL"
+            },
+            {
+                "id": "EPR_NOMBRE_COMERCIAL",
+                "full_definition": "EPR_NOMBRE_COMERCIAL varchar(100) NOT NULL",
+                "simple_name": "EPR_NOMBRE_COMERCIAL"
+            },
+            {
+                "id": "EPR_IDENTIFICACION_TRIBUTARIA",
+                "full_definition": "EPR_IDENTIFICACION_TRIBUTARIA varchar(30) NOT NULL",
+                "simple_name": "EPR_IDENTIFICACION_TRIBUTARIA"
+            },
+            {
+                "id": "EPR_MONEDA_PRINCIPAL",
+                "full_definition": "EPR_MONEDA_PRINCIPAL char(3) NOT NULL",
+                "simple_name": "EPR_MONEDA_PRINCIPAL"
+            },
+            {
+                "id": "EPR_FECHA_CONSTITUCION",
+                "full_definition": "EPR_FECHA_CONSTITUCION date",
+                "simple_name": "EPR_FECHA_CONSTITUCION"
+            },
+            {
+                "id": "EPR_LOGO",
+                "full_definition": "EPR_LOGO blob",
+                "simple_name": "EPR_LOGO"
+            },
+            {
+                "id": "EPR_ACTIVO",
+                "full_definition": "EPR_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "EPR_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_USUARIOS",
+        "name": "PLA_SYS_USUARIOS",
+        "attributes": [
+            {
+                "id": "PLA_SYS_USUARIOS_ID",
+                "full_definition": "USU_USUARIO_ID int NOT NULL",
+                "simple_name": "USU_USUARIO_ID"
+            },
+            {
+                "id": "USU_EMPRESA_ID",
+                "full_definition": "USU_EMPRESA_ID int NOT NULL",
+                "simple_name": "USU_EMPRESA_ID"
+            },
+            {
+                "id": "USU_NOMBRE_USUARIO",
+                "full_definition": "USU_NOMBRE_USUARIO varchar(50) NOT NULL",
+                "simple_name": "USU_NOMBRE_USUARIO"
+            },
+            {
+                "id": "USU_CONTRASENA",
+                "full_definition": "USU_CONTRASENA varchar(255) NOT NULL",
+                "simple_name": "USU_CONTRASENA"
+            },
+            {
+                "id": "USU_CORREO",
+                "full_definition": "USU_CORREO varchar(100) NOT NULL",
+                "simple_name": "USU_CORREO"
+            },
+            {
+                "id": "USU_NOMBRES",
+                "full_definition": "USU_NOMBRES varchar(100) NOT NULL",
+                "simple_name": "USU_NOMBRES"
+            },
+            {
+                "id": "USU_APELLIDOS",
+                "full_definition": "USU_APELLIDOS varchar(100) NOT NULL",
+                "simple_name": "USU_APELLIDOS"
+            },
+            {
+                "id": "USU_ROL_ID",
+                "full_definition": "USU_ROL_ID int NOT NULL",
+                "simple_name": "USU_ROL_ID"
+            },
+            {
+                "id": "USU_FECHA_ULTIMO_LOGIN",
+                "full_definition": "USU_FECHA_ULTIMO_LOGIN datetime",
+                "simple_name": "USU_FECHA_ULTIMO_LOGIN"
+            },
+            {
+                "id": "USU_ACTIVO",
+                "full_definition": "USU_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "USU_ACTIVO"
+            },
+            {
+                "id": "USU_REQUIERE_CAMBIO_CONTRASENA",
+                "full_definition": "USU_REQUIERE_CAMBIO_CONTRASENA boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "USU_REQUIERE_CAMBIO_CONTRASENA"
+            },
+            {
+                "id": "USU_FECHA_CREACION",
+                "full_definition": "USU_FECHA_CREACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "simple_name": "USU_FECHA_CREACION"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_ROLES",
+        "name": "PLA_SYS_ROLES",
+        "attributes": [
+            {
+                "id": "PLA_SYS_ROLES_ID",
+                "full_definition": "ROL_ROL_ID int NOT NULL",
+                "simple_name": "ROL_ROL_ID"
+            },
+            {
+                "id": "ROL_NOMBRE",
+                "full_definition": "ROL_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "ROL_NOMBRE"
+            },
+            {
+                "id": "ROL_DESCRIPCION",
+                "full_definition": "ROL_DESCRIPCION varchar(200)",
+                "simple_name": "ROL_DESCRIPCION"
+            },
+            {
+                "id": "ROL_NIVEL_ACCESO",
+                "full_definition": "ROL_NIVEL_ACCESO int NOT NULL DEFAULT 99",
+                "simple_name": "ROL_NIVEL_ACCESO"
+            },
+            {
+                "id": "ROL_ACCESO_GLOBAL",
+                "full_definition": "ROL_ACCESO_GLOBAL boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "ROL_ACCESO_GLOBAL"
+            },
+            {
+                "id": "ROL_ACTIVO",
+                "full_definition": "ROL_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "ROL_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_PERMISOS",
+        "name": "PLA_SYS_PERMISOS",
+        "attributes": [
+            {
+                "id": "PLA_SYS_PERMISOS_ID",
+                "full_definition": "PRM_PERMISO_ID int NOT NULL",
+                "simple_name": "PRM_PERMISO_ID"
+            },
+            {
+                "id": "PRM_ROL_ID",
+                "full_definition": "PRM_ROL_ID int NOT NULL",
+                "simple_name": "PRM_ROL_ID"
+            },
+            {
+                "id": "PRM_MODULO",
+                "full_definition": "PRM_MODULO varchar(50) NOT NULL",
+                "simple_name": "PRM_MODULO"
+            },
+            {
+                "id": "PRM_ACCION",
+                "full_definition": "PRM_ACCION varchar(20) NOT NULL",
+                "simple_name": "PRM_ACCION"
+            },
+            {
+                "id": "PRM_PERMITIDO",
+                "full_definition": "PRM_PERMITIDO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "PRM_PERMITIDO"
+            },
+            {
+                "id": "PRM_RESTRICCION_EMPRESA",
+                "full_definition": "PRM_RESTRICCION_EMPRESA boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "PRM_RESTRICCION_EMPRESA"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_HISTORIAL_LABORAL",
+        "name": "PLA_EMP_HISTORIAL_LABORAL",
+        "attributes": [
+            {
+                "id": "PLA_EMP_HISTORIAL_LABORAL_ID",
+                "full_definition": "HLA_HISTORIAL_ID int NOT NULL",
+                "simple_name": "HLA_HISTORIAL_ID"
+            },
+            {
+                "id": "HLA_EMPLEADO_ID",
+                "full_definition": "HLA_EMPLEADO_ID int NOT NULL",
+                "simple_name": "HLA_EMPLEADO_ID"
+            },
+            {
+                "id": "HLA_TIPO_MOVIMIENTO",
+                "full_definition": "HLA_TIPO_MOVIMIENTO varchar(30) NOT NULL",
+                "simple_name": "HLA_TIPO_MOVIMIENTO"
+            },
+            {
+                "id": "HLA_DEPARTAMENTO_ID",
+                "full_definition": "HLA_DEPARTAMENTO_ID int",
+                "simple_name": "HLA_DEPARTAMENTO_ID"
+            },
+            {
+                "id": "HLA_PUESTO_ID",
+                "full_definition": "HLA_PUESTO_ID int",
+                "simple_name": "HLA_PUESTO_ID"
+            },
+            {
+                "id": "HLA_FECHA_INICIO",
+                "full_definition": "HLA_FECHA_INICIO date NOT NULL",
+                "simple_name": "HLA_FECHA_INICIO"
+            },
+            {
+                "id": "HLA_FECHA_FIN",
+                "full_definition": "HLA_FECHA_FIN date",
+                "simple_name": "HLA_FECHA_FIN"
+            },
+            {
+                "id": "HLA_SUPERVISOR_ID",
+                "full_definition": "HLA_SUPERVISOR_ID int",
+                "simple_name": "HLA_SUPERVISOR_ID"
+            },
+            {
+                "id": "HLA_MOTIVO",
+                "full_definition": "HLA_MOTIVO text",
+                "simple_name": "HLA_MOTIVO"
+            },
+            {
+                "id": "HLA_DOCUMENTO_SOPORTE",
+                "full_definition": "HLA_DOCUMENTO_SOPORTE varchar(50)",
+                "simple_name": "HLA_DOCUMENTO_SOPORTE"
+            },
+            {
+                "id": "HLA_AUTORIZADO_POR",
+                "full_definition": "HLA_AUTORIZADO_POR int NOT NULL",
+                "simple_name": "HLA_AUTORIZADO_POR"
+            },
+            {
+                "id": "HLA_ESTADO",
+                "full_definition": "HLA_ESTADO varchar(20) NOT NULL DEFAULT 'ACTIVO'",
+                "simple_name": "HLA_ESTADO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_DEPARTAMENTOS",
+        "name": "PLA_CONF_DEPARTAMENTOS",
+        "attributes": [
+            {
+                "id": "PLA_CONF_DEPARTAMENTOS_ID",
+                "full_definition": "DEP_DEPARTAMENTO_ID int NOT NULL",
+                "simple_name": "DEP_DEPARTAMENTO_ID"
+            },
+            {
+                "id": "DEP_EMPRESA_ID",
+                "full_definition": "DEP_EMPRESA_ID int NOT NULL",
+                "simple_name": "DEP_EMPRESA_ID"
+            },
+            {
+                "id": "DEP_CODIGO",
+                "full_definition": "DEP_CODIGO varchar(20) NOT NULL",
+                "simple_name": "DEP_CODIGO"
+            },
+            {
+                "id": "DEP_NOMBRE",
+                "full_definition": "DEP_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "DEP_NOMBRE"
+            },
+            {
+                "id": "DEP_DESCRIPCION",
+                "full_definition": "DEP_DESCRIPCION text",
+                "simple_name": "DEP_DESCRIPCION"
+            },
+            {
+                "id": "DEP_CENTRO_COSTO",
+                "full_definition": "DEP_CENTRO_COSTO varchar(30)",
+                "simple_name": "DEP_CENTRO_COSTO"
+            },
+            {
+                "id": "DEP_SUPERVISOR_ID",
+                "full_definition": "DEP_SUPERVISOR_ID int",
+                "simple_name": "DEP_SUPERVISOR_ID"
+            },
+            {
+                "id": "DEP_FECHA_CREACION",
+                "full_definition": "DEP_FECHA_CREACION date NOT NULL DEFAULT CURRENT_DATE",
+                "simple_name": "DEP_FECHA_CREACION"
+            },
+            {
+                "id": "DEP_ACTIVO",
+                "full_definition": "DEP_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "DEP_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_PUESTOS",
+        "name": "PLA_EMP_PUESTOS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_PUESTOS_ID",
+                "full_definition": "PUE_PUESTO_ID int NOT NULL",
+                "simple_name": "PUE_PUESTO_ID"
+            },
+            {
+                "id": "PUE_EMPRESA_ID",
+                "full_definition": "PUE_EMPRESA_ID int NOT NULL",
+                "simple_name": "PUE_EMPRESA_ID"
+            },
+            {
+                "id": "PUE_CODIGO",
+                "full_definition": "PUE_CODIGO varchar(20) NOT NULL",
+                "simple_name": "PUE_CODIGO"
+            },
+            {
+                "id": "PUE_NOMBRE",
+                "full_definition": "PUE_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "PUE_NOMBRE"
+            },
+            {
+                "id": "PUE_DESCRIPCION",
+                "full_definition": "PUE_DESCRIPCION text",
+                "simple_name": "PUE_DESCRIPCION"
+            },
+            {
+                "id": "PUE_DEPARTAMENTO_ID",
+                "full_definition": "PUE_DEPARTAMENTO_ID int NOT NULL",
+                "simple_name": "PUE_DEPARTAMENTO_ID"
+            },
+            {
+                "id": "PUE_NIVEL_JERARQUICO",
+                "full_definition": "PUE_NIVEL_JERARQUICO int NOT NULL DEFAULT 1",
+                "simple_name": "PUE_NIVEL_JERARQUICO"
+            },
+            {
+                "id": "PUE_SALARIO_MIN",
+                "full_definition": "PUE_SALARIO_MIN decimal(12,2) NOT NULL",
+                "simple_name": "PUE_SALARIO_MIN"
+            },
+            {
+                "id": "PUE_SALARIO_MAX",
+                "full_definition": "PUE_SALARIO_MAX decimal(12,2) NOT NULL",
+                "simple_name": "PUE_SALARIO_MAX"
+            },
+            {
+                "id": "PUE_MONEDA",
+                "full_definition": "PUE_MONEDA char(3) NOT NULL",
+                "simple_name": "PUE_MONEDA"
+            },
+            {
+                "id": "PUE_ACTIVO",
+                "full_definition": "PUE_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "PUE_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_DOCUMENTOS",
+        "name": "PLA_EMP_DOCUMENTOS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_DOCUMENTOS_ID",
+                "full_definition": "DOC_DOCUMENTO_ID int NOT NULL",
+                "simple_name": "DOC_DOCUMENTO_ID"
+            },
+            {
+                "id": "DOC_EMPLEADO_ID",
+                "full_definition": "DOC_EMPLEADO_ID int NOT NULL",
+                "simple_name": "DOC_EMPLEADO_ID"
+            },
+            {
+                "id": "DOC_TIPO_DOCUMENTO_ID",
+                "full_definition": "DOC_TIPO_DOCUMENTO_ID int NOT NULL",
+                "simple_name": "DOC_TIPO_DOCUMENTO_ID"
+            },
+            {
+                "id": "DOC_NOMBRE",
+                "full_definition": "DOC_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "DOC_NOMBRE"
+            },
+            {
+                "id": "DOC_DESCRIPCION",
+                "full_definition": "DOC_DESCRIPCION text",
+                "simple_name": "DOC_DESCRIPCION"
+            },
+            {
+                "id": "DOC_FECHA_EMISION",
+                "full_definition": "DOC_FECHA_EMISION date",
+                "simple_name": "DOC_FECHA_EMISION"
+            },
+            {
+                "id": "DOC_FECHA_VENCIMIENTO",
+                "full_definition": "DOC_FECHA_VENCIMIENTO date",
+                "simple_name": "DOC_FECHA_VENCIMIENTO"
+            },
+            {
+                "id": "DOC_ARCHIVO",
+                "full_definition": "DOC_ARCHIVO blob",
+                "simple_name": "DOC_ARCHIVO"
+            },
+            {
+                "id": "DOC_EXTENSION",
+                "full_definition": "DOC_EXTENSION varchar(10) NOT NULL",
+                "simple_name": "DOC_EXTENSION"
+            },
+            {
+                "id": "DOC_TAMANIO",
+                "full_definition": "DOC_TAMANIO int NOT NULL",
+                "simple_name": "DOC_TAMANIO"
+            },
+            {
+                "id": "DOC_PRIVADO",
+                "full_definition": "DOC_PRIVADO boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "DOC_PRIVADO"
+            },
+            {
+                "id": "DOC_CREADO_POR",
+                "full_definition": "DOC_CREADO_POR int NOT NULL",
+                "simple_name": "DOC_CREADO_POR"
+            },
+            {
+                "id": "DOC_FECHA_CREACION",
+                "full_definition": "DOC_FECHA_CREACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "simple_name": "DOC_FECHA_CREACION"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_DOCUMENTO",
+        "name": "PLA_CONF_TIPOS_DOCUMENTO",
+        "attributes": [
+            {
+                "id": "PLA_CONF_TIPOS_DOCUMENTO_ID",
+                "full_definition": "TDO_TIPO_DOC_ID int NOT NULL",
+                "simple_name": "TDO_TIPO_DOC_ID"
+            },
+            {
+                "id": "TDO_PAIS_ID",
+                "full_definition": "TDO_PAIS_ID int NOT NULL",
+                "simple_name": "TDO_PAIS_ID"
+            },
+            {
+                "id": "TDO_NOMBRE",
+                "full_definition": "TDO_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "TDO_NOMBRE"
+            },
+            {
+                "id": "TDO_DESCRIPCION",
+                "full_definition": "TDO_DESCRIPCION varchar(200)",
+                "simple_name": "TDO_DESCRIPCION"
+            },
+            {
+                "id": "TDO_OBLIGATORIO",
+                "full_definition": "TDO_OBLIGATORIO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TDO_OBLIGATORIO"
+            },
+            {
+                "id": "TDO_VALIDEZ_DIAS",
+                "full_definition": "TDO_VALIDEZ_DIAS int",
+                "simple_name": "TDO_VALIDEZ_DIAS"
+            },
+            {
+                "id": "TDO_RESTRICCION_VISUALIZACION",
+                "full_definition": "TDO_RESTRICCION_VISUALIZACION varchar(20) NOT NULL DEFAULT 'HR'",
+                "simple_name": "TDO_RESTRICCION_VISUALIZACION"
+            },
+            {
+                "id": "TDO_FORMATOS_PERMITIDOS",
+                "full_definition": "TDO_FORMATOS_PERMITIDOS varchar(100) NOT NULL DEFAULT 'PDF,JPG,PNG'",
+                "simple_name": "TDO_FORMATOS_PERMITIDOS"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "name": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_BENEFICIOS_ASIGNADOS_ID",
+                "full_definition": "BEA_ASIGNACION_ID int NOT NULL",
+                "simple_name": "BEA_ASIGNACION_ID"
+            },
+            {
+                "id": "BEA_EMPLEADO_ID",
+                "full_definition": "BEA_EMPLEADO_ID int NOT NULL",
+                "simple_name": "BEA_EMPLEADO_ID"
+            },
+            {
+                "id": "BEA_BENEFICIO_ID",
+                "full_definition": "BEA_BENEFICIO_ID int NOT NULL",
+                "simple_name": "BEA_BENEFICIO_ID"
+            },
+            {
+                "id": "BEA_FECHA_INICIO",
+                "full_definition": "BEA_FECHA_INICIO date NOT NULL",
+                "simple_name": "BEA_FECHA_INICIO"
+            },
+            {
+                "id": "BEA_FECHA_FIN",
+                "full_definition": "BEA_FECHA_FIN date",
+                "simple_name": "BEA_FECHA_FIN"
+            },
+            {
+                "id": "BEA_VALOR",
+                "full_definition": "BEA_VALOR decimal(10,2) NOT NULL",
+                "simple_name": "BEA_VALOR"
+            },
+            {
+                "id": "BEA_MONEDA",
+                "full_definition": "BEA_MONEDA char(3)",
+                "simple_name": "BEA_MONEDA"
+            },
+            {
+                "id": "BEA_FRECUENCIA",
+                "full_definition": "BEA_FRECUENCIA varchar(20) NOT NULL",
+                "simple_name": "BEA_FRECUENCIA"
+            },
+            {
+                "id": "BEA_ESTADO",
+                "full_definition": "BEA_ESTADO varchar(20) NOT NULL DEFAULT 'ACTIVO'",
+                "simple_name": "BEA_ESTADO"
+            },
+            {
+                "id": "BEA_OBSERVACIONES",
+                "full_definition": "BEA_OBSERVACIONES text",
+                "simple_name": "BEA_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_AUSENCIAS",
+        "name": "PLA_EMP_AUSENCIAS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_AUSENCIAS_ID",
+                "full_definition": "AUS_AUSENCIA_ID int NOT NULL",
+                "simple_name": "AUS_AUSENCIA_ID"
+            },
+            {
+                "id": "AUS_EMPLEADO_ID",
+                "full_definition": "AUS_EMPLEADO_ID int NOT NULL",
+                "simple_name": "AUS_EMPLEADO_ID"
+            },
+            {
+                "id": "AUS_TIPO_AUSENCIA_ID",
+                "full_definition": "AUS_TIPO_AUSENCIA_ID int NOT NULL",
+                "simple_name": "AUS_TIPO_AUSENCIA_ID"
+            },
+            {
+                "id": "AUS_FECHA_INICIO",
+                "full_definition": "AUS_FECHA_INICIO date NOT NULL",
+                "simple_name": "AUS_FECHA_INICIO"
+            },
+            {
+                "id": "AUS_FECHA_FIN",
+                "full_definition": "AUS_FECHA_FIN date NOT NULL",
+                "simple_name": "AUS_FECHA_FIN"
+            },
+            {
+                "id": "AUS_DURACION_HORAS",
+                "full_definition": "AUS_DURACION_HORAS decimal(6,2) NOT NULL",
+                "simple_name": "AUS_DURACION_HORAS"
+            },
+            {
+                "id": "AUS_ESTADO",
+                "full_definition": "AUS_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "simple_name": "AUS_ESTADO"
+            },
+            {
+                "id": "AUS_MOTIVO",
+                "full_definition": "AUS_MOTIVO text",
+                "simple_name": "AUS_MOTIVO"
+            },
+            {
+                "id": "AUS_CERTIFICADO_MEDICO",
+                "full_definition": "AUS_CERTIFICADO_MEDICO boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "AUS_CERTIFICADO_MEDICO"
+            },
+            {
+                "id": "AUS_DOCUMENTO_SOPORTE",
+                "full_definition": "AUS_DOCUMENTO_SOPORTE int",
+                "simple_name": "AUS_DOCUMENTO_SOPORTE"
+            },
+            {
+                "id": "AUS_APROBADO_POR",
+                "full_definition": "AUS_APROBADO_POR int",
+                "simple_name": "AUS_APROBADO_POR"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_AUSENCIA",
+        "name": "PLA_CONF_TIPOS_AUSENCIA",
+        "attributes": [
+            {
+                "id": "PLA_CONF_TIPOS_AUSENCIA_ID",
+                "full_definition": "TAU_TIPO_AUSENCIA_ID int NOT NULL",
+                "simple_name": "TAU_TIPO_AUSENCIA_ID"
+            },
+            {
+                "id": "TAU_PAIS_ID",
+                "full_definition": "TAU_PAIS_ID int NOT NULL",
+                "simple_name": "TAU_PAIS_ID"
+            },
+            {
+                "id": "TAU_CODIGO",
+                "full_definition": "TAU_CODIGO varchar(10) NOT NULL",
+                "simple_name": "TAU_CODIGO"
+            },
+            {
+                "id": "TAU_NOMBRE",
+                "full_definition": "TAU_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "TAU_NOMBRE"
+            },
+            {
+                "id": "TAU_DESCRIPCION",
+                "full_definition": "TAU_DESCRIPCION varchar(200)",
+                "simple_name": "TAU_DESCRIPCION"
+            },
+            {
+                "id": "TAU_REMUNERADA",
+                "full_definition": "TAU_REMUNERADA boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TAU_REMUNERADA"
+            },
+            {
+                "id": "TAU_DESCUENTA_VACACIONES",
+                "full_definition": "TAU_DESCUENTA_VACACIONES boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "TAU_DESCUENTA_VACACIONES"
+            },
+            {
+                "id": "TAU_REQUIERE_APROBACION",
+                "full_definition": "TAU_REQUIERE_APROBACION boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TAU_REQUIERE_APROBACION"
+            },
+            {
+                "id": "TAU_MAX_DIAS_ANIO",
+                "full_definition": "TAU_MAX_DIAS_ANIO int",
+                "simple_name": "TAU_MAX_DIAS_ANIO"
+            },
+            {
+                "id": "TAU_ACUMULABLE",
+                "full_definition": "TAU_ACUMULABLE boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "TAU_ACUMULABLE"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_HORARIOS",
+        "name": "PLA_EMP_HORARIOS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_HORARIOS_ID",
+                "full_definition": "HOR_HORARIO_ID int NOT NULL",
+                "simple_name": "HOR_HORARIO_ID"
+            },
+            {
+                "id": "HOR_EMPLEADO_ID",
+                "full_definition": "HOR_EMPLEADO_ID int NOT NULL",
+                "simple_name": "HOR_EMPLEADO_ID"
+            },
+            {
+                "id": "HOR_TIPO_HORARIO_ID",
+                "full_definition": "HOR_TIPO_HORARIO_ID int NOT NULL",
+                "simple_name": "HOR_TIPO_HORARIO_ID"
+            },
+            {
+                "id": "HOR_DIA_SEMANA",
+                "full_definition": "HOR_DIA_SEMANA int NOT NULL",
+                "simple_name": "HOR_DIA_SEMANA"
+            },
+            {
+                "id": "HOR_HORA_ENTRADA",
+                "full_definition": "HOR_HORA_ENTRADA time NOT NULL",
+                "simple_name": "HOR_HORA_ENTRADA"
+            },
+            {
+                "id": "HOR_HORA_SALIDA",
+                "full_definition": "HOR_HORA_SALIDA time NOT NULL",
+                "simple_name": "HOR_HORA_SALIDA"
+            },
+            {
+                "id": "HOR_HORAS_LABORALES",
+                "full_definition": "HOR_HORAS_LABORALES decimal(4,2) NOT NULL",
+                "simple_name": "HOR_HORAS_LABORALES"
+            },
+            {
+                "id": "HOR_FECHA_INICIO",
+                "full_definition": "HOR_FECHA_INICIO date NOT NULL",
+                "simple_name": "HOR_FECHA_INICIO"
+            },
+            {
+                "id": "HOR_FECHA_FIN",
+                "full_definition": "HOR_FECHA_FIN date",
+                "simple_name": "HOR_FECHA_FIN"
+            },
+            {
+                "id": "HOR_ACTIVO",
+                "full_definition": "HOR_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "HOR_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_HORARIO",
+        "name": "PLA_CONF_TIPOS_HORARIO",
+        "attributes": [
+            {
+                "id": "PLA_CONF_TIPOS_HORARIO_ID",
+                "full_definition": "THO_TIPO_HORARIO_ID int NOT NULL",
+                "simple_name": "THO_TIPO_HORARIO_ID"
+            },
+            {
+                "id": "THO_EMPRESA_ID",
+                "full_definition": "THO_EMPRESA_ID int NOT NULL",
+                "simple_name": "THO_EMPRESA_ID"
+            },
+            {
+                "id": "THO_NOMBRE",
+                "full_definition": "THO_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "THO_NOMBRE"
+            },
+            {
+                "id": "THO_DESCRIPCION",
+                "full_definition": "THO_DESCRIPCION varchar(200)",
+                "simple_name": "THO_DESCRIPCION"
+            },
+            {
+                "id": "THO_HORAS_SEMANALES",
+                "full_definition": "THO_HORAS_SEMANALES decimal(5,2) NOT NULL DEFAULT 40",
+                "simple_name": "THO_HORAS_SEMANALES"
+            },
+            {
+                "id": "THO_FLEXIBLE",
+                "full_definition": "THO_FLEXIBLE boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "THO_FLEXIBLE"
+            },
+            {
+                "id": "THO_NOCTURNO",
+                "full_definition": "THO_NOCTURNO boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "THO_NOCTURNO"
+            },
+            {
+                "id": "THO_ACTIVO",
+                "full_definition": "THO_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "THO_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_MARCADORES",
+        "name": "PLA_EMP_MARCADORES",
+        "attributes": [
+            {
+                "id": "PLA_EMP_MARCADORES_ID",
+                "full_definition": "MAR_MARCADOR_ID int NOT NULL",
+                "simple_name": "MAR_MARCADOR_ID"
+            },
+            {
+                "id": "MAR_EMPLEADO_ID",
+                "full_definition": "MAR_EMPLEADO_ID int NOT NULL",
+                "simple_name": "MAR_EMPLEADO_ID"
+            },
+            {
+                "id": "MAR_FECHA_HORA",
+                "full_definition": "MAR_FECHA_HORA datetime NOT NULL",
+                "simple_name": "MAR_FECHA_HORA"
+            },
+            {
+                "id": "MAR_TIPO",
+                "full_definition": "MAR_TIPO varchar(20) NOT NULL",
+                "simple_name": "MAR_TIPO"
+            },
+            {
+                "id": "MAR_METODO",
+                "full_definition": "MAR_METODO varchar(20) NOT NULL",
+                "simple_name": "MAR_METODO"
+            },
+            {
+                "id": "MAR_UBICACION_LAT",
+                "full_definition": "MAR_UBICACION_LAT decimal(10,6)",
+                "simple_name": "MAR_UBICACION_LAT"
+            },
+            {
+                "id": "MAR_UBICACION_LON",
+                "full_definition": "MAR_UBICACION_LON decimal(10,6)",
+                "simple_name": "MAR_UBICACION_LON"
+            },
+            {
+                "id": "MAR_DIRECCION_IP",
+                "full_definition": "MAR_DIRECCION_IP varchar(45)",
+                "simple_name": "MAR_DIRECCION_IP"
+            },
+            {
+                "id": "MAR_DISPOSITIVO",
+                "full_definition": "MAR_DISPOSITIVO varchar(100)",
+                "simple_name": "MAR_DISPOSITIVO"
+            },
+            {
+                "id": "MAR_OBSERVACIONES",
+                "full_definition": "MAR_OBSERVACIONES text",
+                "simple_name": "MAR_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_INCAPACIDADES",
+        "name": "PLA_EMP_INCAPACIDADES",
+        "attributes": [
+            {
+                "id": "PLA_EMP_INCAPACIDADES_ID",
+                "full_definition": "INC_INCAPACIDAD_ID int NOT NULL",
+                "simple_name": "INC_INCAPACIDAD_ID"
+            },
+            {
+                "id": "INC_EMPLEADO_ID",
+                "full_definition": "INC_EMPLEADO_ID int NOT NULL",
+                "simple_name": "INC_EMPLEADO_ID"
+            },
+            {
+                "id": "INC_TIPO_INCAPACIDAD_ID",
+                "full_definition": "INC_TIPO_INCAPACIDAD_ID int NOT NULL",
+                "simple_name": "INC_TIPO_INCAPACIDAD_ID"
+            },
+            {
+                "id": "INC_NUMERO_DOCUMENTO",
+                "full_definition": "INC_NUMERO_DOCUMENTO varchar(50) NOT NULL",
+                "simple_name": "INC_NUMERO_DOCUMENTO"
+            },
+            {
+                "id": "INC_FECHA_INICIO",
+                "full_definition": "INC_FECHA_INICIO date NOT NULL",
+                "simple_name": "INC_FECHA_INICIO"
+            },
+            {
+                "id": "INC_FECHA_FIN",
+                "full_definition": "INC_FECHA_FIN date NOT NULL",
+                "simple_name": "INC_FECHA_FIN"
+            },
+            {
+                "id": "INC_DIAS_INCAPACIDAD",
+                "full_definition": "INC_DIAS_INCAPACIDAD int NOT NULL",
+                "simple_name": "INC_DIAS_INCAPACIDAD"
+            },
+            {
+                "id": "INC_PORCENTAJE",
+                "full_definition": "INC_PORCENTAJE decimal(5,2) NOT NULL DEFAULT 100",
+                "simple_name": "INC_PORCENTAJE"
+            },
+            {
+                "id": "INC_ENTIDAD_SALUD",
+                "full_definition": "INC_ENTIDAD_SALUD varchar(100) NOT NULL",
+                "simple_name": "INC_ENTIDAD_SALUD"
+            },
+            {
+                "id": "INC_DOCUMENTO_SOPORTE",
+                "full_definition": "INC_DOCUMENTO_SOPORTE int",
+                "simple_name": "INC_DOCUMENTO_SOPORTE"
+            },
+            {
+                "id": "INC_ESTADO",
+                "full_definition": "INC_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "simple_name": "INC_ESTADO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "name": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "attributes": [
+            {
+                "id": "PLA_CONF_TIPOS_INCAPACIDAD_ID",
+                "full_definition": "TIN_TIPO_INCAPACIDAD_ID int NOT NULL",
+                "simple_name": "TIN_TIPO_INCAPACIDAD_ID"
+            },
+            {
+                "id": "TIN_PAIS_ID",
+                "full_definition": "TIN_PAIS_ID int NOT NULL",
+                "simple_name": "TIN_PAIS_ID"
+            },
+            {
+                "id": "TIN_CODIGO",
+                "full_definition": "TIN_CODIGO varchar(10) NOT NULL",
+                "simple_name": "TIN_CODIGO"
+            },
+            {
+                "id": "TIN_NOMBRE",
+                "full_definition": "TIN_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "TIN_NOMBRE"
+            },
+            {
+                "id": "TIN_DESCRIPCION",
+                "full_definition": "TIN_DESCRIPCION varchar(200)",
+                "simple_name": "TIN_DESCRIPCION"
+            },
+            {
+                "id": "TIN_LABORAL",
+                "full_definition": "TIN_LABORAL boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "TIN_LABORAL"
+            },
+            {
+                "id": "TIN_DIAS_CARENCIA",
+                "full_definition": "TIN_DIAS_CARENCIA int NOT NULL DEFAULT 0",
+                "simple_name": "TIN_DIAS_CARENCIA"
+            },
+            {
+                "id": "TIN_PORCENTAJE_PAGO",
+                "full_definition": "TIN_PORCENTAJE_PAGO decimal(5,2) NOT NULL DEFAULT 100",
+                "simple_name": "TIN_PORCENTAJE_PAGO"
+            },
+            {
+                "id": "TIN_PAGA_EMPRESA",
+                "full_definition": "TIN_PAGA_EMPRESA boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "TIN_PAGA_EMPRESA"
+            },
+            {
+                "id": "TIN_REQUIERE_DOC_OFICIAL",
+                "full_definition": "TIN_REQUIERE_DOC_OFICIAL boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TIN_REQUIERE_DOC_OFICIAL"
+            },
+            {
+                "id": "TIN_ACTIVO",
+                "full_definition": "TIN_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TIN_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "name": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "attributes": [
+            {
+                "id": "PLA_SYS_HISTORIAL_CAMBIOS_ID",
+                "full_definition": "HCA_CAMBIO_ID int NOT NULL",
+                "simple_name": "HCA_CAMBIO_ID"
+            },
+            {
+                "id": "HCA_TABLA_AFECTADA",
+                "full_definition": "HCA_TABLA_AFECTADA varchar(50) NOT NULL",
+                "simple_name": "HCA_TABLA_AFECTADA"
+            },
+            {
+                "id": "HCA_REGISTRO_ID",
+                "full_definition": "HCA_REGISTRO_ID varchar(20) NOT NULL",
+                "simple_name": "HCA_REGISTRO_ID"
+            },
+            {
+                "id": "HCA_CAMPO_MODIFICADO",
+                "full_definition": "HCA_CAMPO_MODIFICADO varchar(50) NOT NULL",
+                "simple_name": "HCA_CAMPO_MODIFICADO"
+            },
+            {
+                "id": "HCA_VALOR_ANTERIOR",
+                "full_definition": "HCA_VALOR_ANTERIOR text",
+                "simple_name": "HCA_VALOR_ANTERIOR"
+            },
+            {
+                "id": "HCA_VALOR_NUEVO",
+                "full_definition": "HCA_VALOR_NUEVO text",
+                "simple_name": "HCA_VALOR_NUEVO"
+            },
+            {
+                "id": "HCA_FECHA_CAMBIO",
+                "full_definition": "HCA_FECHA_CAMBIO datetime NOT NULL",
+                "simple_name": "HCA_FECHA_CAMBIO"
+            },
+            {
+                "id": "HCA_USUARIO_ID",
+                "full_definition": "HCA_USUARIO_ID int NOT NULL",
+                "simple_name": "HCA_USUARIO_ID"
+            },
+            {
+                "id": "HCA_IP_ORIGEN",
+                "full_definition": "HCA_IP_ORIGEN varchar(45) NOT NULL",
+                "simple_name": "HCA_IP_ORIGEN"
+            },
+            {
+                "id": "HCA_MODULO",
+                "full_definition": "HCA_MODULO varchar(50) NOT NULL",
+                "simple_name": "HCA_MODULO"
+            },
+            {
+                "id": "HCA_AUTORIZACION_ID",
+                "full_definition": "HCA_AUTORIZACION_ID int",
+                "simple_name": "HCA_AUTORIZACION_ID"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_FERIADOS",
+        "name": "PLA_CONF_FERIADOS",
+        "attributes": [
+            {
+                "id": "PLA_CONF_FERIADOS_ID",
+                "full_definition": "FER_FERIADO_ID int NOT NULL",
+                "simple_name": "FER_FERIADO_ID"
+            },
+            {
+                "id": "FER_PAIS_ID",
+                "full_definition": "FER_PAIS_ID int NOT NULL",
+                "simple_name": "FER_PAIS_ID"
+            },
+            {
+                "id": "FER_NOMBRE",
+                "full_definition": "FER_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "FER_NOMBRE"
+            },
+            {
+                "id": "FER_FECHA",
+                "full_definition": "FER_FECHA date",
+                "simple_name": "FER_FECHA"
+            },
+            {
+                "id": "FER_TIPO",
+                "full_definition": "FER_TIPO varchar(20) NOT NULL",
+                "simple_name": "FER_TIPO"
+            },
+            {
+                "id": "FER_DIA_MES",
+                "full_definition": "FER_DIA_MES int",
+                "simple_name": "FER_DIA_MES"
+            },
+            {
+                "id": "FER_MES",
+                "full_definition": "FER_MES int",
+                "simple_name": "FER_MES"
+            },
+            {
+                "id": "FER_REGLA_ESPECIAL",
+                "full_definition": "FER_REGLA_ESPECIAL varchar(100)",
+                "simple_name": "FER_REGLA_ESPECIAL"
+            },
+            {
+                "id": "FER_RECURRENTE",
+                "full_definition": "FER_RECURRENTE boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "FER_RECURRENTE"
+            },
+            {
+                "id": "FER_PAGABLE",
+                "full_definition": "FER_PAGABLE boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "FER_PAGABLE"
+            },
+            {
+                "id": "FER_ACTIVO",
+                "full_definition": "FER_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "FER_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "name": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "attributes": [
+            {
+                "id": "PLA_SYS_REPORTES_PERSONALIZADOS_ID",
+                "full_definition": "REP_REPORTE_ID int NOT NULL",
+                "simple_name": "REP_REPORTE_ID"
+            },
+            {
+                "id": "REP_EMPRESA_ID",
+                "full_definition": "REP_EMPRESA_ID int NOT NULL",
+                "simple_name": "REP_EMPRESA_ID"
+            },
+            {
+                "id": "REP_NOMBRE",
+                "full_definition": "REP_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "REP_NOMBRE"
+            },
+            {
+                "id": "REP_DESCRIPCION",
+                "full_definition": "REP_DESCRIPCION text",
+                "simple_name": "REP_DESCRIPCION"
+            },
+            {
+                "id": "REP_MODULO",
+                "full_definition": "REP_MODULO varchar(30) NOT NULL",
+                "simple_name": "REP_MODULO"
+            },
+            {
+                "id": "REP_QUERY_SQL",
+                "full_definition": "REP_QUERY_SQL text NOT NULL",
+                "simple_name": "REP_QUERY_SQL"
+            },
+            {
+                "id": "REP_COLUMNAS",
+                "full_definition": "REP_COLUMNAS json NOT NULL",
+                "simple_name": "REP_COLUMNAS"
+            },
+            {
+                "id": "REP_FILTROS",
+                "full_definition": "REP_FILTROS json NOT NULL",
+                "simple_name": "REP_FILTROS"
+            },
+            {
+                "id": "REP_FORMATO",
+                "full_definition": "REP_FORMATO varchar(10) NOT NULL DEFAULT 'PDF'",
+                "simple_name": "REP_FORMATO"
+            },
+            {
+                "id": "REP_VISIBLE",
+                "full_definition": "REP_VISIBLE boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "REP_VISIBLE"
+            },
+            {
+                "id": "REP_CREADO_POR",
+                "full_definition": "REP_CREADO_POR int NOT NULL",
+                "simple_name": "REP_CREADO_POR"
+            },
+            {
+                "id": "REP_FECHA_CREACION",
+                "full_definition": "REP_FECHA_CREACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "simple_name": "REP_FECHA_CREACION"
+            }
+        ]
+    },
+    {
+        "id": "PLA_LIQUIDACIONES",
+        "name": "PLA_PLA_LIQUIDACIONES",
+        "attributes": [
+            {
+                "id": "PLA_LIQUIDACIONES_ID",
+                "full_definition": "LIQ_LIQUIDACION_ID int NOT NULL",
+                "simple_name": "LIQ_LIQUIDACION_ID"
+            },
+            {
+                "id": "LIQ_EMPLEADO_ID",
+                "full_definition": "LIQ_EMPLEADO_ID int NOT NULL",
+                "simple_name": "LIQ_EMPLEADO_ID"
+            },
+            {
+                "id": "LIQ_TIPO",
+                "full_definition": "LIQ_TIPO varchar(20) NOT NULL",
+                "simple_name": "LIQ_TIPO"
+            },
+            {
+                "id": "LIQ_FECHA_SALIDA",
+                "full_definition": "LIQ_FECHA_SALIDA date NOT NULL",
+                "simple_name": "LIQ_FECHA_SALIDA"
+            },
+            {
+                "id": "LIQ_MOTIVO",
+                "full_definition": "LIQ_MOTIVO text",
+                "simple_name": "LIQ_MOTIVO"
+            },
+            {
+                "id": "LIQ_DIAS_TRABAJADOS",
+                "full_definition": "LIQ_DIAS_TRABAJADOS int NOT NULL",
+                "simple_name": "LIQ_DIAS_TRABAJADOS"
+            },
+            {
+                "id": "LIQ_TOTAL_INGRESOS",
+                "full_definition": "LIQ_TOTAL_INGRESOS decimal(12,2) NOT NULL",
+                "simple_name": "LIQ_TOTAL_INGRESOS"
+            },
+            {
+                "id": "LIQ_TOTAL_DESCUENTOS",
+                "full_definition": "LIQ_TOTAL_DESCUENTOS decimal(12,2) NOT NULL",
+                "simple_name": "LIQ_TOTAL_DESCUENTOS"
+            },
+            {
+                "id": "LIQ_TOTAL_LIQUIDO",
+                "full_definition": "LIQ_TOTAL_LIQUIDO decimal(12,2) NOT NULL",
+                "simple_name": "LIQ_TOTAL_LIQUIDO"
+            },
+            {
+                "id": "LIQ_MONEDA",
+                "full_definition": "LIQ_MONEDA char(3) NOT NULL",
+                "simple_name": "LIQ_MONEDA"
+            },
+            {
+                "id": "LIQ_ESTADO",
+                "full_definition": "LIQ_ESTADO varchar(20) NOT NULL DEFAULT 'BORRADOR'",
+                "simple_name": "LIQ_ESTADO"
+            },
+            {
+                "id": "LIQ_DOCUMENTO_GENERADO",
+                "full_definition": "LIQ_DOCUMENTO_GENERADO int",
+                "simple_name": "LIQ_DOCUMENTO_GENERADO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_LIQUIDACION_DETALLE",
+        "name": "PLA_PLA_LIQUIDACION_DETALLE",
+        "attributes": [
+            {
+                "id": "LID_LIQUIDACION_DET_ID",
+                "full_definition": "LID_LIQUIDACION_DET_ID int NOT NULL",
+                "simple_name": "LID_LIQUIDACION_DET_ID"
+            },
+            {
+                "id": "LID_LIQUIDACION_ID",
+                "full_definition": "LID_LIQUIDACION_ID int NOT NULL",
+                "simple_name": "LID_LIQUIDACION_ID"
+            },
+            {
+                "id": "LID_TIPO_CONCEPTO",
+                "full_definition": "LID_TIPO_CONCEPTO varchar(20) NOT NULL",
+                "simple_name": "LID_TIPO_CONCEPTO"
+            },
+            {
+                "id": "LID_CODIGO_CONCEPTO",
+                "full_definition": "LID_CODIGO_CONCEPTO int NOT NULL",
+                "simple_name": "LID_CODIGO_CONCEPTO"
+            },
+            {
+                "id": "LID_DESCRIPCION",
+                "full_definition": "LID_DESCRIPCION varchar(200) NOT NULL",
+                "simple_name": "LID_DESCRIPCION"
+            },
+            {
+                "id": "LID_VALOR",
+                "full_definition": "LID_VALOR decimal(12,2) NOT NULL",
+                "simple_name": "LID_VALOR"
+            },
+            {
+                "id": "LID_MONEDA",
+                "full_definition": "LID_MONEDA char(3) NOT NULL",
+                "simple_name": "LID_MONEDA"
+            },
+            {
+                "id": "LID_APLICA_IMPUESTOS",
+                "full_definition": "LID_APLICA_IMPUESTOS boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "LID_APLICA_IMPUESTOS"
+            },
+            {
+                "id": "LID_APLICA_SEGURO_SOCIAL",
+                "full_definition": "LID_APLICA_SEGURO_SOCIAL boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "LID_APLICA_SEGURO_SOCIAL"
+            },
+            {
+                "id": "LID_FORMULA_CALCULO",
+                "full_definition": "LID_FORMULA_CALCULO text",
+                "simple_name": "LID_FORMULA_CALCULO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_TERMINACION",
+        "name": "PLA_CONF_TIPOS_TERMINACION",
+        "attributes": [
+            {
+                "id": "TTE_TIPO_TERMINACION_ID",
+                "full_definition": "TTE_TIPO_TERMINACION_ID int NOT NULL",
+                "simple_name": "TTE_TIPO_TERMINACION_ID"
+            },
+            {
+                "id": "TTE_PAIS_ID",
+                "full_definition": "TTE_PAIS_ID int NOT NULL",
+                "simple_name": "TTE_PAIS_ID"
+            },
+            {
+                "id": "TTE_NOMBRE",
+                "full_definition": "TTE_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "TTE_NOMBRE"
+            },
+            {
+                "id": "TTE_CODIGO_LEGAL",
+                "full_definition": "TTE_CODIGO_LEGAL varchar(20)",
+                "simple_name": "TTE_CODIGO_LEGAL"
+            },
+            {
+                "id": "TTE_DESCRIPCION",
+                "full_definition": "TTE_DESCRIPCION varchar(200)",
+                "simple_name": "TTE_DESCRIPCION"
+            },
+            {
+                "id": "TTE_INDEMNIZABLE",
+                "full_definition": "TTE_INDEMNIZABLE boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "TTE_INDEMNIZABLE"
+            },
+            {
+                "id": "TTE_PREAVISO_REQUERIDO",
+                "full_definition": "TTE_PREAVISO_REQUERIDO int NOT NULL DEFAULT 0",
+                "simple_name": "TTE_PREAVISO_REQUERIDO"
+            },
+            {
+                "id": "TTE_LIQUIDA_VACACIONES",
+                "full_definition": "TTE_LIQUIDA_VACACIONES boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TTE_LIQUIDA_VACACIONES"
+            },
+            {
+                "id": "TTE_LIQUIDA_PRESTACIONES",
+                "full_definition": "TTE_LIQUIDA_PRESTACIONES boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TTE_LIQUIDA_PRESTACIONES"
+            },
+            {
+                "id": "TTE_ACTIVO",
+                "full_definition": "TTE_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "TTE_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_ACTIVOS",
+        "name": "PLA_EMP_ACTIVOS",
+        "attributes": [
+            {
+                "id": "ACT_ACTIVO_ID",
+                "full_definition": "ACT_ACTIVO_ID int NOT NULL",
+                "simple_name": "ACT_ACTIVO_ID"
+            },
+            {
+                "id": "ACT_EMPLEADO_ID",
+                "full_definition": "ACT_EMPLEADO_ID int NOT NULL",
+                "simple_name": "ACT_EMPLEADO_ID"
+            },
+            {
+                "id": "ACT_TIPO_ACTIVO_ID",
+                "full_definition": "ACT_TIPO_ACTIVO_ID int NOT NULL",
+                "simple_name": "ACT_TIPO_ACTIVO_ID"
+            },
+            {
+                "id": "ACT_CODIGO_INVENTARIO",
+                "full_definition": "ACT_CODIGO_INVENTARIO varchar(30) NOT NULL",
+                "simple_name": "ACT_CODIGO_INVENTARIO"
+            },
+            {
+                "id": "ACT_DESCRIPCION",
+                "full_definition": "ACT_DESCRIPCION varchar(200) NOT NULL",
+                "simple_name": "ACT_DESCRIPCION"
+            },
+            {
+                "id": "ACT_MARCA",
+                "full_definition": "ACT_MARCA varchar(50)",
+                "simple_name": "ACT_MARCA"
+            },
+            {
+                "id": "ACT_MODELO",
+                "full_definition": "ACT_MODELO varchar(50)",
+                "simple_name": "ACT_MODELO"
+            },
+            {
+                "id": "ACT_FECHA_ASIGNACION",
+                "full_definition": "ACT_FECHA_ASIGNACION date NOT NULL DEFAULT CURRENT_DATE",
+                "simple_name": "ACT_FECHA_ASIGNACION"
+            },
+            {
+                "id": "ACT_FECHA_DEVOLUCION",
+                "full_definition": "ACT_FECHA_DEVOLUCION date",
+                "simple_name": "ACT_FECHA_DEVOLUCION"
+            },
+            {
+                "id": "ACT_ESTADO",
+                "full_definition": "ACT_ESTADO varchar(20) NOT NULL DEFAULT 'ASIGNADO'",
+                "simple_name": "ACT_ESTADO"
+            },
+            {
+                "id": "ACT_VALOR",
+                "full_definition": "ACT_VALOR decimal(12,2)",
+                "simple_name": "ACT_VALOR"
+            },
+            {
+                "id": "ACT_OBSERVACIONES",
+                "full_definition": "ACT_OBSERVACIONES text",
+                "simple_name": "ACT_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_TIPOS_ACTIVO",
+        "name": "PLA_PLA_CONF_TIPOS_ACTIVO",
+        "attributes": [
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_ID",
+                "full_definition": "TAC_TIPO_ACTIVO_ID int NOT NULL",
+                "simple_name": "TAC_TIPO_ACTIVO_ID"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_EMPRESA",
+                "full_definition": "TAC_EMPRESA_ID int NOT NULL",
+                "simple_name": "TAC_EMPRESA_ID"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_NOMBRE",
+                "full_definition": "TAC_NOMBRE varchar(50) NOT NULL",
+                "simple_name": "TAC_NOMBRE"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_CODIGO",
+                "full_definition": "TAC_CODIGO varchar(20) NOT NULL",
+                "simple_name": "TAC_CODIGO"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_CATEGORIA",
+                "full_definition": "TAC_CATEGORIA varchar(30) NOT NULL",
+                "simple_name": "TAC_CATEGORIA"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_DESCRIPCION",
+                "full_definition": "TAC_DESCRIPCION varchar(200)",
+                "simple_name": "TAC_DESCRIPCION"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_REQUIERE_DEVOLUCION",
+                "full_definition": "TAC_REQUIERE_DEVOLUCION boolean NOT NULL",
+                "simple_name": "TAC_REQUIERE_DEVOLUCION"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_DIAS_GARANTIA",
+                "full_definition": "TAC_DIAS_GARANTIA int",
+                "simple_name": "TAC_DIAS_GARANTIA"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_POLITICA_USO",
+                "full_definition": "TAC_POLITICA_USO text",
+                "simple_name": "TAC_POLITICA_USO"
+            },
+            {
+                "id": "PLA_CONF_TIPOS_ACTIVO_ACTIVO",
+                "full_definition": "TAC_ACTIVO boolean NOT NULL",
+                "simple_name": "TAC_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_PROVISIONES",
+        "name": "PLA_PLA_PROVISIONES",
+        "attributes": [
+            {
+                "id": "PLA_PROVISIONES_ID",
+                "full_definition": "PRO_PROVISION_ID int NOT NULL",
+                "simple_name": "PRO_PROVISION_ID"
+            },
+            {
+                "id": "PLA_PROVISIONES_EMPRESA",
+                "full_definition": "PRO_EMPRESA_ID int NOT NULL",
+                "simple_name": "PRO_EMPRESA_ID"
+            },
+            {
+                "id": "PLA_PROVISIONES_PERIODO",
+                "full_definition": "PRO_PERIODO_ID int NOT NULL",
+                "simple_name": "PRO_PERIODO_ID"
+            },
+            {
+                "id": "PLA_PROVISIONES_TIPO",
+                "full_definition": "PRO_TIPO_PROVISION varchar(30) NOT NULL",
+                "simple_name": "PRO_TIPO_PROVISION"
+            },
+            {
+                "id": "PLA_PROVISIONES_FECHA_CORTE",
+                "full_definition": "PRO_FECHA_CORTE date NOT NULL",
+                "simple_name": "PRO_FECHA_CORTE"
+            },
+            {
+                "id": "PLA_PROVISIONES_MONTO",
+                "full_definition": "PRO_MONTO_TOTAL decimal(12,2) NOT NULL",
+                "simple_name": "PRO_MONTO_TOTAL"
+            },
+            {
+                "id": "PLA_PROVISIONES_MONEDA",
+                "full_definition": "PRO_MONEDA char(3) NOT NULL",
+                "simple_name": "PRO_MONEDA"
+            },
+            {
+                "id": "PLA_PROVISIONES_ESTADO",
+                "full_definition": "PRO_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "simple_name": "PRO_ESTADO"
+            },
+            {
+                "id": "PLA_PROVISIONES_METODO",
+                "full_definition": "PRO_METODO_CALCULO text NOT NULL",
+                "simple_name": "PRO_METODO_CALCULO"
+            },
+            {
+                "id": "PLA_PROVISIONES_OBSERVACIONES",
+                "full_definition": "PRO_OBSERVACIONES text",
+                "simple_name": "PRO_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_BACKUP_REGISTROS",
+        "name": "PLA_SYS_BACKUP_REGISTROS",
+        "attributes": [
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_ID",
+                "full_definition": "BAC_BACKUP_ID int NOT NULL",
+                "simple_name": "BAC_BACKUP_ID"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_TIPO",
+                "full_definition": "BAC_TIPO_BACKUP varchar(20) NOT NULL",
+                "simple_name": "BAC_TIPO_BACKUP"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_FECHA",
+                "full_definition": "BAC_FECHA_HORA datetime NOT NULL",
+                "simple_name": "BAC_FECHA_HORA"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_USUARIO",
+                "full_definition": "BAC_USUARIO_ID int",
+                "simple_name": "BAC_USUARIO_ID"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_TABLAS",
+                "full_definition": "BAC_TABLAS_INCLUIDAS json NOT NULL",
+                "simple_name": "BAC_TABLAS_INCLUIDAS"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_TAMANIO",
+                "full_definition": "BAC_TAMANIO_MB decimal(10,2) NOT NULL",
+                "simple_name": "BAC_TAMANIO_MB"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_RUTA",
+                "full_definition": "BAC_RUTA_ARCHIVO varchar(255) NOT NULL",
+                "simple_name": "BAC_RUTA_ARCHIVO"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_HASH",
+                "full_definition": "BAC_HASH_VERIFICACION varchar(64) NOT NULL",
+                "simple_name": "BAC_HASH_VERIFICACION"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_ESTADO",
+                "full_definition": "BAC_ESTADO varchar(20) NOT NULL",
+                "simple_name": "BAC_ESTADO"
+            },
+            {
+                "id": "PLA_SYS_BACKUP_REGISTROS_OBSERVACIONES",
+                "full_definition": "BAC_OBSERVACIONES text",
+                "simple_name": "BAC_OBSERVACIONES"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_ALERTAS",
+        "name": "PLA_CONF_ALERTAS",
+        "attributes": [
+            {
+                "id": "PLA_CONF_ALERTAS_ID",
+                "full_definition": "ALE_ALERTA_ID int NOT NULL",
+                "simple_name": "ALE_ALERTA_ID"
+            },
+            {
+                "id": "ALE_EMPRESA_ID",
+                "full_definition": "ALE_EMPRESA_ID int NOT NULL",
+                "simple_name": "ALE_EMPRESA_ID"
+            },
+            {
+                "id": "ALE_NOMBRE",
+                "full_definition": "ALE_NOMBRE varchar(100) NOT NULL",
+                "simple_name": "ALE_NOMBRE"
+            },
+            {
+                "id": "ALE_TIPO_ALERTA",
+                "full_definition": "ALE_TIPO_ALERTA varchar(30) NOT NULL",
+                "simple_name": "ALE_TIPO_ALERTA"
+            },
+            {
+                "id": "ALE_MODULO",
+                "full_definition": "ALE_MODULO varchar(50) NOT NULL",
+                "simple_name": "ALE_MODULO"
+            },
+            {
+                "id": "ALE_CONDICION",
+                "full_definition": "ALE_CONDICION text NOT NULL",
+                "simple_name": "ALE_CONDICION"
+            },
+            {
+                "id": "ALE_MENSAJE",
+                "full_definition": "ALE_MENSAJE text NOT NULL",
+                "simple_name": "ALE_MENSAJE"
+            },
+            {
+                "id": "ALE_FRECUENCIA",
+                "full_definition": "ALE_FRECUENCIA varchar(20) NOT NULL",
+                "simple_name": "ALE_FRECUENCIA"
+            },
+            {
+                "id": "ALE_DESTINATARIOS",
+                "full_definition": "ALE_DESTINATARIOS json NOT NULL",
+                "simple_name": "ALE_DESTINATARIOS"
+            },
+            {
+                "id": "ALE_MEDIO_ENVIO",
+                "full_definition": "ALE_MEDIO_ENVIO varchar(20) NOT NULL DEFAULT 'INTERNO'",
+                "simple_name": "ALE_MEDIO_ENVIO"
+            },
+            {
+                "id": "ALE_ACTIVA",
+                "full_definition": "ALE_ACTIVA boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "ALE_ACTIVA"
+            },
+            {
+                "id": "ALE_PRIORIDAD",
+                "full_definition": "ALE_PRIORIDAD varchar(20) NOT NULL DEFAULT 'MEDIA'",
+                "simple_name": "ALE_PRIORIDAD"
+            }
+        ]
+    },
+    {
+        "id": "PLA_EMP_EMERGENCIAS",
+        "name": "PLA_EMP_EMERGENCIAS",
+        "attributes": [
+            {
+                "id": "PLA_EMP_EMERGENCIAS_ID",
+                "full_definition": "EME_EMERGENCIA_ID int NOT NULL",
+                "simple_name": "EME_EMERGENCIA_ID"
+            },
+            {
+                "id": "EME_EMPLEADO_ID",
+                "full_definition": "EME_EMPLEADO_ID int NOT NULL",
+                "simple_name": "EME_EMPLEADO_ID"
+            },
+            {
+                "id": "EME_NOMBRE_CONTACTO",
+                "full_definition": "EME_NOMBRE_CONTACTO varchar(100) NOT NULL",
+                "simple_name": "EME_NOMBRE_CONTACTO"
+            },
+            {
+                "id": "EME_PARENTESCO",
+                "full_definition": "EME_PARENTESCO varchar(50) NOT NULL",
+                "simple_name": "EME_PARENTESCO"
+            },
+            {
+                "id": "EME_TELEFONO_PRINCIPAL",
+                "full_definition": "EME_TELEFONO_PRINCIPAL varchar(20) NOT NULL",
+                "simple_name": "EME_TELEFONO_PRINCIPAL"
+            },
+            {
+                "id": "EME_TELEFONO_SECUNDARIO",
+                "full_definition": "EME_TELEFONO_SECUNDARIO varchar(20)",
+                "simple_name": "EME_TELEFONO_SECUNDARIO"
+            },
+            {
+                "id": "EME_EMAIL",
+                "full_definition": "EME_EMAIL varchar(100)",
+                "simple_name": "EME_EMAIL"
+            },
+            {
+                "id": "EME_DIRECCION",
+                "full_definition": "EME_DIRECCION text",
+                "simple_name": "EME_DIRECCION"
+            },
+            {
+                "id": "EME_CONTACTO_PRINCIPAL",
+                "full_definition": "EME_CONTACTO_PRINCIPAL boolean NOT NULL DEFAULT FALSE",
+                "simple_name": "EME_CONTACTO_PRINCIPAL"
+            },
+            {
+                "id": "EME_NOTAS",
+                "full_definition": "EME_NOTAS text",
+                "simple_name": "EME_NOTAS"
+            }
+        ]
+    },
+    {
+        "id": "PLA_CONF_ESCALAS_SALARIALES",
+        "name": "PLA_CONF_ESCALAS_SALARIALES",
+        "attributes": [
+            {
+                "id": "PLA_CONF_ESCALAS_SALARIALES_ID",
+                "full_definition": "ESC_ESCALA_ID int NOT NULL",
+                "simple_name": "ESC_ESCALA_ID"
+            },
+            {
+                "id": "ESC_PAIS_ID",
+                "full_definition": "ESC_PAIS_ID int NOT NULL",
+                "simple_name": "ESC_PAIS_ID"
+            },
+            {
+                "id": "ESC_NOMBRE_ESCALA",
+                "full_definition": "ESC_NOMBRE_ESCALA varchar(100) NOT NULL",
+                "simple_name": "ESC_NOMBRE_ESCALA"
+            },
+            {
+                "id": "ESC_NIVEL",
+                "full_definition": "ESC_NIVEL int NOT NULL",
+                "simple_name": "ESC_NIVEL"
+            },
+            {
+                "id": "ESC_SALARIO_MIN",
+                "full_definition": "ESC_SALARIO_MIN decimal(12,2) NOT NULL",
+                "simple_name": "ESC_SALARIO_MIN"
+            },
+            {
+                "id": "ESC_SALARIO_MAX",
+                "full_definition": "ESC_SALARIO_MAX decimal(12,2) NOT NULL",
+                "simple_name": "ESC_SALARIO_MAX"
+            },
+            {
+                "id": "ESC_MONEDA",
+                "full_definition": "ESC_MONEDA char(3) NOT NULL",
+                "simple_name": "ESC_MONEDA"
+            },
+            {
+                "id": "ESC_VIGENTE_DESDE",
+                "full_definition": "ESC_VIGENTE_DESDE date NOT NULL",
+                "simple_name": "ESC_VIGENTE_DESDE"
+            },
+            {
+                "id": "ESC_VIGENTE_HASTA",
+                "full_definition": "ESC_VIGENTE_HASTA date",
+                "simple_name": "ESC_VIGENTE_HASTA"
+            },
+            {
+                "id": "ESC_ACTIVO",
+                "full_definition": "ESC_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "simple_name": "ESC_ACTIVO"
+            }
+        ]
+    },
+    {
+        "id": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "name": "PLA_PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "attributes": [
+            {
+                "id": "PLA_HISTORICO_CAMBIOS_MASIVOS_ID",
+                "full_definition": "HCM_CAMBIO_MASIVO_ID int NOT NULL",
+                "simple_name": "HCM_CAMBIO_MASIVO_ID"
+            },
+            {
+                "id": "HCM_USUARIO_ID",
+                "full_definition": "HCM_USUARIO_ID int NOT NULL",
+                "simple_name": "HCM_USUARIO_ID"
+            },
+            {
+                "id": "HCM_FECHA_HORA",
+                "full_definition": "HCM_FECHA_HORA datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "simple_name": "HCM_FECHA_HORA"
+            },
+            {
+                "id": "HCM_TABLA_AFECTADA",
+                "full_definition": "HCM_TABLA_AFECTADA varchar(50) NOT NULL",
+                "simple_name": "HCM_TABLA_AFECTADA"
+            },
+            {
+                "id": "HCM_TIPO_OPERACION",
+                "full_definition": "HCM_TIPO_OPERACION varchar(20) NOT NULL",
+                "simple_name": "HCM_TIPO_OPERACION"
+            },
+            {
+                "id": "HCM_REGISTROS_AFECTADOS",
+                "full_definition": "HCM_REGISTROS_AFECTADOS int NOT NULL",
+                "simple_name": "HCM_REGISTROS_AFECTADOS"
+            },
+            {
+                "id": "HCM_DESCRIPCION_CAMBIO",
+                "full_definition": "HCM_DESCRIPCION_CAMBIO text NOT NULL",
+                "simple_name": "HCM_DESCRIPCION_CAMBIO"
+            },
+            {
+                "id": "HCM_QUERY_EJECUTADA",
+                "full_definition": "HCM_QUERY_EJECUTADA text NOT NULL",
+                "simple_name": "HCM_QUERY_EJECUTADA"
+            },
+            {
+                "id": "HCM_VALORES_ANTERIORES",
+                "full_definition": "HCM_VALORES_ANTERIORES json",
+                "simple_name": "HCM_VALORES_ANTERIORES"
+            },
+            {
+                "id": "HCM_VALORES_NUEVOS",
+                "full_definition": "HCM_VALORES_NUEVOS json",
+                "simple_name": "HCM_VALORES_NUEVOS"
+            },
+            {
+                "id": "HCM_IP_ORIGEN",
+                "full_definition": "HCM_IP_ORIGEN varchar(45) NOT NULL",
+                "simple_name": "HCM_IP_ORIGEN"
+            },
+            {
+                "id": "HCM_MODULO",
+                "full_definition": "HCM_MODULO varchar(50) NOT NULL",
+                "simple_name": "HCM_MODULO"
+            },
+            {
+                "id": "HCM_AUTORIZACION_ID",
+                "full_definition": "HCM_AUTORIZACION_ID int",
+                "simple_name": "HCM_AUTORIZACION_ID"
+            }
+        ]
+    },
+    {
+        "id": "PLA_SYS_AUTORIZACIONES",
+        "name": "PLA_SYS_AUTORIZACIONES",
+        "attributes": [
+            {
+                "id": "PLA_SYS_AUTORIZACIONES_ID",
+                "full_definition": "AUT_AUTORIZACIONES_ID int NOT NULL AUTO_INCREMENT",
+                "simple_name": "AUT_AUTORIZACIONES_ID"
+            },
+            {
+                "id": "AUT_CODIGO",
+                "full_definition": "AUT_CODIGO varchar(20) NOT NULL",
+                "simple_name": "AUT_CODIGO"
+            },
+            {
+                "id": "AUT_TIPO",
+                "full_definition": "AUT_TIPO varchar(50) NOT NULL",
+                "simple_name": "AUT_TIPO"
+            },
+            {
+                "id": "AUT_DESCRIPCION",
+                "full_definition": "AUT_DESCRIPCION text NOT NULL",
+                "simple_name": "AUT_DESCRIPCION"
+            },
+            {
+                "id": "AUT_SOLICITANTE",
+                "full_definition": "AUT_SOLICITANTE int NOT NULL",
+                "simple_name": "AUT_SOLICITANTE"
+            },
+            {
+                "id": "AUT_AUTORIZADOR",
+                "full_definition": "AUT_AUTORIZADOR int",
+                "simple_name": "AUT_AUTORIZADOR"
+            },
+            {
+                "id": "AUT_FECHA_SOLICITUD",
+                "full_definition": "AUT_FECHA_SOLICITUD date NOT NULL DEFAULT CURRENT_DATE",
+                "simple_name": "AUT_FECHA_SOLICITUD"
+            },
+            {
+                "id": "AUT_FECHA_AUTORIZACION",
+                "full_definition": "AUT_FECHA_AUTORIZACION date",
+                "simple_name": "AUT_FECHA_AUTORIZACION"
+            },
+            {
+                "id": "AUT_ESTADO",
+                "full_definition": "AUT_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "simple_name": "AUT_ESTADO"
+            },
+            {
+                "id": "AUT_TABLA_AFECTADA",
+                "full_definition": "AUT_TABLA_AFECTADA varchar(50)",
+                "simple_name": "AUT_TABLA_AFECTADA"
+            },
+            {
+                "id": "AUT_OPERACION",
+                "full_definition": "AUT_OPERACION varchar(20)",
+                "simple_name": "AUT_OPERACION"
+            },
+            {
+                "id": "AUT_DATOS_OPERACION",
+                "full_definition": "AUT_DATOS_OPERACION json",
+                "simple_name": "AUT_DATOS_OPERACION"
+            },
+            {
+                "id": "AUT_JUSTIFICACION",
+                "full_definition": "AUT_JUSTIFICACION varchar(500) NOT NULL",
+                "simple_name": "AUT_JUSTIFICACION"
+            },
+            {
+                "id": "AUT_NIVEL_AUTORIZACION",
+                "full_definition": "AUT_NIVEL_AUTORIZACION int NOT NULL DEFAULT 1",
+                "simple_name": "AUT_NIVEL_AUTORIZACION"
+            },
+            {
+                "id": "AUT_OBSERVACIONES",
+                "full_definition": "AUT_OBSERVACIONES text",
+                "simple_name": "AUT_OBSERVACIONES"
+            },
+            {
+                "id": "AUT_IP_SOLICITUD",
+                "full_definition": "AUT_IP_SOLICITUD varchar(45) NOT NULL",
+                "simple_name": "AUT_IP_SOLICITUD"
+            },
+            {
+                "id": "AUT_MODULO",
+                "full_definition": "AUT_MODULO varchar(50) NOT NULL",
+                "simple_name": "AUT_MODULO"
+            }
+        ]
+    },
+    {
+        "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d",
+        "name": "PLA_SYS_INTEGRACIONES_API",
+        "attributes": [
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ROW_PK_HEADER_PK_TEXT",
+                "full_definition": "INT_INTEGRACION_ID INT NOT NULL",
+                "simple_name": "INT_INTEGRACION_ID"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_NOMBRE_SISTEMA_6a0eab9572ae40c_TEXT",
+                "full_definition": "INT_NOMBRE_SISTEMA VARCHAR(100)",
+                "simple_name": "INT_NOMBRE_SISTEMA"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_ENDPOINT_URL_d6cf7ec787584b2_TEXT",
+                "full_definition": "INT_ENDPOINT_URL VARCHAR(255)",
+                "simple_name": "INT_ENDPOINT_URL"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_TIPO_AUTENTICACION_039008928b1f429_TEXT",
+                "full_definition": "INT_TIPO_AUTENTICACION VARCHAR(50)",
+                "simple_name": "INT_TIPO_AUTENTICACION"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_CREDENCIALES_3904a8385e92439_TEXT",
+                "full_definition": "INT_CREDENCIALES TEXT",
+                "simple_name": "INT_CREDENCIALES"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_FORMATO_DATOS_c55c36b8beb8461_TEXT",
+                "full_definition": "INT_FORMATO_DATOS VARCHAR(20)",
+                "simple_name": "INT_FORMATO_DATOS"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_FRECUENCIA_SINCRONIZACION_d23fa4c09c6741d_TEXT",
+                "full_definition": "INT_FRECUENCIA_SINCRONIZACION VARCHAR(50)",
+                "simple_name": "INT_FRECUENCIA_SINCRONIZACION"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_ULTIMA_SINCRONIZACION_f7d2611227d0425_TEXT",
+                "full_definition": "INT_ULTIMA_SINCRONIZACION DATETIME",
+                "simple_name": "INT_ULTIMA_SINCRONIZACION"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_ESTADO_cfe0c478019e42a_TEXT",
+                "full_definition": "INT_ESTADO VARCHAR(20)",
+                "simple_name": "INT_ESTADO"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_EMPRESA_ID_afef6ef4f58c45f_TEXT",
+                "full_definition": "INT_EMPRESA_ID INT",
+                "simple_name": "INT_EMPRESA_ID"
+            },
+            {
+                "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_OBSERVACIONES_9028b0b1f145435_TEXT",
+                "full_definition": "INT_OBSERVACIONES TEXT",
+                "simple_name": "INT_OBSERVACIONES"
+            }
+        ]
+    }
+]

@@ -1,0 +1,1263 @@
+[
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "CONF_PAISES",
+            "target_column_name": "PAI_MONEDA_PRINCIPAL"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_CONF_PAISES",
+        "diagram_target_fk_row_cell_id": "PLA_CONF_PAISES_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "PAR_IMPUESTOS",
+            "target_column_name": "IMP_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_PAR_IMPUESTOS",
+        "diagram_target_fk_row_cell_id": "IMP_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PAR_IMPUESTOS",
+            "source_column_name": "IMP_IMPUESTO_ID",
+            "target_table_name": "PAR_TRAMOS_IMPUESTOS",
+            "target_column_name": "TRA_IMPUESTO_ID"
+        },
+        "diagram_source_table": "PLA_PAR_IMPUESTOS",
+        "diagram_source_pk_row_cell_id": "PLA_PAR_IMPUESTOS_HEADER",
+        "diagram_target_table": "PLA_PAR_TRAMOS_IMPUESTOS",
+        "diagram_target_fk_row_cell_id": "TRA_IMPUESTO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "PAR_PRESTACIONES",
+            "target_column_name": "PRE_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_PAR_PRESTACIONES",
+        "diagram_target_fk_row_cell_id": "PRE_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_TIPOS_ID",
+            "source_column_name": "TIP_TIPO_ID",
+            "target_table_name": "EMP_EMPLEADOS",
+            "target_column_name": "EMP_TIPO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_TIPOS_ID",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_TIPOS_ID_HEADER",
+        "diagram_target_table": "PLA_EMP_EMPLEADOS",
+        "diagram_target_fk_row_cell_id": "PLA_EMP_TIPO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "EMP_EMPLEADOS",
+            "target_column_name": "EMP_PAIS_NAC"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_EMP_EMPLEADOS",
+        "diagram_target_fk_row_cell_id": "PLA_EMP_PAIS_NAC_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "EMP_EMPLEADOS",
+            "target_column_name": "EMP_MONEDA_SALARIO"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_EMP_EMPLEADOS",
+        "diagram_target_fk_row_cell_id": "PLA_EMP_MONEDA_SALARIO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_TIPOS_ID",
+            "target_column_name": "TIP_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_ID",
+        "diagram_target_fk_row_cell_id": "PLA_CONF_TIPOS_ID_PAIS_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "EMP_TIPOS_CONTRATO",
+            "target_column_name": "TCO_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_EMP_TIPOS_CONTRATO",
+        "diagram_target_fk_row_cell_id": "PLA_TCO_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_PERIODOS_PAGO",
+            "target_column_name": "PRP_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_PERIODOS_PAGO",
+        "diagram_target_fk_row_cell_id": "PRP_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_BENEFICIOS",
+            "target_column_name": "BEN_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_BENEFICIOS",
+        "diagram_target_fk_row_cell_id": "BEN_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "CONF_BENEFICIOS",
+            "target_column_name": "BEN_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_CONF_BENEFICIOS",
+        "diagram_target_fk_row_cell_id": "BEN_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "PLA_PERIODOS",
+            "target_column_name": "PER_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_PERIODOS",
+        "diagram_target_fk_row_cell_id": "PER_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PERIODOS_PAGO",
+            "source_column_name": "PRP_PERIODO_ID",
+            "target_table_name": "PLA_PERIODOS",
+            "target_column_name": "PER_TIPO_PERIODO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PERIODOS_PAGO",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PERIODOS_PAGO_HEADER",
+        "diagram_target_table": "PLA_PERIODOS",
+        "diagram_target_fk_row_cell_id": "PER_TIPO_PERIODO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_PERIODOS",
+            "target_column_name": "PER_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_PERIODOS",
+        "diagram_target_fk_row_cell_id": "PER_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PLA_PERIODOS",
+            "source_column_name": "PER_PERIODO_ID",
+            "target_table_name": "PLA_PLANILLA",
+            "target_column_name": "PLA_PERIODO_ID"
+        },
+        "diagram_source_table": "PLA_PERIODOS",
+        "diagram_source_pk_row_cell_id": "PLA_PLA_PERIODOS_HEADER",
+        "diagram_target_table": "PLA_PLANILLA",
+        "diagram_target_fk_row_cell_id": "PLA_PERIODO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_PLANILLA",
+            "target_column_name": "PLA_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_PLANILLA",
+        "diagram_target_fk_row_cell_id": "PLA_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_EMPRESAS",
+            "target_column_name": "EPR_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_EMPRESAS",
+        "diagram_target_fk_row_cell_id": "EPR_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "CONF_EMPRESAS",
+            "target_column_name": "EPR_MONEDA_PRINCIPAL"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_CONF_EMPRESAS",
+        "diagram_target_fk_row_cell_id": "EPR_MONEDA_PRINCIPAL_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PLA_PLANILLA",
+            "source_column_name": "PLA_PLANILLA_ID",
+            "target_table_name": "PLA_DETALLE",
+            "target_column_name": "DET_PLANILLA_ID"
+        },
+        "diagram_source_table": "PLA_PLANILLA",
+        "diagram_source_pk_row_cell_id": "PLA_PLANILLA_HEADER",
+        "diagram_target_table": "PLA_DETALLE",
+        "diagram_target_fk_row_cell_id": "DET_PLANILLA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "PLA_DETALLE",
+            "target_column_name": "DET_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_DETALLE",
+        "diagram_target_fk_row_cell_id": "DET_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_DETALLE",
+            "target_column_name": "DET_MONEDA_SALARIO"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_DETALLE",
+        "diagram_target_fk_row_cell_id": "DET_MONEDA_SALARIO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_DETALLE",
+            "target_column_name": "DET_MONEDA_PAGO"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_DETALLE",
+        "diagram_target_fk_row_cell_id": "DET_MONEDA_PAGO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PLA_DETALLE",
+            "source_column_name": "DET_DETALLE_ID",
+            "target_table_name": "PLA_DETALLE_ITEMS",
+            "target_column_name": "DEI_DETALLE_ID"
+        },
+        "diagram_source_table": "PLA_DETALLE",
+        "diagram_source_pk_row_cell_id": "PLA_DETALLE_HEADER",
+        "diagram_target_table": "PLA_DETALLE_ITEMS",
+        "diagram_target_fk_row_cell_id": "DEI_DETALLE_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_CONCEPTOS_NOMINA",
+            "source_column_name": "CON_CONCEPTO_ID",
+            "target_table_name": "PLA_DETALLE_ITEMS",
+            "target_column_name": "DEI_CODIGO_CONCEPTO"
+        },
+        "diagram_source_table": "PLA_CONF_CONCEPTOS_NOMINA",
+        "diagram_source_pk_row_cell_id": "PLA_PLA_CONF_CONCEPTOS_NOMINA_HEADER",
+        "diagram_target_table": "PLA_DETALLE_ITEMS",
+        "diagram_target_fk_row_cell_id": "DEI_CODIGO_CONCEPTO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_DETALLE_ITEMS",
+            "target_column_name": "DEI_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_DETALLE_ITEMS",
+        "diagram_target_fk_row_cell_id": "DEI_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_CONCEPTOS_NOMINA",
+            "target_column_name": "CON_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_CONCEPTOS_NOMINA",
+        "diagram_target_fk_row_cell_id": "CON_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_HISTORIAL_SALARIAL",
+            "target_column_name": "HSA_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_SALARIAL",
+        "diagram_target_fk_row_cell_id": "HSA_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "EMP_HISTORIAL_SALARIAL",
+            "target_column_name": "HSA_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_SALARIAL",
+        "diagram_target_fk_row_cell_id": "HSA_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "EMP_HISTORIAL_SALARIAL",
+            "target_column_name": "HSA_AUTORIZADO_POR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_SALARIAL",
+        "diagram_target_fk_row_cell_id": "HSA_AUTORIZADO_POR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "PLA_MOVIMIENTOS",
+            "target_column_name": "MOV_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_MOVIMIENTOS",
+        "diagram_target_fk_row_cell_id": "MOV_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_CONCEPTOS_NOMINA",
+            "source_column_name": "CON_CONCEPTO_ID",
+            "target_table_name": "PLA_MOVIMIENTOS",
+            "target_column_name": "MOV_CONCEPTO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_CONCEPTOS_NOMINA",
+        "diagram_source_pk_row_cell_id": "PLA_PLA_CONF_CONCEPTOS_NOMINA_HEADER",
+        "diagram_target_table": "PLA_MOVIMIENTOS",
+        "diagram_target_fk_row_cell_id": "MOV_CONCEPTO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_MOVIMIENTOS",
+            "target_column_name": "MOV_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_MOVIMIENTOS",
+        "diagram_target_fk_row_cell_id": "MOV_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PLA_PERIODOS",
+            "source_column_name": "PER_PERIODO_ID",
+            "target_table_name": "PLA_MOVIMIENTOS",
+            "target_column_name": "MOV_PERIODO_ID"
+        },
+        "diagram_source_table": "PLA_PERIODOS",
+        "diagram_source_pk_row_cell_id": "PLA_PLA_PERIODOS_HEADER",
+        "diagram_target_table": "PLA_MOVIMIENTOS",
+        "diagram_target_fk_row_cell_id": "MOV_PERIODO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "PLA_MOVIMIENTOS",
+            "target_column_name": "MOV_APROBADO_POR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_MOVIMIENTOS",
+        "diagram_target_fk_row_cell_id": "MOV_APROBADO_POR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "PLA_PRESTACIONES_LEGALES",
+            "target_column_name": "PRL_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_PRESTACIONES_LEGALES",
+        "diagram_target_fk_row_cell_id": "PRL_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PAR_PRESTACIONES",
+            "source_column_name": "PRE_PRESTACION_ID",
+            "target_table_name": "PLA_PRESTACIONES_LEGALES",
+            "target_column_name": "PRL_TIPO_PRESTACION_ID"
+        },
+        "diagram_source_table": "PLA_PAR_PRESTACIONES",
+        "diagram_source_pk_row_cell_id": "PLA_PAR_PRESTACIONES_HEADER",
+        "diagram_target_table": "PLA_PRESTACIONES_LEGALES",
+        "diagram_target_fk_row_cell_id": "PRL_TIPO_PRESTACION_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_PRESTACIONES_LEGALES",
+            "target_column_name": "PRL_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_PRESTACIONES_LEGALES",
+        "diagram_target_fk_row_cell_id": "PRL_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "SYS_USUARIOS",
+            "target_column_name": "USU_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_SYS_USUARIOS",
+        "diagram_target_fk_row_cell_id": "USU_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_HISTORIAL_LABORAL",
+            "target_column_name": "HLA_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_LABORAL",
+        "diagram_target_fk_row_cell_id": "HLA_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_DEPARTAMENTOS",
+            "source_column_name": "DEP_DEPARTAMENTO_ID",
+            "target_table_name": "EMP_HISTORIAL_LABORAL",
+            "target_column_name": "HLA_DEPARTAMENTO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_DEPARTAMENTOS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_DEPARTAMENTOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_LABORAL",
+        "diagram_target_fk_row_cell_id": "HLA_DEPARTAMENTO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_PUESTOS",
+            "source_column_name": "PUE_PUESTO_ID",
+            "target_table_name": "EMP_HISTORIAL_LABORAL",
+            "target_column_name": "HLA_PUESTO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_PUESTOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_PUESTOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_LABORAL",
+        "diagram_target_fk_row_cell_id": "HLA_PUESTO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_HISTORIAL_LABORAL",
+            "target_column_name": "HLA_SUPERVISOR_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_LABORAL",
+        "diagram_target_fk_row_cell_id": "HLA_SUPERVISOR_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "EMP_HISTORIAL_LABORAL",
+            "target_column_name": "HLA_AUTORIZADO_POR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HISTORIAL_LABORAL",
+        "diagram_target_fk_row_cell_id": "HLA_AUTORIZADO_POR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "CONF_DEPARTAMENTOS",
+            "target_column_name": "DEP_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_CONF_DEPARTAMENTOS",
+        "diagram_target_fk_row_cell_id": "DEP_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "CONF_DEPARTAMENTOS",
+            "target_column_name": "DEP_SUPERVISOR_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_CONF_DEPARTAMENTOS",
+        "diagram_target_fk_row_cell_id": "DEP_SUPERVISOR_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "EMP_PUESTOS",
+            "target_column_name": "PUE_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_EMP_PUESTOS",
+        "diagram_target_fk_row_cell_id": "PUE_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_DEPARTAMENTOS",
+            "source_column_name": "DEP_DEPARTAMENTO_ID",
+            "target_table_name": "EMP_PUESTOS",
+            "target_column_name": "PUE_DEPARTAMENTO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_DEPARTAMENTOS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_DEPARTAMENTOS_HEADER",
+        "diagram_target_table": "PLA_EMP_PUESTOS",
+        "diagram_target_fk_row_cell_id": "PUE_DEPARTAMENTO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "EMP_PUESTOS",
+            "target_column_name": "PUE_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_EMP_PUESTOS",
+        "diagram_target_fk_row_cell_id": "PUE_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_DOCUMENTOS",
+            "target_column_name": "DOC_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_DOCUMENTOS",
+        "diagram_target_fk_row_cell_id": "DOC_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_TIPOS_DOCUMENTO",
+            "source_column_name": "TDO_TIPO_DOC_ID",
+            "target_table_name": "EMP_DOCUMENTOS",
+            "target_column_name": "DOC_TIPO_DOCUMENTO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_TIPOS_DOCUMENTO",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_TIPOS_DOCUMENTO_HEADER",
+        "diagram_target_table": "PLA_EMP_DOCUMENTOS",
+        "diagram_target_fk_row_cell_id": "DOC_TIPO_DOCUMENTO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "EMP_DOCUMENTOS",
+            "target_column_name": "DOC_CREADO_POR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_EMP_DOCUMENTOS",
+        "diagram_target_fk_row_cell_id": "DOC_CREADO_POR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_TIPOS_DOCUMENTO",
+            "target_column_name": "TDO_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_DOCUMENTO",
+        "diagram_target_fk_row_cell_id": "TDO_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_BENEFICIOS_ASIGNADOS",
+            "target_column_name": "BEA_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "diagram_target_fk_row_cell_id": "BEA_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_BENEFICIOS",
+            "source_column_name": "BEN_BENEFICIO_ID",
+            "target_table_name": "EMP_BENEFICIOS_ASIGNADOS",
+            "target_column_name": "BEA_BENEFICIO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_BENEFICIOS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_BENEFICIOS_HEADER",
+        "diagram_target_table": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "diagram_target_fk_row_cell_id": "BEA_BENEFICIO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "EMP_BENEFICIOS_ASIGNADOS",
+            "target_column_name": "BEA_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "diagram_target_fk_row_cell_id": "BEA_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_AUSENCIAS",
+            "target_column_name": "AUS_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_AUSENCIAS",
+        "diagram_target_fk_row_cell_id": "AUS_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_TIPOS_AUSENCIA",
+            "source_column_name": "TAU_TIPO_AUSENCIA_ID",
+            "target_table_name": "EMP_AUSENCIAS",
+            "target_column_name": "AUS_TIPO_AUSENCIA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_TIPOS_AUSENCIA",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_TIPOS_AUSENCIA_HEADER",
+        "diagram_target_table": "PLA_EMP_AUSENCIAS",
+        "diagram_target_fk_row_cell_id": "AUS_TIPO_AUSENCIA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_DOCUMENTOS",
+            "source_column_name": "DOC_DOCUMENTO_ID",
+            "target_table_name": "EMP_AUSENCIAS",
+            "target_column_name": "AUS_DOCUMENTO_SOPORTE"
+        },
+        "diagram_source_table": "PLA_EMP_DOCUMENTOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_DOCUMENTOS_HEADER",
+        "diagram_target_table": "PLA_EMP_AUSENCIAS",
+        "diagram_target_fk_row_cell_id": "AUS_DOCUMENTO_SOPORTE_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "EMP_AUSENCIAS",
+            "target_column_name": "AUS_APROBADO_POR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_EMP_AUSENCIAS",
+        "diagram_target_fk_row_cell_id": "AUS_APROBADO_POR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_TIPOS_AUSENCIA",
+            "target_column_name": "TAU_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_AUSENCIA",
+        "diagram_target_fk_row_cell_id": "TAU_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_HORARIOS",
+            "target_column_name": "HOR_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_HORARIOS",
+        "diagram_target_fk_row_cell_id": "HOR_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_TIPOS_HORARIO",
+            "source_column_name": "THO_TIPO_HORARIO_ID",
+            "target_table_name": "EMP_HORARIOS",
+            "target_column_name": "HOR_TIPO_HORARIO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_TIPOS_HORARIO",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_TIPOS_HORARIO_HEADER",
+        "diagram_target_table": "PLA_EMP_HORARIOS",
+        "diagram_target_fk_row_cell_id": "HOR_TIPO_HORARIO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "CONF_TIPOS_HORARIO",
+            "target_column_name": "THO_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_HORARIO",
+        "diagram_target_fk_row_cell_id": "THO_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_MARCADORES",
+            "target_column_name": "MAR_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_MARCADORES",
+        "diagram_target_fk_row_cell_id": "MAR_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_INCAPACIDADES",
+            "target_column_name": "INC_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_INCAPACIDADES",
+        "diagram_target_fk_row_cell_id": "INC_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_TIPOS_INCAPACIDAD",
+            "source_column_name": "TIN_TIPO_INCAPACIDAD_ID",
+            "target_table_name": "EMP_INCAPACIDADES",
+            "target_column_name": "INC_TIPO_INCAPACIDAD_ID"
+        },
+        "diagram_source_table": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_TIPOS_INCAPACIDAD_HEADER",
+        "diagram_target_table": "PLA_EMP_INCAPACIDADES",
+        "diagram_target_fk_row_cell_id": "INC_TIPO_INCAPACIDAD_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_DOCUMENTOS",
+            "source_column_name": "DOC_DOCUMENTO_ID",
+            "target_table_name": "EMP_INCAPACIDADES",
+            "target_column_name": "INC_DOCUMENTO_SOPORTE"
+        },
+        "diagram_source_table": "PLA_EMP_DOCUMENTOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_DOCUMENTOS_HEADER",
+        "diagram_target_table": "PLA_EMP_INCAPACIDADES",
+        "diagram_target_fk_row_cell_id": "INC_DOCUMENTO_SOPORTE_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_TIPOS_INCAPACIDAD",
+            "target_column_name": "TIN_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "diagram_target_fk_row_cell_id": "TIN_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "SYS_HISTORIAL_CAMBIOS",
+            "target_column_name": "HCA_USUARIO_ID"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "diagram_target_fk_row_cell_id": "HCA_USUARIO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_AUTORIZACIONES",
+            "source_column_name": "AUT_AUTORIZACIONES_ID",
+            "target_table_name": "SYS_HISTORIAL_CAMBIOS",
+            "target_column_name": "HCA_AUTORIZACION_ID"
+        },
+        "diagram_source_table": "PLA_SYS_AUTORIZACIONES",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_AUTORIZACIONES_HEADER",
+        "diagram_target_table": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "diagram_target_fk_row_cell_id": "HCA_AUTORIZACION_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_FERIADOS",
+            "target_column_name": "FER_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_FERIADOS",
+        "diagram_target_fk_row_cell_id": "FER_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "SYS_REPORTES_PERSONALIZADOS",
+            "target_column_name": "REP_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "diagram_target_fk_row_cell_id": "REP_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "SYS_REPORTES_PERSONALIZADOS",
+            "target_column_name": "REP_CREADO_POR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "diagram_target_fk_row_cell_id": "REP_CREADO_POR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "SYS_INTEGRACIONES_API",
+            "target_column_name": "INT_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_SYS_INTEGRACIONES_API",
+        "diagram_target_fk_row_cell_id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_EMPRESA_ID_afef6ef4f58c45f",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "PLA_LIQUIDACIONES",
+            "target_column_name": "LIQ_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_LIQUIDACIONES",
+        "diagram_target_fk_row_cell_id": "LIQ_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_LIQUIDACIONES",
+            "target_column_name": "LIQ_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_LIQUIDACIONES",
+        "diagram_target_fk_row_cell_id": "LIQ_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_DOCUMENTOS",
+            "source_column_name": "DOC_DOCUMENTO_ID",
+            "target_table_name": "PLA_LIQUIDACIONES",
+            "target_column_name": "LIQ_DOCUMENTO_GENERADO"
+        },
+        "diagram_source_table": "PLA_EMP_DOCUMENTOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_DOCUMENTOS_HEADER",
+        "diagram_target_table": "PLA_LIQUIDACIONES",
+        "diagram_target_fk_row_cell_id": "LIQ_DOCUMENTO_GENERADO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PLA_LIQUIDACIONES",
+            "source_column_name": "LIQ_LIQUIDACION_ID",
+            "target_table_name": "PLA_LIQUIDACION_DETALLE",
+            "target_column_name": "LID_LIQUIDACION_ID"
+        },
+        "diagram_source_table": "PLA_LIQUIDACIONES",
+        "diagram_source_pk_row_cell_id": "PLA_LIQUIDACIONES_HEADER",
+        "diagram_target_table": "PLA_LIQUIDACION_DETALLE",
+        "diagram_target_fk_row_cell_id": "LID_LIQUIDACION_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_CONCEPTOS_NOMINA",
+            "source_column_name": "CON_CONCEPTO_ID",
+            "target_table_name": "PLA_LIQUIDACION_DETALLE",
+            "target_column_name": "LID_CODIGO_CONCEPTO"
+        },
+        "diagram_source_table": "PLA_CONF_CONCEPTOS_NOMINA",
+        "diagram_source_pk_row_cell_id": "PLA_PLA_CONF_CONCEPTOS_NOMINA_HEADER",
+        "diagram_target_table": "PLA_LIQUIDACION_DETALLE",
+        "diagram_target_fk_row_cell_id": "LID_CODIGO_CONCEPTO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_LIQUIDACION_DETALLE",
+            "target_column_name": "LID_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_LIQUIDACION_DETALLE",
+        "diagram_target_fk_row_cell_id": "LID_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_TIPOS_TERMINACION",
+            "target_column_name": "TTE_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_TERMINACION",
+        "diagram_target_fk_row_cell_id": "TTE_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_ACTIVOS",
+            "target_column_name": "ACT_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_ACTIVOS",
+        "diagram_target_fk_row_cell_id": "ACT_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_TIPOS_ACTIVO",
+            "source_column_name": "TAC_TIPO_ACTIVO_ID",
+            "target_table_name": "EMP_ACTIVOS",
+            "target_column_name": "ACT_TIPO_ACTIVO_ID"
+        },
+        "diagram_source_table": "PLA_CONF_TIPOS_ACTIVO",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_TIPOS_ACTIVO_HEADER",
+        "diagram_target_table": "PLA_EMP_ACTIVOS",
+        "diagram_target_fk_row_cell_id": "ACT_TIPO_ACTIVO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "CONF_TIPOS_ACTIVO",
+            "target_column_name": "TAC_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_CONF_TIPOS_ACTIVO",
+        "diagram_target_fk_row_cell_id": "PLA_CONF_TIPOS_ACTIVO_EMPRESA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "PLA_PROVISIONES",
+            "target_column_name": "PRO_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_PROVISIONES",
+        "diagram_target_fk_row_cell_id": "PLA_PROVISIONES_EMPRESA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "PLA_PERIODOS",
+            "source_column_name": "PER_PERIODO_ID",
+            "target_table_name": "PLA_PROVISIONES",
+            "target_column_name": "PRO_PERIODO_ID"
+        },
+        "diagram_source_table": "PLA_PERIODOS",
+        "diagram_source_pk_row_cell_id": "PLA_PLA_PERIODOS_HEADER",
+        "diagram_target_table": "PLA_PROVISIONES",
+        "diagram_target_fk_row_cell_id": "PLA_PROVISIONES_PERIODO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "PLA_PROVISIONES",
+            "target_column_name": "PRO_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_PROVISIONES",
+        "diagram_target_fk_row_cell_id": "PLA_PROVISIONES_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "SYS_BACKUP_REGISTROS",
+            "target_column_name": "BAC_USUARIO_ID"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_SYS_BACKUP_REGISTROS",
+        "diagram_target_fk_row_cell_id": "PLA_SYS_BACKUP_REGISTROS_USUARIO_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_EMPRESAS",
+            "source_column_name": "EPR_EMPRESA_ID",
+            "target_table_name": "CONF_ALERTAS",
+            "target_column_name": "ALE_EMPRESA_ID"
+        },
+        "diagram_source_table": "PLA_CONF_EMPRESAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_EMPRESAS_HEADER",
+        "diagram_target_table": "PLA_CONF_ALERTAS",
+        "diagram_target_fk_row_cell_id": "ALE_EMPRESA_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "EMP_EMPLEADOS",
+            "source_column_name": "EMP_EMP_ID",
+            "target_table_name": "EMP_EMERGENCIAS",
+            "target_column_name": "EME_EMPLEADO_ID"
+        },
+        "diagram_source_table": "PLA_EMP_EMPLEADOS",
+        "diagram_source_pk_row_cell_id": "PLA_EMP_EMPLEADOS_HEADER",
+        "diagram_target_table": "PLA_EMP_EMERGENCIAS",
+        "diagram_target_fk_row_cell_id": "EME_EMPLEADO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_PAISES",
+            "source_column_name": "PAI_PAIS_ID",
+            "target_table_name": "CONF_ESCALAS_SALARIALES",
+            "target_column_name": "ESC_PAIS_ID"
+        },
+        "diagram_source_table": "PLA_CONF_PAISES",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_PAISES_HEADER",
+        "diagram_target_table": "PLA_CONF_ESCALAS_SALARIALES",
+        "diagram_target_fk_row_cell_id": "ESC_PAIS_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "CONF_MONEDAS",
+            "source_column_name": "MON_CODIGO_ISO",
+            "target_table_name": "CONF_ESCALAS_SALARIALES",
+            "target_column_name": "ESC_MONEDA"
+        },
+        "diagram_source_table": "PLA_CONF_MONEDAS",
+        "diagram_source_pk_row_cell_id": "PLA_CONF_MONEDAS_CODIGO_ISO_ROW",
+        "diagram_target_table": "PLA_CONF_ESCALAS_SALARIALES",
+        "diagram_target_fk_row_cell_id": "ESC_MONEDA_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+            "target_column_name": "HCM_USUARIO_ID"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "diagram_target_fk_row_cell_id": "HCM_USUARIO_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_AUTORIZACIONES",
+            "source_column_name": "AUT_AUTORIZACIONES_ID",
+            "target_table_name": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+            "target_column_name": "HCM_AUTORIZACION_ID"
+        },
+        "diagram_source_table": "PLA_SYS_AUTORIZACIONES",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_AUTORIZACIONES_HEADER",
+        "diagram_target_table": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "diagram_target_fk_row_cell_id": "HCM_AUTORIZACION_ID_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "SYS_AUTORIZACIONES",
+            "target_column_name": "AUT_SOLICITANTE"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_SYS_AUTORIZACIONES",
+        "diagram_target_fk_row_cell_id": "AUT_SOLICITANTE_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    },
+    {
+        "fk_definition": {
+            "source_table_name": "SYS_USUARIOS",
+            "source_column_name": "USU_USUARIO_ID",
+            "target_table_name": "SYS_AUTORIZACIONES",
+            "target_column_name": "AUT_AUTORIZADOR"
+        },
+        "diagram_source_table": "PLA_SYS_USUARIOS",
+        "diagram_source_pk_row_cell_id": "PLA_SYS_USUARIOS_HEADER",
+        "diagram_target_table": "PLA_SYS_AUTORIZACIONES",
+        "diagram_target_fk_row_cell_id": "AUT_AUTORIZADOR_ROW",
+        "reason": "No visual edge found connecting the relevant cells for this FK definition."
+    }
+]

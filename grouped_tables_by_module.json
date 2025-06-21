@@ -1,0 +1,216 @@
+{
+    "CONF": [
+        {
+            "id": "PLA_CONF_ALERTAS",
+            "name": "PLA_CONF_ALERTAS"
+        },
+        {
+            "id": "PLA_CONF_BENEFICIOS",
+            "name": "PLA_CONF_BENEFICIOS"
+        },
+        {
+            "id": "PLA_PLA_CONF_CONCEPTOS_NOMINA",
+            "name": "PLA_CONF_CONCEPTOS_NOMINA"
+        },
+        {
+            "id": "PLA_CONF_DEPARTAMENTOS",
+            "name": "PLA_CONF_DEPARTAMENTOS"
+        },
+        {
+            "id": "PLA_CONF_EMPRESAS",
+            "name": "PLA_CONF_EMPRESAS"
+        },
+        {
+            "id": "PLA_CONF_ESCALAS_SALARIALES",
+            "name": "PLA_CONF_ESCALAS_SALARIALES"
+        },
+        {
+            "id": "PLA_CONF_FERIADOS",
+            "name": "PLA_CONF_FERIADOS"
+        },
+        {
+            "id": "PLA_CONF_MONEDAS",
+            "name": "PLA_CONF_MONEDAS"
+        },
+        {
+            "id": "PLA_CONF_PAISES",
+            "name": "PLA_CONF_PAISES"
+        },
+        {
+            "id": "PLA_CONF_PERIODOS_PAGO",
+            "name": "PLA_CONF_PERIODOS_PAGO"
+        },
+        {
+            "id": "PLA_CONF_TIPOS_AUSENCIA",
+            "name": "PLA_CONF_TIPOS_AUSENCIA"
+        },
+        {
+            "id": "PLA_CONF_TIPOS_DOCUMENTO",
+            "name": "PLA_CONF_TIPOS_DOCUMENTO"
+        },
+        {
+            "id": "PLA_CONF_TIPOS_HORARIO",
+            "name": "PLA_CONF_TIPOS_HORARIO"
+        },
+        {
+            "id": "PLA_CONF_TIPOS_ID",
+            "name": "PLA_CONF_TIPOS_ID"
+        },
+        {
+            "id": "PLA_CONF_TIPOS_INCAPACIDAD",
+            "name": "PLA_CONF_TIPOS_INCAPACIDAD"
+        },
+        {
+            "id": "PLA_CONF_TIPOS_TERMINACION",
+            "name": "PLA_CONF_TIPOS_TERMINACION"
+        }
+    ],
+    "PAR": [
+        {
+            "id": "PLA_PAR_IMPUESTOS",
+            "name": "PLA_PAR_IMPUESTOS"
+        },
+        {
+            "id": "PLA_PAR_PRESTACIONES",
+            "name": "PLA_PAR_PRESTACIONES"
+        },
+        {
+            "id": "PLA_PAR_TRAMOS_IMPUESTOS",
+            "name": "PLA_PAR_TRAMOS_IMPUESTOS"
+        }
+    ],
+    "EMP": [
+        {
+            "id": "PLA_EMP_ACTIVOS",
+            "name": "PLA_EMP_ACTIVOS"
+        },
+        {
+            "id": "PLA_EMP_AUSENCIAS",
+            "name": "PLA_EMP_AUSENCIAS"
+        },
+        {
+            "id": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+            "name": "PLA_EMP_BENEFICIOS_ASIGNADOS"
+        },
+        {
+            "id": "PLA_EMP_DOCUMENTOS",
+            "name": "PLA_EMP_DOCUMENTOS"
+        },
+        {
+            "id": "PLA_EMP_EMERGENCIAS",
+            "name": "PLA_EMP_EMERGENCIAS"
+        },
+        {
+            "id": "PLA_EMP_EMPLEADOS",
+            "name": "PLA_EMP_EMPLEADOS"
+        },
+        {
+            "id": "PLA_EMP_HISTORIAL_LABORAL",
+            "name": "PLA_EMP_HISTORIAL_LABORAL"
+        },
+        {
+            "id": "PLA_PLA_EMP_HISTORIAL_SALARIAL",
+            "name": "PLA_EMP_HISTORIAL_SALARIAL"
+        },
+        {
+            "id": "PLA_EMP_HORARIOS",
+            "name": "PLA_EMP_HORARIOS"
+        },
+        {
+            "id": "PLA_EMP_INCAPACIDADES",
+            "name": "PLA_EMP_INCAPACIDADES"
+        },
+        {
+            "id": "PLA_EMP_MARCADORES",
+            "name": "PLA_EMP_MARCADORES"
+        },
+        {
+            "id": "PLA_EMP_PUESTOS",
+            "name": "PLA_EMP_PUESTOS"
+        },
+        {
+            "id": "PLA_EMP_TIPOS_CONTRATO",
+            "name": "PLA_EMP_TIPOS_CONTRATO"
+        }
+    ],
+    "PLA": [
+        {
+            "id": "PLA_CONF_TIPOS_ACTIVO",
+            "name": "PLA_PLA_CONF_TIPOS_ACTIVO"
+        },
+        {
+            "id": "PLA_DETALLE",
+            "name": "PLA_PLA_DETALLE"
+        },
+        {
+            "id": "PLA_PLA_DETALLE_ITEMS",
+            "name": "PLA_PLA_DETALLE_ITEMS"
+        },
+        {
+            "id": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+            "name": "PLA_PLA_HISTORICO_CAMBIOS_MASIVOS"
+        },
+        {
+            "id": "PLA_LIQUIDACIONES",
+            "name": "PLA_PLA_LIQUIDACIONES"
+        },
+        {
+            "id": "PLA_LIQUIDACION_DETALLE",
+            "name": "PLA_PLA_LIQUIDACION_DETALLE"
+        },
+        {
+            "id": "PLA_MOVIMIENTOS",
+            "name": "PLA_PLA_MOVIMIENTOS"
+        },
+        {
+            "id": "PLA_PLA_PERIODOS",
+            "name": "PLA_PLA_PERIODOS"
+        },
+        {
+            "id": "PLA_PLANILLA",
+            "name": "PLA_PLA_PLANILLA"
+        },
+        {
+            "id": "PLA_PRESTACIONES_LEGALES",
+            "name": "PLA_PLA_PRESTACIONES_LEGALES"
+        },
+        {
+            "id": "PLA_PROVISIONES",
+            "name": "PLA_PLA_PROVISIONES"
+        }
+    ],
+    "SYS": [
+        {
+            "id": "PLA_SYS_AUTORIZACIONES",
+            "name": "PLA_SYS_AUTORIZACIONES"
+        },
+        {
+            "id": "PLA_SYS_BACKUP_REGISTROS",
+            "name": "PLA_SYS_BACKUP_REGISTROS"
+        },
+        {
+            "id": "PLA_SYS_HISTORIAL_CAMBIOS",
+            "name": "PLA_SYS_HISTORIAL_CAMBIOS"
+        },
+        {
+            "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d",
+            "name": "PLA_SYS_INTEGRACIONES_API"
+        },
+        {
+            "id": "PLA_SYS_PERMISOS",
+            "name": "PLA_SYS_PERMISOS"
+        },
+        {
+            "id": "PLA_SYS_REPORTES_PERSONALIZADOS",
+            "name": "PLA_SYS_REPORTES_PERSONALIZADOS"
+        },
+        {
+            "id": "PLA_SYS_ROLES",
+            "name": "PLA_SYS_ROLES"
+        },
+        {
+            "id": "PLA_SYS_USUARIOS",
+            "name": "PLA_SYS_USUARIOS"
+        }
+    ]
+}

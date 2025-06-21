@@ -1,0 +1,602 @@
+[
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "CONF_PAISES",
+        "target_column_name": "PAI_MONEDA_PRINCIPAL"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "PAR_IMPUESTOS",
+        "target_column_name": "IMP_PAIS_ID"
+    },
+    {
+        "source_table_name": "PAR_IMPUESTOS",
+        "source_column_name": "IMP_IMPUESTO_ID",
+        "target_table_name": "PAR_TRAMOS_IMPUESTOS",
+        "target_column_name": "TRA_IMPUESTO_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "PAR_PRESTACIONES",
+        "target_column_name": "PRE_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_TIPOS_ID",
+        "source_column_name": "TIP_TIPO_ID",
+        "target_table_name": "EMP_EMPLEADOS",
+        "target_column_name": "EMP_TIPO_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "EMP_EMPLEADOS",
+        "target_column_name": "EMP_PAIS_NAC"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "EMP_EMPLEADOS",
+        "target_column_name": "EMP_MONEDA_SALARIO"
+    },
+    {
+        "source_table_name": "EMP_TIPOS_CONTRATO",
+        "source_column_name": "TCO_CONTRATO_ID",
+        "target_table_name": "EMP_EMPLEADOS",
+        "target_column_name": "EMP_TIPO_CONTRATO"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_TIPOS_ID",
+        "target_column_name": "TIP_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "EMP_TIPOS_CONTRATO",
+        "target_column_name": "TCO_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_PERIODOS_PAGO",
+        "target_column_name": "PRP_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_BENEFICIOS",
+        "target_column_name": "BEN_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "CONF_BENEFICIOS",
+        "target_column_name": "BEN_MONEDA"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "PLA_PERIODOS",
+        "target_column_name": "PER_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "CONF_PERIODOS_PAGO",
+        "source_column_name": "PRP_PERIODO_ID",
+        "target_table_name": "PLA_PERIODOS",
+        "target_column_name": "PER_TIPO_PERIODO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_PERIODOS",
+        "target_column_name": "PER_MONEDA"
+    },
+    {
+        "source_table_name": "PLA_PERIODOS",
+        "source_column_name": "PER_PERIODO_ID",
+        "target_table_name": "PLA_PLANILLA",
+        "target_column_name": "PLA_PERIODO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_PLANILLA",
+        "target_column_name": "PLA_MONEDA"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_EMPRESAS",
+        "target_column_name": "EPR_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "CONF_EMPRESAS",
+        "target_column_name": "EPR_MONEDA_PRINCIPAL"
+    },
+    {
+        "source_table_name": "PLA_PLANILLA",
+        "source_column_name": "PLA_PLANILLA_ID",
+        "target_table_name": "PLA_DETALLE",
+        "target_column_name": "DET_PLANILLA_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "PLA_DETALLE",
+        "target_column_name": "DET_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_DETALLE",
+        "target_column_name": "DET_MONEDA_SALARIO"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_DETALLE",
+        "target_column_name": "DET_MONEDA_PAGO"
+    },
+    {
+        "source_table_name": "PLA_DETALLE",
+        "source_column_name": "DET_DETALLE_ID",
+        "target_table_name": "PLA_DETALLE_ITEMS",
+        "target_column_name": "DEI_DETALLE_ID"
+    },
+    {
+        "source_table_name": "CONF_CONCEPTOS_NOMINA",
+        "source_column_name": "CON_CONCEPTO_ID",
+        "target_table_name": "PLA_DETALLE_ITEMS",
+        "target_column_name": "DEI_CODIGO_CONCEPTO"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_DETALLE_ITEMS",
+        "target_column_name": "DEI_MONEDA"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_CONCEPTOS_NOMINA",
+        "target_column_name": "CON_PAIS_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_HISTORIAL_SALARIAL",
+        "target_column_name": "HSA_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "EMP_HISTORIAL_SALARIAL",
+        "target_column_name": "HSA_MONEDA"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "EMP_HISTORIAL_SALARIAL",
+        "target_column_name": "HSA_AUTORIZADO_POR"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "PLA_MOVIMIENTOS",
+        "target_column_name": "MOV_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_CONCEPTOS_NOMINA",
+        "source_column_name": "CON_CONCEPTO_ID",
+        "target_table_name": "PLA_MOVIMIENTOS",
+        "target_column_name": "MOV_CONCEPTO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_MOVIMIENTOS",
+        "target_column_name": "MOV_MONEDA"
+    },
+    {
+        "source_table_name": "PLA_PERIODOS",
+        "source_column_name": "PER_PERIODO_ID",
+        "target_table_name": "PLA_MOVIMIENTOS",
+        "target_column_name": "MOV_PERIODO_ID"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "PLA_MOVIMIENTOS",
+        "target_column_name": "MOV_APROBADO_POR"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "PLA_PRESTACIONES_LEGALES",
+        "target_column_name": "PRL_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "PAR_PRESTACIONES",
+        "source_column_name": "PRE_PRESTACION_ID",
+        "target_table_name": "PLA_PRESTACIONES_LEGALES",
+        "target_column_name": "PRL_TIPO_PRESTACION_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_PRESTACIONES_LEGALES",
+        "target_column_name": "PRL_MONEDA"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "SYS_USUARIOS",
+        "target_column_name": "USU_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "SYS_ROLES",
+        "source_column_name": "ROL_ROL_ID",
+        "target_table_name": "SYS_USUARIOS",
+        "target_column_name": "USU_ROL_ID"
+    },
+    {
+        "source_table_name": "SYS_ROLES",
+        "source_column_name": "ROL_ROL_ID",
+        "target_table_name": "SYS_PERMISOS",
+        "target_column_name": "PRM_ROL_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_HISTORIAL_LABORAL",
+        "target_column_name": "HLA_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_DEPARTAMENTOS",
+        "source_column_name": "DEP_DEPARTAMENTO_ID",
+        "target_table_name": "EMP_HISTORIAL_LABORAL",
+        "target_column_name": "HLA_DEPARTAMENTO_ID"
+    },
+    {
+        "source_table_name": "EMP_PUESTOS",
+        "source_column_name": "PUE_PUESTO_ID",
+        "target_table_name": "EMP_HISTORIAL_LABORAL",
+        "target_column_name": "HLA_PUESTO_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_HISTORIAL_LABORAL",
+        "target_column_name": "HLA_SUPERVISOR_ID"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "EMP_HISTORIAL_LABORAL",
+        "target_column_name": "HLA_AUTORIZADO_POR"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "CONF_DEPARTAMENTOS",
+        "target_column_name": "DEP_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "CONF_DEPARTAMENTOS",
+        "target_column_name": "DEP_SUPERVISOR_ID"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "EMP_PUESTOS",
+        "target_column_name": "PUE_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "CONF_DEPARTAMENTOS",
+        "source_column_name": "DEP_DEPARTAMENTO_ID",
+        "target_table_name": "EMP_PUESTOS",
+        "target_column_name": "PUE_DEPARTAMENTO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "EMP_PUESTOS",
+        "target_column_name": "PUE_MONEDA"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_DOCUMENTOS",
+        "target_column_name": "DOC_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_TIPOS_DOCUMENTO",
+        "source_column_name": "TDO_TIPO_DOC_ID",
+        "target_table_name": "EMP_DOCUMENTOS",
+        "target_column_name": "DOC_TIPO_DOCUMENTO_ID"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "EMP_DOCUMENTOS",
+        "target_column_name": "DOC_CREADO_POR"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_TIPOS_DOCUMENTO",
+        "target_column_name": "TDO_PAIS_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_BENEFICIOS_ASIGNADOS",
+        "target_column_name": "BEA_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_BENEFICIOS",
+        "source_column_name": "BEN_BENEFICIO_ID",
+        "target_table_name": "EMP_BENEFICIOS_ASIGNADOS",
+        "target_column_name": "BEA_BENEFICIO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "EMP_BENEFICIOS_ASIGNADOS",
+        "target_column_name": "BEA_MONEDA"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_AUSENCIAS",
+        "target_column_name": "AUS_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_TIPOS_AUSENCIA",
+        "source_column_name": "TAU_TIPO_AUSENCIA_ID",
+        "target_table_name": "EMP_AUSENCIAS",
+        "target_column_name": "AUS_TIPO_AUSENCIA_ID"
+    },
+    {
+        "source_table_name": "EMP_DOCUMENTOS",
+        "source_column_name": "DOC_DOCUMENTO_ID",
+        "target_table_name": "EMP_AUSENCIAS",
+        "target_column_name": "AUS_DOCUMENTO_SOPORTE"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "EMP_AUSENCIAS",
+        "target_column_name": "AUS_APROBADO_POR"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_TIPOS_AUSENCIA",
+        "target_column_name": "TAU_PAIS_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_HORARIOS",
+        "target_column_name": "HOR_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_TIPOS_HORARIO",
+        "source_column_name": "THO_TIPO_HORARIO_ID",
+        "target_table_name": "EMP_HORARIOS",
+        "target_column_name": "HOR_TIPO_HORARIO_ID"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "CONF_TIPOS_HORARIO",
+        "target_column_name": "THO_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_MARCADORES",
+        "target_column_name": "MAR_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_INCAPACIDADES",
+        "target_column_name": "INC_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_TIPOS_INCAPACIDAD",
+        "source_column_name": "TIN_TIPO_INCAPACIDAD_ID",
+        "target_table_name": "EMP_INCAPACIDADES",
+        "target_column_name": "INC_TIPO_INCAPACIDAD_ID"
+    },
+    {
+        "source_table_name": "EMP_DOCUMENTOS",
+        "source_column_name": "DOC_DOCUMENTO_ID",
+        "target_table_name": "EMP_INCAPACIDADES",
+        "target_column_name": "INC_DOCUMENTO_SOPORTE"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_TIPOS_INCAPACIDAD",
+        "target_column_name": "TIN_PAIS_ID"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "SYS_HISTORIAL_CAMBIOS",
+        "target_column_name": "HCA_USUARIO_ID"
+    },
+    {
+        "source_table_name": "SYS_AUTORIZACIONES",
+        "source_column_name": "AUT_AUTORIZACIONES_ID",
+        "target_table_name": "SYS_HISTORIAL_CAMBIOS",
+        "target_column_name": "HCA_AUTORIZACION_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_FERIADOS",
+        "target_column_name": "FER_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "SYS_REPORTES_PERSONALIZADOS",
+        "target_column_name": "REP_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "SYS_REPORTES_PERSONALIZADOS",
+        "target_column_name": "REP_CREADO_POR"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "SYS_INTEGRACIONES_API",
+        "target_column_name": "INT_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "PLA_LIQUIDACIONES",
+        "target_column_name": "LIQ_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_LIQUIDACIONES",
+        "target_column_name": "LIQ_MONEDA"
+    },
+    {
+        "source_table_name": "EMP_DOCUMENTOS",
+        "source_column_name": "DOC_DOCUMENTO_ID",
+        "target_table_name": "PLA_LIQUIDACIONES",
+        "target_column_name": "LIQ_DOCUMENTO_GENERADO"
+    },
+    {
+        "source_table_name": "PLA_LIQUIDACIONES",
+        "source_column_name": "LIQ_LIQUIDACION_ID",
+        "target_table_name": "PLA_LIQUIDACION_DETALLE",
+        "target_column_name": "LID_LIQUIDACION_ID"
+    },
+    {
+        "source_table_name": "CONF_CONCEPTOS_NOMINA",
+        "source_column_name": "CON_CONCEPTO_ID",
+        "target_table_name": "PLA_LIQUIDACION_DETALLE",
+        "target_column_name": "LID_CODIGO_CONCEPTO"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_LIQUIDACION_DETALLE",
+        "target_column_name": "LID_MONEDA"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_TIPOS_TERMINACION",
+        "target_column_name": "TTE_PAIS_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_ACTIVOS",
+        "target_column_name": "ACT_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_TIPOS_ACTIVO",
+        "source_column_name": "TAC_TIPO_ACTIVO_ID",
+        "target_table_name": "EMP_ACTIVOS",
+        "target_column_name": "ACT_TIPO_ACTIVO_ID"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "CONF_TIPOS_ACTIVO",
+        "target_column_name": "TAC_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "PLA_PROVISIONES",
+        "target_column_name": "PRO_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "PLA_PERIODOS",
+        "source_column_name": "PER_PERIODO_ID",
+        "target_table_name": "PLA_PROVISIONES",
+        "target_column_name": "PRO_PERIODO_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "PLA_PROVISIONES",
+        "target_column_name": "PRO_MONEDA"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "SYS_BACKUP_REGISTROS",
+        "target_column_name": "BAC_USUARIO_ID"
+    },
+    {
+        "source_table_name": "CONF_EMPRESAS",
+        "source_column_name": "EPR_EMPRESA_ID",
+        "target_table_name": "CONF_ALERTAS",
+        "target_column_name": "ALE_EMPRESA_ID"
+    },
+    {
+        "source_table_name": "EMP_EMPLEADOS",
+        "source_column_name": "EMP_EMP_ID",
+        "target_table_name": "EMP_EMERGENCIAS",
+        "target_column_name": "EME_EMPLEADO_ID"
+    },
+    {
+        "source_table_name": "CONF_PAISES",
+        "source_column_name": "PAI_PAIS_ID",
+        "target_table_name": "CONF_ESCALAS_SALARIALES",
+        "target_column_name": "ESC_PAIS_ID"
+    },
+    {
+        "source_table_name": "CONF_MONEDAS",
+        "source_column_name": "MON_CODIGO_ISO",
+        "target_table_name": "CONF_ESCALAS_SALARIALES",
+        "target_column_name": "ESC_MONEDA"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "target_column_name": "HCM_USUARIO_ID"
+    },
+    {
+        "source_table_name": "SYS_AUTORIZACIONES",
+        "source_column_name": "AUT_AUTORIZACIONES_ID",
+        "target_table_name": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "target_column_name": "HCM_AUTORIZACION_ID"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "SYS_AUTORIZACIONES",
+        "target_column_name": "AUT_SOLICITANTE"
+    },
+    {
+        "source_table_name": "SYS_USUARIOS",
+        "source_column_name": "USU_USUARIO_ID",
+        "target_table_name": "SYS_AUTORIZACIONES",
+        "target_column_name": "AUT_AUTORIZADOR"
+    }
+]

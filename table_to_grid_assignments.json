@@ -1,0 +1,257 @@
+[
+    {
+        "id": "PLA_CONF_BENEFICIOS",
+        "new_x": 50,
+        "new_y": 50
+    },
+    {
+        "id": "PLA_PAR_IMPUESTOS",
+        "new_x": 610,
+        "new_y": 50
+    },
+    {
+        "id": "PLA_SYS_BACKUP_REGISTROS",
+        "new_x": 1170,
+        "new_y": 50
+    },
+    {
+        "id": "PLA_PLA_CONF_CONCEPTOS_NOMINA",
+        "new_x": 1730,
+        "new_y": 50
+    },
+    {
+        "id": "PLA_PAR_PRESTACIONES",
+        "new_x": 2290,
+        "new_y": 50
+    },
+    {
+        "id": "PLA_SYS_AUTORIZACIONES",
+        "new_x": 2850,
+        "new_y": 50
+    },
+    {
+        "id": "PLA_CONF_ALERTAS",
+        "new_x": 50,
+        "new_y": 640
+    },
+    {
+        "id": "PLA_CONF_DEPARTAMENTOS",
+        "new_x": 610,
+        "new_y": 640
+    },
+    {
+        "id": "PLA_PAR_TRAMOS_IMPUESTOS",
+        "new_x": 1170,
+        "new_y": 640
+    },
+    {
+        "id": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "new_x": 1730,
+        "new_y": 640
+    },
+    {
+        "id": "PLA_CONF_EMPRESAS",
+        "new_x": 2290,
+        "new_y": 640
+    },
+    {
+        "id": "PLA_CONF_MONEDAS",
+        "new_x": 2850,
+        "new_y": 640
+    },
+    {
+        "id": "PLA_CONF_FERIADOS",
+        "new_x": 50,
+        "new_y": 1230
+    },
+    {
+        "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d",
+        "new_x": 610,
+        "new_y": 1230
+    },
+    {
+        "id": "PLA_CONF_TIPOS_DOCUMENTO",
+        "new_x": 1170,
+        "new_y": 1230
+    },
+    {
+        "id": "PLA_SYS_PERMISOS",
+        "new_x": 1730,
+        "new_y": 1230
+    },
+    {
+        "id": "PLA_CONF_ESCALAS_SALARIALES",
+        "new_x": 2290,
+        "new_y": 1230
+    },
+    {
+        "id": "PLA_DETALLE",
+        "new_x": 2850,
+        "new_y": 1230
+    },
+    {
+        "id": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "new_x": 50,
+        "new_y": 1820
+    },
+    {
+        "id": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "new_x": 610,
+        "new_y": 1820
+    },
+    {
+        "id": "PLA_CONF_TIPOS_ACTIVO",
+        "new_x": 1170,
+        "new_y": 1820
+    },
+    {
+        "id": "PLA_SYS_USUARIOS",
+        "new_x": 1730,
+        "new_y": 1820
+    },
+    {
+        "id": "PLA_EMP_AUSENCIAS",
+        "new_x": 2290,
+        "new_y": 1820
+    },
+    {
+        "id": "PLA_CONF_TIPOS_TERMINACION",
+        "new_x": 2850,
+        "new_y": 1820
+    },
+    {
+        "id": "PLA_SYS_ROLES",
+        "new_x": 50,
+        "new_y": 2410
+    },
+    {
+        "id": "PLA_EMP_ACTIVOS",
+        "new_x": 610,
+        "new_y": 2410
+    },
+    {
+        "id": "PLA_PLA_DETALLE_ITEMS",
+        "new_x": 1170,
+        "new_y": 2410
+    },
+    {
+        "id": "PLA_CONF_PAISES",
+        "new_x": 1730,
+        "new_y": 2410
+    },
+    {
+        "id": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "new_x": 2290,
+        "new_y": 2410
+    },
+    {
+        "id": "PLA_CONF_PERIODOS_PAGO",
+        "new_x": 2850,
+        "new_y": 2410
+    },
+    {
+        "id": "PLA_LIQUIDACIONES",
+        "new_x": 50,
+        "new_y": 3000
+    },
+    {
+        "id": "PLA_CONF_TIPOS_AUSENCIA",
+        "new_x": 610,
+        "new_y": 3000
+    },
+    {
+        "id": "PLA_LIQUIDACION_DETALLE",
+        "new_x": 1170,
+        "new_y": 3000
+    },
+    {
+        "id": "PLA_EMP_EMPLEADOS",
+        "new_x": 1730,
+        "new_y": 3000
+    },
+    {
+        "id": "PLA_PLA_PERIODOS",
+        "new_x": 2290,
+        "new_y": 3000
+    },
+    {
+        "id": "PLA_EMP_DOCUMENTOS",
+        "new_x": 2850,
+        "new_y": 3000
+    },
+    {
+        "id": "PLA_MOVIMIENTOS",
+        "new_x": 50,
+        "new_y": 3590
+    },
+    {
+        "id": "PLA_EMP_EMERGENCIAS",
+        "new_x": 610,
+        "new_y": 3590
+    },
+    {
+        "id": "PLA_PLANILLA",
+        "new_x": 1170,
+        "new_y": 3590
+    },
+    {
+        "id": "PLA_CONF_TIPOS_ID",
+        "new_x": 1730,
+        "new_y": 3590
+    },
+    {
+        "id": "PLA_PRESTACIONES_LEGALES",
+        "new_x": 2290,
+        "new_y": 3590
+    },
+    {
+        "id": "PLA_CONF_TIPOS_HORARIO",
+        "new_x": 2850,
+        "new_y": 3590
+    },
+    {
+        "id": "PLA_PROVISIONES",
+        "new_x": 50,
+        "new_y": 4180
+    },
+    {
+        "id": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "new_x": 610,
+        "new_y": 4180
+    },
+    {
+        "id": "PLA_PLA_EMP_HISTORIAL_SALARIAL",
+        "new_x": 1170,
+        "new_y": 4180
+    },
+    {
+        "id": "PLA_EMP_HISTORIAL_LABORAL",
+        "new_x": 1730,
+        "new_y": 4180
+    },
+    {
+        "id": "PLA_EMP_HORARIOS",
+        "new_x": 2290,
+        "new_y": 4180
+    },
+    {
+        "id": "PLA_EMP_PUESTOS",
+        "new_x": 2850,
+        "new_y": 4180
+    },
+    {
+        "id": "PLA_EMP_MARCADORES",
+        "new_x": 50,
+        "new_y": 4770
+    },
+    {
+        "id": "PLA_EMP_INCAPACIDADES",
+        "new_x": 610,
+        "new_y": 4770
+    },
+    {
+        "id": "PLA_EMP_TIPOS_CONTRATO",
+        "new_x": 1170,
+        "new_y": 4770
+    }
+]

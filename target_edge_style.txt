@@ -1,0 +1,1 @@
+edgeStyle=entityRelationEdgeStyle;endArrow=ERmany;startArrow=ERone;endFill=0;startFill=0;rounded=0;entryX=0;entryY=0.5;exitX=1;exitY=0.5;

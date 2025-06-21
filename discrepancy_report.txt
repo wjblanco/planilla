@@ -1,0 +1,16 @@
+Discrepancy Report
+====================
+
+1. Table-level Discrepancies:
+  Tables in Data Dictionary but NOT in Diagram XML (after normalization):
+    - PLA_SYS_INTEGRACIONES_API
+  No tables found only in Diagram XML (after normalization).
+
+2. Attribute-level Discrepancies (for common tables):
+  No attribute discrepancies found for common tables.
+
+3. Primary Key (PK) Discrepancies:
+  No PK discrepancies found for common tables.
+
+4. Foreign Key (FK) Discrepancies:
+  No FK discrepancies found for common tables.

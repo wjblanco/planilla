@@ -1,0 +1,3090 @@
+[
+    {
+        "name": "CONF_PAISES",
+        "columns": [
+            {
+                "name": "PAI_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PAI_CODIGO_ISO",
+                "type": "CHAR(2)"
+            },
+            {
+                "name": "PAI_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "PAI_MONEDA_PRINCIPAL",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "PAI_FORMATO_FECHA",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PAI_IDIOMA_PRINCIPAL",
+                "type": "CHAR(2)"
+            },
+            {
+                "name": "PAI_ZONA_HORARIA",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "PAI_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "PAI_PAIS_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PAI_MONEDA_PRINCIPAL",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "CONF_MONEDAS",
+        "columns": [
+            {
+                "name": "MON_MONEDA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MON_CODIGO_ISO",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "MON_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "MON_SIMBOLO",
+                "type": "VARCHAR(5)"
+            },
+            {
+                "name": "MON_DECIMALES",
+                "type": "INT"
+            },
+            {
+                "name": "MON_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "MON_MONEDA_ID"
+        ],
+        "foreign_keys": []
+    },
+    {
+        "name": "PAR_IMPUESTOS",
+        "columns": [
+            {
+                "name": "IMP_IMPUESTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "IMP_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "IMP_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "IMP_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "IMP_APLICA_A",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "IMP_FECHA_INI",
+                "type": "DATE"
+            },
+            {
+                "name": "IMP_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "IMP_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "IMP_IMPUESTO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "IMP_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "PAR_TRAMOS_IMPUESTOS",
+        "columns": [
+            {
+                "name": "TRA_TRAMO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TRA_IMPUESTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TRA_LIM_INF",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "TRA_LIM_SUP",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "TRA_PORCENTAJE",
+                "type": "DECIMAL(5,2)"
+            },
+            {
+                "name": "TRA_CUOTA_FIJA",
+                "type": "DECIMAL(10,2)"
+            }
+        ],
+        "primary_key": [
+            "TRA_TRAMO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TRA_IMPUESTO_ID",
+                "references_table": "PAR_IMPUESTOS",
+                "references_column": "IMP_IMPUESTO_ID"
+            }
+        ]
+    },
+    {
+        "name": "PAR_PRESTACIONES",
+        "columns": [
+            {
+                "name": "PRE_PRESTACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRE_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRE_TIPO_PRESTACION",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "PRE_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "PRE_METODO_CALCULO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "PRE_VALOR_BASE",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "PRE_PERIODICIDAD",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PRE_ACUMULABLE",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "PRE_MAX_ACUMULACION",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "PRE_FECHA_INI",
+                "type": "DATE"
+            },
+            {
+                "name": "PRE_FECHA_FIN",
+                "type": "DATE"
+            }
+        ],
+        "primary_key": [
+            "PRE_PRESTACION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PRE_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_EMPLEADOS",
+        "columns": [
+            {
+                "name": "EMP_EMP_ID",
+                "type": "INT"
+            },
+            {
+                "name": "EMP_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "EMP_TIPO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "EMP_NUMERO_ID",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "EMP_NOMBRE1",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "EMP_NOMBRE2",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "EMP_APELLIDO1",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "EMP_APELLIDO2",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "EMP_FECHA_NAC",
+                "type": "DATE"
+            },
+            {
+                "name": "EMP_GENERO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "EMP_PAIS_NAC",
+                "type": "INT"
+            },
+            {
+                "name": "EMP_FECHA_INGRESO",
+                "type": "DATE"
+            },
+            {
+                "name": "EMP_MONEDA_SALARIO",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "EMP_SALARIO_BASE",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "EMP_TIPO_CONTRATO",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "EMP_EMP_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "EMP_TIPO_ID",
+                "references_table": "CONF_TIPOS_ID",
+                "references_column": "TIP_TIPO_ID"
+            },
+            {
+                "column": "EMP_PAIS_NAC",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            },
+            {
+                "column": "EMP_MONEDA_SALARIO",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            },
+            {
+                "column": "EMP_TIPO_CONTRATO",
+                "references_table": "EMP_TIPOS_CONTRATO",
+                "references_column": "TCO_CONTRATO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_ID",
+        "columns": [
+            {
+                "name": "TIP_TIPO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TIP_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TIP_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "TIP_FORMATO",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TIP_LONGITUD",
+                "type": "INT"
+            },
+            {
+                "name": "TIP_OBLIGATORIO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "TIP_TIPO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TIP_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_TIPOS_CONTRATO",
+        "columns": [
+            {
+                "name": "TCO_CONTRATO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TCO_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TCO_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "TCO_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "TCO_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TCO_HORAS_SEMANALES",
+                "type": "DECIMAL(5,2)"
+            },
+            {
+                "name": "TCO_BENEFICIOS_LEGALES",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TCO_PERIODO_PRUEBA",
+                "type": "INT"
+            },
+            {
+                "name": "TCO_NOTIFICACION_PREAVISO",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "TCO_CONTRATO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TCO_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_PERIODOS_PAGO",
+        "columns": [
+            {
+                "name": "PRP_PERIODO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRP_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRP_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PRP_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "PRP_DIAS",
+                "type": "INT"
+            },
+            {
+                "name": "PRP_DIA_PAGO",
+                "type": "INT"
+            },
+            {
+                "name": "PRP_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "PRP_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "PRP_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "PRP_PERIODO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PRP_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_BENEFICIOS",
+        "columns": [
+            {
+                "name": "BEN_BENEFICIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BEN_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BEN_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "BEN_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "BEN_VALOR",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "BEN_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "BEN_PERIODICIDAD",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "BEN_IMPOSITIVO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "BEN_APLICA_SEGURO_SOCIAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "BEN_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "BEN_BENEFICIO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "BEN_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            },
+            {
+                "column": "BEN_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "PLA_PERIODOS",
+        "columns": [
+            {
+                "name": "PER_PERIODO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PER_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PER_TIPO_PERIODO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PER_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PER_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "PER_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "PER_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "PER_FECHA_PAGO",
+                "type": "DATE"
+            },
+            {
+                "name": "PER_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "PER_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PER_TASA_CAMBIO",
+                "type": "DECIMAL(12,6)"
+            }
+        ],
+        "primary_key": [
+            "PER_PERIODO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PER_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            },
+            {
+                "column": "PER_TIPO_PERIODO_ID",
+                "references_table": "CONF_PERIODOS_PAGO",
+                "references_column": "PRP_PERIODO_ID"
+            },
+            {
+                "column": "PER_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLANILLA",
+        "columns": [
+            {
+                "name": "PLA_PLANILLA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PLA_PERIODO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PLA_TIPO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "PLA_FECHA_GENERACION",
+                "type": "DATETIME"
+            },
+            {
+                "name": "PLA_TOTAL_INGRESOS",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PLA_TOTAL_DESCUENTOS",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PLA_TOTAL_LIQUIDO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PLA_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "PLA_TASA_CAMBIO",
+                "type": "DECIMAL(12,6)"
+            },
+            {
+                "name": "PLA_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PLA_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "PLA_PLANILLA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PLA_PERIODO_ID",
+                "references_table": "PLA_PERIODOS",
+                "references_column": "PER_PERIODO_ID"
+            },
+            {
+                "column": "PLA_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "CONF_EMPRESAS",
+        "columns": [
+            {
+                "name": "EPR_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "EPR_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "EPR_NOMBRE_LEGAL",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "EPR_NOMBRE_COMERCIAL",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "EPR_IDENTIFICACION_TRIBUTARIA",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "EPR_MONEDA_PRINCIPAL",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "EPR_FECHA_CONSTITUCION",
+                "type": "DATE"
+            },
+            {
+                "name": "EPR_LOGO",
+                "type": "BLOB"
+            },
+            {
+                "name": "EPR_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "EPR_EMPRESA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "EPR_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            },
+            {
+                "column": "EPR_MONEDA_PRINCIPAL",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "PLA_DETALLE",
+        "columns": [
+            {
+                "name": "DET_DETALLE_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DET_PLANILLA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DET_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DET_SALARIO_BASE",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "DET_MONEDA_SALARIO",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "DET_TASA_CAMBIO",
+                "type": "DECIMAL(12,6)"
+            },
+            {
+                "name": "DET_TOTAL_INGRESOS",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "DET_TOTAL_DESCUENTOS",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "DET_TOTAL_LIQUIDO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "DET_MONEDA_PAGO",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "DET_ESTADO",
+                "type": "VARCHAR(20)"
+            }
+        ],
+        "primary_key": [
+            "DET_DETALLE_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "DET_PLANILLA_ID",
+                "references_table": "PLA_PLANILLA",
+                "references_column": "PLA_PLANILLA_ID"
+            },
+            {
+                "column": "DET_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "DET_MONEDA_SALARIO",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            },
+            {
+                "column": "DET_MONEDA_PAGO",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "PLA_DETALLE_ITEMS",
+        "columns": [
+            {
+                "name": "DEI_ITEM_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DEI_DETALLE_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DEI_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "DEI_CODIGO_CONCEPTO",
+                "type": "INT"
+            },
+            {
+                "name": "DEI_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "DEI_CANTIDAD",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "DEI_VALOR_UNITARIO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "DEI_VALOR_TOTAL",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "DEI_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "DEI_TASA_CAMBIO",
+                "type": "DECIMAL(12,6)"
+            }
+        ],
+        "primary_key": [
+            "DEI_ITEM_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "DEI_DETALLE_ID",
+                "references_table": "PLA_DETALLE",
+                "references_column": "DET_DETALLE_ID"
+            },
+            {
+                "column": "DEI_CODIGO_CONCEPTO",
+                "references_table": "CONF_CONCEPTOS_NOMINA",
+                "references_column": "CON_CONCEPTO_ID"
+            },
+            {
+                "column": "DEI_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "CONF_CONCEPTOS_NOMINA",
+        "columns": [
+            {
+                "name": "CON_CONCEPTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "CON_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "CON_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "CON_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "CON_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "CON_APLICA_IMPUESTOS",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "CON_APLICA_SEGURO_SOCIAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "CON_ES_PATRONAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "CON_ESTADO",
+                "type": "VARCHAR(20)"
+            }
+        ],
+        "primary_key": [
+            "CON_CONCEPTO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "CON_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_HISTORIAL_SALARIAL",
+        "columns": [
+            {
+                "name": "HSA_HISTORIAL_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HSA_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HSA_SALARIO_ANTERIOR",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "HSA_SALARIO_NUEVO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "HSA_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "HSA_TIPO_CAMBIO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "HSA_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "HSA_FECHA_REGISTRO",
+                "type": "DATETIME"
+            },
+            {
+                "name": "HSA_MOTIVO",
+                "type": "TEXT"
+            },
+            {
+                "name": "HSA_AUTORIZADO_POR",
+                "type": "INT"
+            },
+            {
+                "name": "HSA_ESTADO",
+                "type": "VARCHAR(20)"
+            }
+        ],
+        "primary_key": [
+            "HSA_HISTORIAL_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "HSA_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "HSA_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            },
+            {
+                "column": "HSA_AUTORIZADO_POR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "PLA_MOVIMIENTOS",
+        "columns": [
+            {
+                "name": "MOV_MOVIMIENTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MOV_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MOV_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "MOV_CONCEPTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MOV_MONTO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "MOV_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "MOV_FECHA",
+                "type": "DATE"
+            },
+            {
+                "name": "MOV_PERIODO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MOV_APLICADO_EN_PLANILLA",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "MOV_DESCRIPCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "MOV_APROBADO_POR",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "MOV_MOVIMIENTO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "MOV_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "MOV_CONCEPTO_ID",
+                "references_table": "CONF_CONCEPTOS_NOMINA",
+                "references_column": "CON_CONCEPTO_ID"
+            },
+            {
+                "column": "MOV_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            },
+            {
+                "column": "MOV_PERIODO_ID",
+                "references_table": "PLA_PERIODOS",
+                "references_column": "PER_PERIODO_ID"
+            },
+            {
+                "column": "MOV_APROBADO_POR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "PLA_PRESTACIONES_LEGALES",
+        "columns": [
+            {
+                "name": "PRL_PRESTACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRL_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRL_TIPO_PRESTACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRL_PERIODO_REFERENCIA",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "PRL_FECHA_CALCULO",
+                "type": "DATE"
+            },
+            {
+                "name": "PRL_FECHA_PAGO",
+                "type": "DATE"
+            },
+            {
+                "name": "PRL_MONTO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PRL_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "PRL_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PRL_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "PRL_PRESTACION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PRL_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "PRL_TIPO_PRESTACION_ID",
+                "references_table": "PAR_PRESTACIONES",
+                "references_column": "PRE_PRESTACION_ID"
+            },
+            {
+                "column": "PRL_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "SYS_USUARIOS",
+        "columns": [
+            {
+                "name": "USU_USUARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "USU_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "USU_NOMBRE_USUARIO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "USU_CONTRASENA",
+                "type": "VARCHAR(255)"
+            },
+            {
+                "name": "USU_CORREO",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "USU_NOMBRES",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "USU_APELLIDOS",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "USU_ROL_ID",
+                "type": "INT"
+            },
+            {
+                "name": "USU_FECHA_ULTIMO_LOGIN",
+                "type": "DATETIME"
+            },
+            {
+                "name": "USU_ACTIVO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "USU_REQUIERE_CAMBIO_CONTRASENA",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "USU_FECHA_CREACION",
+                "type": "DATETIME"
+            }
+        ],
+        "primary_key": [
+            "USU_USUARIO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "USU_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            },
+            {
+                "column": "USU_ROL_ID",
+                "references_table": "SYS_ROLES",
+                "references_column": "ROL_ROL_ID"
+            }
+        ]
+    },
+    {
+        "name": "SYS_ROLES",
+        "columns": [
+            {
+                "name": "ROL_ROL_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ROL_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "ROL_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "ROL_NIVEL_ACCESO",
+                "type": "INT"
+            },
+            {
+                "name": "ROL_ACCESO_GLOBAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "ROL_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "ROL_ROL_ID"
+        ],
+        "foreign_keys": []
+    },
+    {
+        "name": "SYS_PERMISOS",
+        "columns": [
+            {
+                "name": "PRM_PERMISO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRM_ROL_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRM_MODULO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "PRM_ACCION",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PRM_PERMITIDO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "PRM_RESTRICCION_EMPRESA",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "PRM_PERMISO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PRM_ROL_ID",
+                "references_table": "SYS_ROLES",
+                "references_column": "ROL_ROL_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_HISTORIAL_LABORAL",
+        "columns": [
+            {
+                "name": "HLA_HISTORIAL_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HLA_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HLA_TIPO_MOVIMIENTO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "HLA_DEPARTAMENTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HLA_PUESTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HLA_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "HLA_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "HLA_SUPERVISOR_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HLA_MOTIVO",
+                "type": "TEXT"
+            },
+            {
+                "name": "HLA_DOCUMENTO_SOPORTE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "HLA_AUTORIZADO_POR",
+                "type": "INT"
+            },
+            {
+                "name": "HLA_ESTADO",
+                "type": "VARCHAR(20)"
+            }
+        ],
+        "primary_key": [
+            "HLA_HISTORIAL_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "HLA_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "HLA_DEPARTAMENTO_ID",
+                "references_table": "CONF_DEPARTAMENTOS",
+                "references_column": "DEP_DEPARTAMENTO_ID"
+            },
+            {
+                "column": "HLA_PUESTO_ID",
+                "references_table": "EMP_PUESTOS",
+                "references_column": "PUE_PUESTO_ID"
+            },
+            {
+                "column": "HLA_SUPERVISOR_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "HLA_AUTORIZADO_POR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_DEPARTAMENTOS",
+        "columns": [
+            {
+                "name": "DEP_DEPARTAMENTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DEP_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DEP_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "DEP_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "DEP_DESCRIPCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "DEP_CENTRO_COSTO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "DEP_SUPERVISOR_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DEP_FECHA_CREACION",
+                "type": "DATE"
+            },
+            {
+                "name": "DEP_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "DEP_DEPARTAMENTO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "DEP_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            },
+            {
+                "column": "DEP_SUPERVISOR_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_PUESTOS",
+        "columns": [
+            {
+                "name": "PUE_PUESTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PUE_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PUE_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PUE_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "PUE_DESCRIPCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "PUE_DEPARTAMENTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PUE_NIVEL_JERARQUICO",
+                "type": "INT"
+            },
+            {
+                "name": "PUE_SALARIO_MIN",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PUE_SALARIO_MAX",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PUE_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "PUE_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "PUE_PUESTO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PUE_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            },
+            {
+                "column": "PUE_DEPARTAMENTO_ID",
+                "references_table": "CONF_DEPARTAMENTOS",
+                "references_column": "DEP_DEPARTAMENTO_ID"
+            },
+            {
+                "column": "PUE_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "EMP_DOCUMENTOS",
+        "columns": [
+            {
+                "name": "DOC_DOCUMENTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DOC_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DOC_TIPO_DOCUMENTO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "DOC_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "DOC_DESCRIPCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "DOC_FECHA_EMISION",
+                "type": "DATE"
+            },
+            {
+                "name": "DOC_FECHA_VENCIMIENTO",
+                "type": "DATE"
+            },
+            {
+                "name": "DOC_ARCHIVO",
+                "type": "BLOB"
+            },
+            {
+                "name": "DOC_EXTENSION",
+                "type": "VARCHAR(10)"
+            },
+            {
+                "name": "DOC_TAMANIO",
+                "type": "INT"
+            },
+            {
+                "name": "DOC_PRIVADO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "DOC_CREADO_POR",
+                "type": "INT"
+            },
+            {
+                "name": "DOC_FECHA_CREACION",
+                "type": "DATETIME"
+            }
+        ],
+        "primary_key": [
+            "DOC_DOCUMENTO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "DOC_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "DOC_TIPO_DOCUMENTO_ID",
+                "references_table": "CONF_TIPOS_DOCUMENTO",
+                "references_column": "TDO_TIPO_DOC_ID"
+            },
+            {
+                "column": "DOC_CREADO_POR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_DOCUMENTO",
+        "columns": [
+            {
+                "name": "TDO_TIPO_DOC_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TDO_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TDO_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "TDO_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TDO_OBLIGATORIO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TDO_VALIDEZ_DIAS",
+                "type": "INT"
+            },
+            {
+                "name": "TDO_RESTRICCION_VISUALIZACION",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "TDO_FORMATOS_PERMITIDOS",
+                "type": "VARCHAR(100)"
+            }
+        ],
+        "primary_key": [
+            "TDO_TIPO_DOC_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TDO_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_BENEFICIOS_ASIGNADOS",
+        "columns": [
+            {
+                "name": "BEA_ASIGNACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BEA_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BEA_BENEFICIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BEA_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "BEA_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "BEA_VALOR",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "BEA_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "BEA_FRECUENCIA",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "BEA_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "BEA_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "BEA_ASIGNACION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "BEA_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "BEA_BENEFICIO_ID",
+                "references_table": "CONF_BENEFICIOS",
+                "references_column": "BEN_BENEFICIO_ID"
+            },
+            {
+                "column": "BEA_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "EMP_AUSENCIAS",
+        "columns": [
+            {
+                "name": "AUS_AUSENCIA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "AUS_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "AUS_TIPO_AUSENCIA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "AUS_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "AUS_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "AUS_DURACION_HORAS",
+                "type": "DECIMAL(6,2)"
+            },
+            {
+                "name": "AUS_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "AUS_MOTIVO",
+                "type": "TEXT"
+            },
+            {
+                "name": "AUS_CERTIFICADO_MEDICO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "AUS_DOCUMENTO_SOPORTE",
+                "type": "INT"
+            },
+            {
+                "name": "AUS_APROBADO_POR",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "AUS_AUSENCIA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "AUS_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "AUS_TIPO_AUSENCIA_ID",
+                "references_table": "CONF_TIPOS_AUSENCIA",
+                "references_column": "TAU_TIPO_AUSENCIA_ID"
+            },
+            {
+                "column": "AUS_DOCUMENTO_SOPORTE",
+                "references_table": "EMP_DOCUMENTOS",
+                "references_column": "DOC_DOCUMENTO_ID"
+            },
+            {
+                "column": "AUS_APROBADO_POR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_AUSENCIA",
+        "columns": [
+            {
+                "name": "TAU_TIPO_AUSENCIA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TAU_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TAU_CODIGO",
+                "type": "VARCHAR(10)"
+            },
+            {
+                "name": "TAU_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "TAU_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TAU_REMUNERADA",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TAU_DESCUENTA_VACACIONES",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TAU_REQUIERE_APROBACION",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TAU_MAX_DIAS_ANIO",
+                "type": "INT"
+            },
+            {
+                "name": "TAU_ACUMULABLE",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "TAU_TIPO_AUSENCIA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TAU_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_HORARIOS",
+        "columns": [
+            {
+                "name": "HOR_HORARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HOR_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HOR_TIPO_HORARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HOR_DIA_SEMANA",
+                "type": "INT"
+            },
+            {
+                "name": "HOR_HORA_ENTRADA",
+                "type": "TIME"
+            },
+            {
+                "name": "HOR_HORA_SALIDA",
+                "type": "TIME"
+            },
+            {
+                "name": "HOR_HORAS_LABORALES",
+                "type": "DECIMAL(4,2)"
+            },
+            {
+                "name": "HOR_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "HOR_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "HOR_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "HOR_HORARIO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "HOR_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "HOR_TIPO_HORARIO_ID",
+                "references_table": "CONF_TIPOS_HORARIO",
+                "references_column": "THO_TIPO_HORARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_HORARIO",
+        "columns": [
+            {
+                "name": "THO_TIPO_HORARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "THO_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "THO_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "THO_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "THO_HORAS_SEMANALES",
+                "type": "DECIMAL(5,2)"
+            },
+            {
+                "name": "THO_FLEXIBLE",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "THO_NOCTURNO",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "THO_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "THO_TIPO_HORARIO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "THO_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_MARCADORES",
+        "columns": [
+            {
+                "name": "MAR_MARCADOR_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MAR_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "MAR_FECHA_HORA",
+                "type": "DATETIME"
+            },
+            {
+                "name": "MAR_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "MAR_METODO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "MAR_UBICACION_LAT",
+                "type": "DECIMAL(10,6)"
+            },
+            {
+                "name": "MAR_UBICACION_LON",
+                "type": "DECIMAL(10,6)"
+            },
+            {
+                "name": "MAR_DIRECCION_IP",
+                "type": "VARCHAR(45)"
+            },
+            {
+                "name": "MAR_DISPOSITIVO",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "MAR_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "MAR_MARCADOR_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "MAR_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_INCAPACIDADES",
+        "columns": [
+            {
+                "name": "INC_INCAPACIDAD_ID",
+                "type": "INT"
+            },
+            {
+                "name": "INC_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "INC_TIPO_INCAPACIDAD_ID",
+                "type": "INT"
+            },
+            {
+                "name": "INC_NUMERO_DOCUMENTO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "INC_FECHA_INICIO",
+                "type": "DATE"
+            },
+            {
+                "name": "INC_FECHA_FIN",
+                "type": "DATE"
+            },
+            {
+                "name": "INC_DIAS_INCAPACIDAD",
+                "type": "INT"
+            },
+            {
+                "name": "INC_PORCENTAJE",
+                "type": "DECIMAL(5,2)"
+            },
+            {
+                "name": "INC_ENTIDAD_SALUD",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "INC_DOCUMENTO_SOPORTE",
+                "type": "INT"
+            },
+            {
+                "name": "INC_ESTADO",
+                "type": "VARCHAR(20)"
+            }
+        ],
+        "primary_key": [
+            "INC_INCAPACIDAD_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "INC_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "INC_TIPO_INCAPACIDAD_ID",
+                "references_table": "CONF_TIPOS_INCAPACIDAD",
+                "references_column": "TIN_TIPO_INCAPACIDAD_ID"
+            },
+            {
+                "column": "INC_DOCUMENTO_SOPORTE",
+                "references_table": "EMP_DOCUMENTOS",
+                "references_column": "DOC_DOCUMENTO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_INCAPACIDAD",
+        "columns": [
+            {
+                "name": "TIN_TIPO_INCAPACIDAD_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TIN_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TIN_CODIGO",
+                "type": "VARCHAR(10)"
+            },
+            {
+                "name": "TIN_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "TIN_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TIN_LABORAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TIN_DIAS_CARENCIA",
+                "type": "INT"
+            },
+            {
+                "name": "TIN_PORCENTAJE_PAGO",
+                "type": "DECIMAL(5,2)"
+            },
+            {
+                "name": "TIN_PAGA_EMPRESA",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TIN_REQUIERE_DOC_OFICIAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TIN_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "TIN_TIPO_INCAPACIDAD_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TIN_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "SYS_HISTORIAL_CAMBIOS",
+        "columns": [
+            {
+                "name": "HCA_CAMBIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HCA_TABLA_AFECTADA",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "HCA_REGISTRO_ID",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "HCA_CAMPO_MODIFICADO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "HCA_VALOR_ANTERIOR",
+                "type": "TEXT"
+            },
+            {
+                "name": "HCA_VALOR_NUEVO",
+                "type": "TEXT"
+            },
+            {
+                "name": "HCA_FECHA_CAMBIO",
+                "type": "DATETIME"
+            },
+            {
+                "name": "HCA_USUARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HCA_IP_ORIGEN",
+                "type": "VARCHAR(45)"
+            },
+            {
+                "name": "HCA_MODULO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "HCA_AUTORIZACION_ID",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "HCA_CAMBIO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "HCA_USUARIO_ID",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            },
+            {
+                "column": "HCA_AUTORIZACION_ID",
+                "references_table": "SYS_AUTORIZACIONES",
+                "references_column": "AUT_AUTORIZACIONES_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_FERIADOS",
+        "columns": [
+            {
+                "name": "FER_FERIADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "FER_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "FER_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "FER_FECHA",
+                "type": "DATE"
+            },
+            {
+                "name": "FER_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "FER_DIA_MES",
+                "type": "INT"
+            },
+            {
+                "name": "FER_MES",
+                "type": "INT"
+            },
+            {
+                "name": "FER_REGLA_ESPECIAL",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "FER_RECURRENTE",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "FER_PAGABLE",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "FER_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "FER_FERIADO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "FER_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "SYS_REPORTES_PERSONALIZADOS",
+        "columns": [
+            {
+                "name": "REP_REPORTE_ID",
+                "type": "INT"
+            },
+            {
+                "name": "REP_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "REP_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "REP_DESCRIPCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "REP_MODULO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "REP_QUERY_SQL",
+                "type": "TEXT"
+            },
+            {
+                "name": "REP_COLUMNAS",
+                "type": "JSON"
+            },
+            {
+                "name": "REP_FILTROS",
+                "type": "JSON"
+            },
+            {
+                "name": "REP_FORMATO",
+                "type": "VARCHAR(10)"
+            },
+            {
+                "name": "REP_VISIBLE",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "REP_CREADO_POR",
+                "type": "INT"
+            },
+            {
+                "name": "REP_FECHA_CREACION",
+                "type": "DATETIME"
+            }
+        ],
+        "primary_key": [
+            "REP_REPORTE_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "REP_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            },
+            {
+                "column": "REP_CREADO_POR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "SYS_INTEGRACIONES_API",
+        "columns": [
+            {
+                "name": "INT_INTEGRACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "INT_NOMBRE_SISTEMA",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "INT_ENDPOINT_URL",
+                "type": "VARCHAR(255)"
+            },
+            {
+                "name": "INT_TIPO_AUTENTICACION",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "INT_CREDENCIALES",
+                "type": "TEXT"
+            },
+            {
+                "name": "INT_FORMATO_DATOS",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "INT_FRECUENCIA_SINCRONIZACION",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "INT_ULTIMA_SINCRONIZACION",
+                "type": "DATETIME"
+            },
+            {
+                "name": "INT_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "INT_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "INT_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "INT_INTEGRACION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "INT_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            }
+        ]
+    },
+    {
+        "name": "PLA_LIQUIDACIONES",
+        "columns": [
+            {
+                "name": "LIQ_LIQUIDACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "LIQ_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "LIQ_TIPO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "LIQ_FECHA_SALIDA",
+                "type": "DATE"
+            },
+            {
+                "name": "LIQ_MOTIVO",
+                "type": "TEXT"
+            },
+            {
+                "name": "LIQ_DIAS_TRABAJADOS",
+                "type": "INT"
+            },
+            {
+                "name": "LIQ_TOTAL_INGRESOS",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "LIQ_TOTAL_DESCUENTOS",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "LIQ_TOTAL_LIQUIDO",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "LIQ_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "LIQ_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "LIQ_DOCUMENTO_GENERADO",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "LIQ_LIQUIDACION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "LIQ_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "LIQ_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            },
+            {
+                "column": "LIQ_DOCUMENTO_GENERADO",
+                "references_table": "EMP_DOCUMENTOS",
+                "references_column": "DOC_DOCUMENTO_ID"
+            }
+        ]
+    },
+    {
+        "name": "PLA_LIQUIDACION_DETALLE",
+        "columns": [
+            {
+                "name": "LID_LIQUIDACION_DET_ID",
+                "type": "INT"
+            },
+            {
+                "name": "LID_LIQUIDACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "LID_TIPO_CONCEPTO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "LID_CODIGO_CONCEPTO",
+                "type": "INT"
+            },
+            {
+                "name": "LID_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "LID_VALOR",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "LID_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "LID_APLICA_IMPUESTOS",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "LID_APLICA_SEGURO_SOCIAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "LID_FORMULA_CALCULO",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "LID_LIQUIDACION_DET_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "LID_LIQUIDACION_ID",
+                "references_table": "PLA_LIQUIDACIONES",
+                "references_column": "LIQ_LIQUIDACION_ID"
+            },
+            {
+                "column": "LID_CODIGO_CONCEPTO",
+                "references_table": "CONF_CONCEPTOS_NOMINA",
+                "references_column": "CON_CONCEPTO_ID"
+            },
+            {
+                "column": "LID_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_TERMINACION",
+        "columns": [
+            {
+                "name": "TTE_TIPO_TERMINACION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TTE_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TTE_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "TTE_CODIGO_LEGAL",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "TTE_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TTE_INDEMNIZABLE",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TTE_PREAVISO_REQUERIDO",
+                "type": "INT"
+            },
+            {
+                "name": "TTE_LIQUIDA_VACACIONES",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TTE_LIQUIDA_PRESTACIONES",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TTE_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "TTE_TIPO_TERMINACION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TTE_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_ACTIVOS",
+        "columns": [
+            {
+                "name": "ACT_ACTIVO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ACT_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ACT_TIPO_ACTIVO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ACT_CODIGO_INVENTARIO",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "ACT_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "ACT_MARCA",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "ACT_MODELO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "ACT_FECHA_ASIGNACION",
+                "type": "DATE"
+            },
+            {
+                "name": "ACT_FECHA_DEVOLUCION",
+                "type": "DATE"
+            },
+            {
+                "name": "ACT_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "ACT_VALOR",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "ACT_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "ACT_ACTIVO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "ACT_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            },
+            {
+                "column": "ACT_TIPO_ACTIVO_ID",
+                "references_table": "CONF_TIPOS_ACTIVO",
+                "references_column": "TAC_TIPO_ACTIVO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_TIPOS_ACTIVO",
+        "columns": [
+            {
+                "name": "TAC_TIPO_ACTIVO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TAC_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "TAC_NOMBRE",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "TAC_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "TAC_CATEGORIA",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "TAC_DESCRIPCION",
+                "type": "VARCHAR(200)"
+            },
+            {
+                "name": "TAC_REQUIERE_DEVOLUCION",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "TAC_DIAS_GARANTIA",
+                "type": "INT"
+            },
+            {
+                "name": "TAC_POLITICA_USO",
+                "type": "TEXT"
+            },
+            {
+                "name": "TAC_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "TAC_TIPO_ACTIVO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "TAC_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            }
+        ]
+    },
+    {
+        "name": "PLA_PROVISIONES",
+        "columns": [
+            {
+                "name": "PRO_PROVISION_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRO_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRO_PERIODO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "PRO_TIPO_PROVISION",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "PRO_FECHA_CORTE",
+                "type": "DATE"
+            },
+            {
+                "name": "PRO_MONTO_TOTAL",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "PRO_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "PRO_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "PRO_METODO_CALCULO",
+                "type": "TEXT"
+            },
+            {
+                "name": "PRO_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "PRO_PROVISION_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "PRO_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            },
+            {
+                "column": "PRO_PERIODO_ID",
+                "references_table": "PLA_PERIODOS",
+                "references_column": "PER_PERIODO_ID"
+            },
+            {
+                "column": "PRO_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "SYS_BACKUP_REGISTROS",
+        "columns": [
+            {
+                "name": "BAC_BACKUP_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BAC_TIPO_BACKUP",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "BAC_FECHA_HORA",
+                "type": "DATETIME"
+            },
+            {
+                "name": "BAC_USUARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "BAC_TABLAS_INCLUIDAS",
+                "type": "JSON"
+            },
+            {
+                "name": "BAC_TAMANIO_MB",
+                "type": "DECIMAL(10,2)"
+            },
+            {
+                "name": "BAC_RUTA_ARCHIVO",
+                "type": "VARCHAR(255)"
+            },
+            {
+                "name": "BAC_HASH_VERIFICACION",
+                "type": "VARCHAR(64)"
+            },
+            {
+                "name": "BAC_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "BAC_OBSERVACIONES",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "BAC_BACKUP_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "BAC_USUARIO_ID",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_ALERTAS",
+        "columns": [
+            {
+                "name": "ALE_ALERTA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ALE_EMPRESA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ALE_NOMBRE",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "ALE_TIPO_ALERTA",
+                "type": "VARCHAR(30)"
+            },
+            {
+                "name": "ALE_MODULO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "ALE_CONDICION",
+                "type": "TEXT"
+            },
+            {
+                "name": "ALE_MENSAJE",
+                "type": "TEXT"
+            },
+            {
+                "name": "ALE_FRECUENCIA",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "ALE_DESTINATARIOS",
+                "type": "JSON"
+            },
+            {
+                "name": "ALE_MEDIO_ENVIO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "ALE_ACTIVA",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "ALE_PRIORIDAD",
+                "type": "VARCHAR(20)"
+            }
+        ],
+        "primary_key": [
+            "ALE_ALERTA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "ALE_EMPRESA_ID",
+                "references_table": "CONF_EMPRESAS",
+                "references_column": "EPR_EMPRESA_ID"
+            }
+        ]
+    },
+    {
+        "name": "EMP_EMERGENCIAS",
+        "columns": [
+            {
+                "name": "EME_EMERGENCIA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "EME_EMPLEADO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "EME_NOMBRE_CONTACTO",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "EME_PARENTESCO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "EME_TELEFONO_PRINCIPAL",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "EME_TELEFONO_SECUNDARIO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "EME_EMAIL",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "EME_DIRECCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "EME_CONTACTO_PRINCIPAL",
+                "type": "BOOLEAN"
+            },
+            {
+                "name": "EME_NOTAS",
+                "type": "TEXT"
+            }
+        ],
+        "primary_key": [
+            "EME_EMERGENCIA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "EME_EMPLEADO_ID",
+                "references_table": "EMP_EMPLEADOS",
+                "references_column": "EMP_EMP_ID"
+            }
+        ]
+    },
+    {
+        "name": "CONF_ESCALAS_SALARIALES",
+        "columns": [
+            {
+                "name": "ESC_ESCALA_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ESC_PAIS_ID",
+                "type": "INT"
+            },
+            {
+                "name": "ESC_NOMBRE_ESCALA",
+                "type": "VARCHAR(100)"
+            },
+            {
+                "name": "ESC_NIVEL",
+                "type": "INT"
+            },
+            {
+                "name": "ESC_SALARIO_MIN",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "ESC_SALARIO_MAX",
+                "type": "DECIMAL(12,2)"
+            },
+            {
+                "name": "ESC_MONEDA",
+                "type": "CHAR(3)"
+            },
+            {
+                "name": "ESC_VIGENTE_DESDE",
+                "type": "DATE"
+            },
+            {
+                "name": "ESC_VIGENTE_HASTA",
+                "type": "DATE"
+            },
+            {
+                "name": "ESC_ACTIVO",
+                "type": "BOOLEAN"
+            }
+        ],
+        "primary_key": [
+            "ESC_ESCALA_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "ESC_PAIS_ID",
+                "references_table": "CONF_PAISES",
+                "references_column": "PAI_PAIS_ID"
+            },
+            {
+                "column": "ESC_MONEDA",
+                "references_table": "CONF_MONEDAS",
+                "references_column": "MON_CODIGO_ISO"
+            }
+        ]
+    },
+    {
+        "name": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "columns": [
+            {
+                "name": "HCM_CAMBIO_MASIVO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HCM_USUARIO_ID",
+                "type": "INT"
+            },
+            {
+                "name": "HCM_FECHA_HORA",
+                "type": "DATETIME"
+            },
+            {
+                "name": "HCM_TABLA_AFECTADA",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "HCM_TIPO_OPERACION",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "HCM_REGISTROS_AFECTADOS",
+                "type": "INT"
+            },
+            {
+                "name": "HCM_DESCRIPCION_CAMBIO",
+                "type": "TEXT"
+            },
+            {
+                "name": "HCM_QUERY_EJECUTADA",
+                "type": "TEXT"
+            },
+            {
+                "name": "HCM_VALORES_ANTERIORES",
+                "type": "JSON"
+            },
+            {
+                "name": "HCM_VALORES_NUEVOS",
+                "type": "JSON"
+            },
+            {
+                "name": "HCM_IP_ORIGEN",
+                "type": "VARCHAR(45)"
+            },
+            {
+                "name": "HCM_MODULO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "HCM_AUTORIZACION_ID",
+                "type": "INT"
+            }
+        ],
+        "primary_key": [
+            "HCM_CAMBIO_MASIVO_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "HCM_USUARIO_ID",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            },
+            {
+                "column": "HCM_AUTORIZACION_ID",
+                "references_table": "SYS_AUTORIZACIONES",
+                "references_column": "AUT_AUTORIZACIONES_ID"
+            }
+        ]
+    },
+    {
+        "name": "SYS_AUTORIZACIONES",
+        "columns": [
+            {
+                "name": "AUT_AUTORIZACIONES_ID",
+                "type": "INT"
+            },
+            {
+                "name": "AUT_CODIGO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "AUT_TIPO",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "AUT_DESCRIPCION",
+                "type": "TEXT"
+            },
+            {
+                "name": "AUT_SOLICITANTE",
+                "type": "INT"
+            },
+            {
+                "name": "AUT_AUTORIZADOR",
+                "type": "INT"
+            },
+            {
+                "name": "AUT_FECHA_SOLICITUD",
+                "type": "DATE"
+            },
+            {
+                "name": "AUT_FECHA_AUTORIZACION",
+                "type": "DATE"
+            },
+            {
+                "name": "AUT_ESTADO",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "AUT_TABLA_AFECTADA",
+                "type": "VARCHAR(50)"
+            },
+            {
+                "name": "AUT_OPERACION",
+                "type": "VARCHAR(20)"
+            },
+            {
+                "name": "AUT_DATOS_OPERACION",
+                "type": "JSON"
+            },
+            {
+                "name": "AUT_JUSTIFICACION",
+                "type": "VARCHAR(500)"
+            },
+            {
+                "name": "AUT_NIVEL_AUTORIZACION",
+                "type": "INT"
+            },
+            {
+                "name": "AUT_OBSERVACIONES",
+                "type": "TEXT"
+            },
+            {
+                "name": "AUT_IP_SOLICITUD",
+                "type": "VARCHAR(45)"
+            },
+            {
+                "name": "AUT_MODULO",
+                "type": "VARCHAR(50)"
+            }
+        ],
+        "primary_key": [
+            "AUT_AUTORIZACIONES_ID"
+        ],
+        "foreign_keys": [
+            {
+                "column": "AUT_SOLICITANTE",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            },
+            {
+                "column": "AUT_AUTORIZADOR",
+                "references_table": "SYS_USUARIOS",
+                "references_column": "USU_USUARIO_ID"
+            }
+        ]
+    }
+]

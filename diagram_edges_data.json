@@ -1,0 +1,42 @@
+[
+    {
+        "id": "REL_EMP_TIPO_CONTRATO",
+        "source_id": "PLA_EMP_TIPOS_CONTRATO_HEADER",
+        "target_id": "PLA_EMP_TIPO_CONTRATO_ROW"
+    },
+    {
+        "id": "REL_USUARIOS_ROLES",
+        "source_id": "PLA_SYS_ROLES_HEADER",
+        "target_id": "USU_ROL_ID_ROW"
+    },
+    {
+        "id": "qq1FBIANAF6Fxvyeejh6-1",
+        "source_id": "PLA_SYS_ROLES_HEADER",
+        "target_id": "PRM_ROL_ID_ROW"
+    },
+    {
+        "id": "2J5idKsE7KHaBREkCfOW-1",
+        "source_id": "PLA_CONF_MONEDAS_HEADER",
+        "target_id": "BEN_MONEDA_ROW"
+    },
+    {
+        "id": "2J5idKsE7KHaBREkCfOW-2",
+        "source_id": "PLA_CONF_MONEDAS_HEADER",
+        "target_id": "PLA_CONF_PAISES_MONEDA_ROW"
+    },
+    {
+        "id": "2J5idKsE7KHaBREkCfOW-3",
+        "source_id": "PLA_CONF_MONEDAS_HEADER",
+        "target_id": "ESC_MONEDA_ROW"
+    },
+    {
+        "id": "2J5idKsE7KHaBREkCfOW-4",
+        "source_id": "PLA_CONF_MONEDAS_HEADER",
+        "target_id": "EPR_MONEDA_PRINCIPAL_ROW"
+    },
+    {
+        "id": "EDGE_SYS_INTEGRACIONES_API_INT_EMPRESA_ID_eefef3ad966b42b",
+        "source_id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d_ATTR_ROW_INT_EMPRESA_ID_afef6ef4f58c45f",
+        "target_id": "PLA_CONF_EMPRESAS"
+    }
+]

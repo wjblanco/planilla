@@ -1,0 +1,206 @@
+[
+    {
+        "id": "PLA_CONF_BENEFICIOS",
+        "new_y": 50
+    },
+    {
+        "id": "PLA_PAR_IMPUESTOS",
+        "new_y": 50
+    },
+    {
+        "id": "PLA_SYS_BACKUP_REGISTROS",
+        "new_y": 50
+    },
+    {
+        "id": "PLA_PLA_CONF_CONCEPTOS_NOMINA",
+        "new_y": 430.0
+    },
+    {
+        "id": "PLA_PAR_PRESTACIONES",
+        "new_y": 430.0
+    },
+    {
+        "id": "PLA_SYS_AUTORIZACIONES",
+        "new_y": 840.0
+    },
+    {
+        "id": "PLA_CONF_ALERTAS",
+        "new_y": 1430.0
+    },
+    {
+        "id": "PLA_CONF_DEPARTAMENTOS",
+        "new_y": 1430.0
+    },
+    {
+        "id": "PLA_PAR_TRAMOS_IMPUESTOS",
+        "new_y": 1870.0
+    },
+    {
+        "id": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "new_y": 1870.0
+    },
+    {
+        "id": "PLA_CONF_EMPRESAS",
+        "new_y": 2280.0
+    },
+    {
+        "id": "PLA_CONF_MONEDAS",
+        "new_y": 2280.0
+    },
+    {
+        "id": "PLA_CONF_FERIADOS",
+        "new_y": 2630.0
+    },
+    {
+        "id": "TABLE_SYS_INTEGRACIONES_API_6d7fb1940ace43d",
+        "new_y": 2630.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_DOCUMENTO",
+        "new_y": 3070.0
+    },
+    {
+        "id": "PLA_SYS_PERMISOS",
+        "new_y": 3390.0
+    },
+    {
+        "id": "PLA_CONF_ESCALAS_SALARIALES",
+        "new_y": 3650.0
+    },
+    {
+        "id": "PLA_DETALLE",
+        "new_y": 3650.0
+    },
+    {
+        "id": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "new_y": 4060.0
+    },
+    {
+        "id": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "new_y": 4500.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_ACTIVO",
+        "new_y": 4500.0
+    },
+    {
+        "id": "PLA_SYS_USUARIOS",
+        "new_y": 4880.0
+    },
+    {
+        "id": "PLA_EMP_AUSENCIAS",
+        "new_y": 5320.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_TERMINACION",
+        "new_y": 5320.0
+    },
+    {
+        "id": "PLA_SYS_ROLES",
+        "new_y": 5730.0
+    },
+    {
+        "id": "PLA_EMP_ACTIVOS",
+        "new_y": 5990.0
+    },
+    {
+        "id": "PLA_PLA_DETALLE_ITEMS",
+        "new_y": 5990.0
+    },
+    {
+        "id": "PLA_CONF_PAISES",
+        "new_y": 6430.0
+    },
+    {
+        "id": "PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "new_y": 6430.0
+    },
+    {
+        "id": "PLA_CONF_PERIODOS_PAGO",
+        "new_y": 6900.0
+    },
+    {
+        "id": "PLA_LIQUIDACIONES",
+        "new_y": 6900.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_AUSENCIA",
+        "new_y": 7340.0
+    },
+    {
+        "id": "PLA_LIQUIDACION_DETALLE",
+        "new_y": 7720.0
+    },
+    {
+        "id": "PLA_EMP_EMPLEADOS",
+        "new_y": 8100.0
+    },
+    {
+        "id": "PLA_PLA_PERIODOS",
+        "new_y": 8100.0
+    },
+    {
+        "id": "PLA_EMP_DOCUMENTOS",
+        "new_y": 8630.0
+    },
+    {
+        "id": "PLA_MOVIMIENTOS",
+        "new_y": 8630.0
+    },
+    {
+        "id": "PLA_EMP_EMERGENCIAS",
+        "new_y": 9100.0
+    },
+    {
+        "id": "PLA_PLANILLA",
+        "new_y": 9100.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_ID",
+        "new_y": 9510.0
+    },
+    {
+        "id": "PLA_PRESTACIONES_LEGALES",
+        "new_y": 9510.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_HORARIO",
+        "new_y": 9890.0
+    },
+    {
+        "id": "PLA_PROVISIONES",
+        "new_y": 10210.0
+    },
+    {
+        "id": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "new_y": 10590.0
+    },
+    {
+        "id": "PLA_PLA_EMP_HISTORIAL_SALARIAL",
+        "new_y": 11000.0
+    },
+    {
+        "id": "PLA_EMP_HISTORIAL_LABORAL",
+        "new_y": 11410.0
+    },
+    {
+        "id": "PLA_EMP_HORARIOS",
+        "new_y": 11850.0
+    },
+    {
+        "id": "PLA_EMP_PUESTOS",
+        "new_y": 12230.0
+    },
+    {
+        "id": "PLA_EMP_MARCADORES",
+        "new_y": 12640.0
+    },
+    {
+        "id": "PLA_EMP_INCAPACIDADES",
+        "new_y": 13020.0
+    },
+    {
+        "id": "PLA_EMP_TIPOS_CONTRATO",
+        "new_y": 13430.0
+    }
+]

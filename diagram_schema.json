@@ -1,0 +1,2797 @@
+[
+    {
+        "name": "PLA_CONF_PAISES",
+        "attributes": [
+            {
+                "name": "PAI_PAIS_ID INT NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PAI_CODIGO_ISO CHAR(2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PAI_NOMBRE VARCHAR(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PAI_MONEDA_PRINCIPAL CHAR(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PAI_FORMATO_FECHA VARCHAR(20) NOT NULL DEFAULT 'dd/mm/yyyy'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PAI_IDIOMA_PRINCIPAL CHAR(2) NOT NULL DEFAULT 'es'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PAI_ZONA_HORARIA VARCHAR(50) NOT NULL DEFAULT 'America/Guatemala'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PAI_ACTIVO BOOLEAN NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_MONEDAS",
+        "attributes": [
+            {
+                "name": "MON_MONEDA_ID INT NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MON_CODIGO_ISO CHAR(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MON_NOMBRE VARCHAR(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MON_SIMBOLO VARCHAR(5) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MON_DECIMALES INT NOT NULL DEFAULT 2",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MON_ACTIVO BOOLEAN NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_TIPOS_ID",
+        "attributes": [
+            {
+                "name": "TIP_TIPO_ID INT NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIP_PAIS_ID INT NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TIP_NOMBRE VARCHAR(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIP_FORMATO VARCHAR(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIP_LONGITUD INT",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIP_OBLIGATORIO BOOLEAN NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PAR_IMPUESTOS",
+        "attributes": [
+            {
+                "name": "IMP_IMPUESTO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "IMP_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "IMP_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "IMP_TIPO varchar(20) NOT NULL DEFAULT 'ESCALONADO'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "IMP_APLICA_A varchar(20) NOT NULL DEFAULT 'TODOS'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "IMP_FECHA_INI date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "IMP_FECHA_FIN date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "IMP_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PAR_TRAMOS_IMPUESTOS",
+        "attributes": [
+            {
+                "name": "TRA_TRAMO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TRA_IMPUESTO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TRA_LIM_INF decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TRA_LIM_SUP decimal(12,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TRA_PORCENTAJE decimal(5,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TRA_CUOTA_FIJA decimal(10,2) NOT NULL DEFAULT 0",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PAR_PRESTACIONES",
+        "attributes": [
+            {
+                "name": "PRE_PRESTACION_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRE_TIPO_PRESTACION varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_METODO_CALCULO varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_VALOR_BASE decimal(10,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_PERIODICIDAD varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_ACUMULABLE boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_MAX_ACUMULACION decimal(10,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_FECHA_INI date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRE_FECHA_FIN date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_EMPLEADOS",
+        "attributes": [
+            {
+                "name": "EMP_EMP_ID INT NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_CODIGO VARCHAR(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_TIPO_ID INT NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "EMP_NUMERO_ID VARCHAR(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_NOMBRE1 VARCHAR(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_NOMBRE2 VARCHAR(50)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_APELLIDO1 VARCHAR(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_APELLIDO2 VARCHAR(50)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_FECHA_NAC DATE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_GENERO VARCHAR(20)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_PAIS_NAC INT",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "EMP_FECHA_INGRESO DATE NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_MONEDA_SALARIO CHAR(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "EMP_SALARIO_BASE DECIMAL(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EMP_TIPO_CONTRATO INT NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_TIPOS_CONTRATO",
+        "attributes": [
+            {
+                "name": "TCO_CONTRATO_ID INT NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_PAIS_ID INT NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TCO_CODIGO VARCHAR(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_NOMBRE VARCHAR(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_DESCRIPCION VARCHAR(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_HORAS_SEMANALES DECIMAL(5,2) NOT NULL DEFAULT 40",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_BENEFICIOS_LEGALES BOOLEAN NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_PERIODO_PRUEBA INT DEFAULT 90",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TCO_NOTIFICACION_PREAVISO INT DEFAULT 30",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_PERIODOS_PAGO",
+        "attributes": [
+            {
+                "name": "PRP_PERIODO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRP_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_DIAS int NOT NULL DEFAULT 15",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_DIA_PAGO int",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_FECHA_FIN date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRP_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_BENEFICIOS",
+        "attributes": [
+            {
+                "name": "BEN_BENEFICIO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "BEN_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_VALOR decimal(10,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_MONEDA char(3)",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "BEN_PERIODICIDAD varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_IMPOSITIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_APLICA_SEGURO_SOCIAL boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEN_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_PERIODOS",
+        "attributes": [
+            {
+                "name": "PER_PERIODO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PER_TIPO_PERIODO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PER_CODIGO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_FECHA_FIN date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_FECHA_PAGO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PER_ESTADO varchar(20) NOT NULL DEFAULT 'ABIERTO'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PER_TASA_CAMBIO decimal(12,6)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_PLANILLA",
+        "attributes": [
+            {
+                "name": "PLA_PLANILLA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_PERIODO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PLA_TIPO varchar(30) NOT NULL DEFAULT 'NORMAL'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_FECHA_GENERACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_TOTAL_INGRESOS decimal(12,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_TOTAL_DESCUENTOS decimal(12,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_TOTAL_LIQUIDO decimal(12,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PLA_TASA_CAMBIO decimal(12,6) NOT NULL DEFAULT 1",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_ESTADO varchar(20) NOT NULL DEFAULT 'GENERADA'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PLA_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_DETALLE",
+        "attributes": [
+            {
+                "name": "DET_DETALLE_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DET_PLANILLA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DET_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DET_SALARIO_BASE decimal(10,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DET_MONEDA_SALARIO char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DET_TASA_CAMBIO decimal(12,6) NOT NULL DEFAULT 1",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DET_TOTAL_INGRESOS decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DET_TOTAL_DESCUENTOS decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DET_TOTAL_LIQUIDO decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DET_MONEDA_PAGO char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DET_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_DETALLE_ITEMS",
+        "attributes": [
+            {
+                "name": "DEI_ITEM_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEI_DETALLE_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DEI_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEI_CODIGO_CONCEPTO int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DEI_DESCRIPCION varchar(200) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEI_CANTIDAD decimal(10,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEI_VALOR_UNITARIO decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEI_VALOR_TOTAL decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEI_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DEI_TASA_CAMBIO decimal(12,6) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_CONCEPTOS_NOMINA",
+        "attributes": [
+            {
+                "name": "CON_CONCEPTO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "CON_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_APLICA_IMPUESTOS boolean NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_APLICA_SEGURO_SOCIAL boolean NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_ES_PATRONAL boolean NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "CON_ESTADO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_HISTORIAL_SALARIAL",
+        "attributes": [
+            {
+                "name": "HSA_HISTORIAL_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HSA_SALARIO_ANTERIOR decimal(12,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_SALARIO_NUEVO decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HSA_TIPO_CAMBIO varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_FECHA_REGISTRO datetime NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_MOTIVO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HSA_AUTORIZADO_POR int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HSA_ESTADO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_MOVIMIENTOS",
+        "attributes": [
+            {
+                "name": "MOV_MOVIMIENTO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MOV_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "MOV_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MOV_CONCEPTO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "MOV_MONTO decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MOV_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "MOV_FECHA date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MOV_PERIODO_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "MOV_APLICADO_EN_PLANILLA boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MOV_DESCRIPCION text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MOV_APROBADO_POR int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_PRESTACIONES_LEGALES",
+        "attributes": [
+            {
+                "name": "PRL_PRESTACION_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRL_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRL_TIPO_PRESTACION_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRL_PERIODO_REFERENCIA varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRL_FECHA_CALCULO date NOT NULL DEFAULT CURRENT_DATE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRL_FECHA_PAGO date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRL_MONTO decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRL_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRL_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRL_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_EMPRESAS",
+        "attributes": [
+            {
+                "name": "EPR_EMPRESA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EPR_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "EPR_NOMBRE_LEGAL varchar(200) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EPR_NOMBRE_COMERCIAL varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EPR_IDENTIFICACION_TRIBUTARIA varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EPR_MONEDA_PRINCIPAL char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "EPR_FECHA_CONSTITUCION date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EPR_LOGO blob",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EPR_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_USUARIOS",
+        "attributes": [
+            {
+                "name": "USU_USUARIO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "USU_NOMBRE_USUARIO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_CONTRASENA varchar(255) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_CORREO varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_NOMBRES varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_APELLIDOS varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_ROL_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "USU_FECHA_ULTIMO_LOGIN datetime",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_REQUIERE_CAMBIO_CONTRASENA boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "USU_FECHA_CREACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_ROLES",
+        "attributes": [
+            {
+                "name": "ROL_ROL_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ROL_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ROL_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ROL_NIVEL_ACCESO int NOT NULL DEFAULT 99",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ROL_ACCESO_GLOBAL boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ROL_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_PERMISOS",
+        "attributes": [
+            {
+                "name": "PRM_PERMISO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRM_ROL_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRM_MODULO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRM_ACCION varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRM_PERMITIDO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRM_RESTRICCION_EMPRESA boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_HISTORIAL_LABORAL",
+        "attributes": [
+            {
+                "name": "HLA_HISTORIAL_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HLA_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HLA_TIPO_MOVIMIENTO varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HLA_DEPARTAMENTO_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HLA_PUESTO_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HLA_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HLA_FECHA_FIN date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HLA_SUPERVISOR_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HLA_MOTIVO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HLA_DOCUMENTO_SOPORTE varchar(50)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HLA_AUTORIZADO_POR int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HLA_ESTADO varchar(20) NOT NULL DEFAULT 'ACTIVO'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_DEPARTAMENTOS",
+        "attributes": [
+            {
+                "name": "DEP_DEPARTAMENTO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEP_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DEP_CODIGO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEP_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEP_DESCRIPCION text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEP_CENTRO_COSTO varchar(30)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEP_SUPERVISOR_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DEP_FECHA_CREACION date NOT NULL DEFAULT CURRENT_DATE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DEP_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_PUESTOS",
+        "attributes": [
+            {
+                "name": "PUE_PUESTO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PUE_CODIGO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_DESCRIPCION text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_DEPARTAMENTO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PUE_NIVEL_JERARQUICO int NOT NULL DEFAULT 1",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_SALARIO_MIN decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_SALARIO_MAX decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PUE_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PUE_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_DOCUMENTOS",
+        "attributes": [
+            {
+                "name": "DOC_DOCUMENTO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DOC_TIPO_DOCUMENTO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DOC_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_DESCRIPCION text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_FECHA_EMISION date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_FECHA_VENCIMIENTO date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_ARCHIVO blob",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_EXTENSION varchar(10) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_TAMANIO int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_PRIVADO boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "DOC_CREADO_POR int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "DOC_FECHA_CREACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_TIPOS_DOCUMENTO",
+        "attributes": [
+            {
+                "name": "TDO_TIPO_DOC_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TDO_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TDO_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TDO_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TDO_OBLIGATORIO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TDO_VALIDEZ_DIAS int",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TDO_RESTRICCION_VISUALIZACION varchar(20) NOT NULL DEFAULT 'HR'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TDO_FORMATOS_PERMITIDOS varchar(100) NOT NULL DEFAULT 'PDF,JPG,PNG'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_BENEFICIOS_ASIGNADOS",
+        "attributes": [
+            {
+                "name": "BEA_ASIGNACION_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEA_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "BEA_BENEFICIO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "BEA_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEA_FECHA_FIN date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEA_VALOR decimal(10,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEA_MONEDA char(3)",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "BEA_FRECUENCIA varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEA_ESTADO varchar(20) NOT NULL DEFAULT 'ACTIVO'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BEA_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_AUSENCIAS",
+        "attributes": [
+            {
+                "name": "AUS_AUSENCIA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "AUS_TIPO_AUSENCIA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "AUS_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_FECHA_FIN date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_DURACION_HORAS decimal(6,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_MOTIVO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_CERTIFICADO_MEDICO boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUS_DOCUMENTO_SOPORTE int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "AUS_APROBADO_POR int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_TIPOS_AUSENCIA",
+        "attributes": [
+            {
+                "name": "TAU_TIPO_AUSENCIA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TAU_CODIGO varchar(10) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_REMUNERADA boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_DESCUENTA_VACACIONES boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_REQUIERE_APROBACION boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_MAX_DIAS_ANIO int",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAU_ACUMULABLE boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_HORARIOS",
+        "attributes": [
+            {
+                "name": "HOR_HORARIO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HOR_TIPO_HORARIO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HOR_DIA_SEMANA int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_HORA_ENTRADA time NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_HORA_SALIDA time NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_HORAS_LABORALES decimal(4,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_FECHA_FIN date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HOR_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_TIPOS_HORARIO",
+        "attributes": [
+            {
+                "name": "THO_TIPO_HORARIO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "THO_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "THO_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "THO_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "THO_HORAS_SEMANALES decimal(5,2) NOT NULL DEFAULT 40",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "THO_FLEXIBLE boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "THO_NOCTURNO boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "THO_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_MARCADORES",
+        "attributes": [
+            {
+                "name": "MAR_MARCADOR_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "MAR_FECHA_HORA datetime NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_METODO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_UBICACION_LAT decimal(10,6)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_UBICACION_LON decimal(10,6)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_DIRECCION_IP varchar(45)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_DISPOSITIVO varchar(100)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "MAR_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_INCAPACIDADES",
+        "attributes": [
+            {
+                "name": "INC_INCAPACIDAD_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "INC_TIPO_INCAPACIDAD_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "INC_NUMERO_DOCUMENTO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_FECHA_INICIO date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_FECHA_FIN date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_DIAS_INCAPACIDAD int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_PORCENTAJE decimal(5,2) NOT NULL DEFAULT 100",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_ENTIDAD_SALUD varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "INC_DOCUMENTO_SOPORTE int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "INC_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_TIPOS_INCAPACIDAD",
+        "attributes": [
+            {
+                "name": "TIN_TIPO_INCAPACIDAD_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TIN_CODIGO varchar(10) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_LABORAL boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_DIAS_CARENCIA int NOT NULL DEFAULT 0",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_PORCENTAJE_PAGO decimal(5,2) NOT NULL DEFAULT 100",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_PAGA_EMPRESA boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_REQUIERE_DOC_OFICIAL boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TIN_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_HISTORIAL_CAMBIOS",
+        "attributes": [
+            {
+                "name": "HCA_CAMBIO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_TABLA_AFECTADA varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_REGISTRO_ID varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_CAMPO_MODIFICADO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_VALOR_ANTERIOR text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_VALOR_NUEVO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_FECHA_CAMBIO datetime NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_USUARIO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HCA_IP_ORIGEN varchar(45) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_MODULO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCA_AUTORIZACION_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_FERIADOS",
+        "attributes": [
+            {
+                "name": "FER_FERIADO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "FER_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_FECHA date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_DIA_MES int",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_MES int",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_REGLA_ESPECIAL varchar(100)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_RECURRENTE boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_PAGABLE boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "FER_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_REPORTES_PERSONALIZADOS",
+        "attributes": [
+            {
+                "name": "REP_REPORTE_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "REP_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_DESCRIPCION text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_MODULO varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_QUERY_SQL text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_COLUMNAS json NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_FILTROS json NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_FORMATO varchar(10) NOT NULL DEFAULT 'PDF'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_VISIBLE boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "REP_CREADO_POR int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "REP_FECHA_CREACION datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_LIQUIDACIONES",
+        "attributes": [
+            {
+                "name": "LIQ_LIQUIDACION_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "LIQ_TIPO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_FECHA_SALIDA date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_MOTIVO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_DIAS_TRABAJADOS int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_TOTAL_INGRESOS decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_TOTAL_DESCUENTOS decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_TOTAL_LIQUIDO decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "LIQ_ESTADO varchar(20) NOT NULL DEFAULT 'BORRADOR'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LIQ_DOCUMENTO_GENERADO int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_LIQUIDACION_DETALLE",
+        "attributes": [
+            {
+                "name": "LID_LIQUIDACION_DET_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LID_LIQUIDACION_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "LID_TIPO_CONCEPTO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LID_CODIGO_CONCEPTO int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "LID_DESCRIPCION varchar(200) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LID_VALOR decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LID_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "LID_APLICA_IMPUESTOS boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LID_APLICA_SEGURO_SOCIAL boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "LID_FORMULA_CALCULO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_TIPOS_TERMINACION",
+        "attributes": [
+            {
+                "name": "TTE_TIPO_TERMINACION_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TTE_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_CODIGO_LEGAL varchar(20)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_INDEMNIZABLE boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_PREAVISO_REQUERIDO int NOT NULL DEFAULT 0",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_LIQUIDA_VACACIONES boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_LIQUIDA_PRESTACIONES boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TTE_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_ACTIVOS",
+        "attributes": [
+            {
+                "name": "ACT_ACTIVO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "ACT_TIPO_ACTIVO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "ACT_CODIGO_INVENTARIO varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_DESCRIPCION varchar(200) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_MARCA varchar(50)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_MODELO varchar(50)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_FECHA_ASIGNACION date NOT NULL DEFAULT CURRENT_DATE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_FECHA_DEVOLUCION date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_ESTADO varchar(20) NOT NULL DEFAULT 'ASIGNADO'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_VALOR decimal(12,2)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ACT_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_CONF_TIPOS_ACTIVO",
+        "attributes": [
+            {
+                "name": "TAC_TIPO_ACTIVO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "TAC_NOMBRE varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_CODIGO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_CATEGORIA varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_DESCRIPCION varchar(200)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_REQUIERE_DEVOLUCION boolean NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_DIAS_GARANTIA int",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_POLITICA_USO text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "TAC_ACTIVO boolean NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_PROVISIONES",
+        "attributes": [
+            {
+                "name": "PRO_PROVISION_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRO_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRO_PERIODO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRO_TIPO_PROVISION varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRO_FECHA_CORTE date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRO_MONTO_TOTAL decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRO_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "PRO_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRO_METODO_CALCULO text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "PRO_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_BACKUP_REGISTROS",
+        "attributes": [
+            {
+                "name": "BAC_BACKUP_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_TIPO_BACKUP varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_FECHA_HORA datetime NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_USUARIO_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "BAC_TABLAS_INCLUIDAS json NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_TAMANIO_MB decimal(10,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_RUTA_ARCHIVO varchar(255) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_HASH_VERIFICACION varchar(64) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_ESTADO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "BAC_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_ALERTAS",
+        "attributes": [
+            {
+                "name": "ALE_ALERTA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_EMPRESA_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "ALE_NOMBRE varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_TIPO_ALERTA varchar(30) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_MODULO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_CONDICION text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_MENSAJE text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_FRECUENCIA varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_DESTINATARIOS json NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_MEDIO_ENVIO varchar(20) NOT NULL DEFAULT 'INTERNO'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_ACTIVA boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ALE_PRIORIDAD varchar(20) NOT NULL DEFAULT 'MEDIA'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_EMP_EMERGENCIAS",
+        "attributes": [
+            {
+                "name": "EME_EMERGENCIA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_EMPLEADO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "EME_NOMBRE_CONTACTO varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_PARENTESCO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_TELEFONO_PRINCIPAL varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_TELEFONO_SECUNDARIO varchar(20)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_EMAIL varchar(100)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_DIRECCION text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_CONTACTO_PRINCIPAL boolean NOT NULL DEFAULT FALSE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "EME_NOTAS text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_CONF_ESCALAS_SALARIALES",
+        "attributes": [
+            {
+                "name": "ESC_ESCALA_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_PAIS_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "ESC_NOMBRE_ESCALA varchar(100) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_NIVEL int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_SALARIO_MIN decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_SALARIO_MAX decimal(12,2) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_MONEDA char(3) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "ESC_VIGENTE_DESDE date NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_VIGENTE_HASTA date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "ESC_ACTIVO boolean NOT NULL DEFAULT TRUE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    },
+    {
+        "name": "PLA_PLA_HISTORICO_CAMBIOS_MASIVOS",
+        "attributes": [
+            {
+                "name": "HCM_CAMBIO_MASIVO_ID int NOT NULL",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_USUARIO_ID int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "HCM_FECHA_HORA datetime NOT NULL DEFAULT CURRENT_TIMESTAMP",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_TABLA_AFECTADA varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_TIPO_OPERACION varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_REGISTROS_AFECTADOS int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_DESCRIPCION_CAMBIO text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_QUERY_EJECUTADA text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_VALORES_ANTERIORES json",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_VALORES_NUEVOS json",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_IP_ORIGEN varchar(45) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_MODULO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "HCM_AUTORIZACION_ID int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            }
+        ]
+    },
+    {
+        "name": "PLA_SYS_AUTORIZACIONES",
+        "attributes": [
+            {
+                "name": "AUT_AUTORIZACIONES_ID int NOT NULL AUTO_INCREMENT",
+                "is_primary_key": true,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_CODIGO varchar(20) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_TIPO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_DESCRIPCION text NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_SOLICITANTE int NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "AUT_AUTORIZADOR int",
+                "is_primary_key": false,
+                "is_foreign_key": true
+            },
+            {
+                "name": "AUT_FECHA_SOLICITUD date NOT NULL DEFAULT CURRENT_DATE",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_FECHA_AUTORIZACION date",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_ESTADO varchar(20) NOT NULL DEFAULT 'PENDIENTE'",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_TABLA_AFECTADA varchar(50)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_OPERACION varchar(20)",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_DATOS_OPERACION json",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_JUSTIFICACION varchar(500) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_NIVEL_AUTORIZACION int NOT NULL DEFAULT 1",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_OBSERVACIONES text",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_IP_SOLICITUD varchar(45) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            },
+            {
+                "name": "AUT_MODULO varchar(50) NOT NULL",
+                "is_primary_key": false,
+                "is_foreign_key": false
+            }
+        ]
+    }
+]
